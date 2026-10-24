@@ -165,7 +165,7 @@ const CAST=[
 const EP_IDS=['settings',...EPISODES.map(e=>e.id)];
 let originalPromise=null, originalDocument=null, fontLevel=0;
 const $=s=>document.querySelector(s);
-function asset(name){return name+(name.includes('?')?'&':'?')+'v=81'}
+function asset(name){return name+(name.includes('?')?'&':'?')+'v=82'}
 
 async function getOriginal(){
  if(originalDocument)return originalDocument;
@@ -259,7 +259,7 @@ const PLACEHOLDERS=[
  [/ChatGPTのポストのスクショ/, 'screen.svg','SNS投稿のスクリーンショット風イメージ'],
  [/路線図の一部を丸で囲んだ画像/, 'post-route-map.webp','路線図の一部を赤丸で囲んだ画像（イメージ）'],
  [/ユニットバスの湯船に、入浴剤で濁ったお湯/, 'post-bath-water.webp','入浴剤の入ったユニットバス（イメージ）'],
- [/同じユニットバスの写真/, 'post-bath-dry.webp','ユニットバス（イメージ）'],
+ [/同じユニットバスの写真/, 'post-bath-water.webp','同じユニットバスに入浴剤入りのお湯が張られた写真（イメージ）'],
  [/黄金色のスープの写真/, 'post-gold-soup.webp','黄金色のスープ（イメージ）'],
  [/無関係な富士山の画像/, 'post-fuji-twilight.webp','投稿内容と無関係な富士山（イメージ）'],
  [/富士山の画像/, 'post-fuji-photo.webp','富士山のイメージ写真']
@@ -309,7 +309,7 @@ function buildFeed(){
  $('#homeFeed').innerHTML=EPISODES.map(makeTweet).join('');
  $('#episodesFeed').innerHTML=EPISODES.map(makeTweet).join('');
  const last=safeLoad('toketsu-last',null);if(last&&EPISODES.some(x=>x.id===last)){$('#resumeLink').hidden=false;$('#resumeLink').href='#'+last}
- $('#pinnedPost').innerHTML=`<img class="avatar" src="masuku-social.webp?v=81" alt=""><div class="tweet-core"><div class="authorline"><strong>異論・枡句 <span class="bluecheck">◆</span></strong><span class="muted">@iron_masuku · 午前4:21</span></div><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p><div class="post-quote"><div class="quote-top">調停コンペ・公式告知</div><p>Grok / ChatGPT / Claude / Gemini<br>誰がタイムラインを鎮める？</p></div><div class="engagement"><a class="action" href="#prologue">${svgIcons.message} プロローグへ</a><button class="action" data-act="share" data-id="prologue">${svgIcons.share} リンクを共有</button></div></div>`;
+ $('#pinnedPost').innerHTML=`<img class="avatar" src="masuku-social.webp?v=82" alt=""><div class="tweet-core"><div class="authorline"><strong>異論・枡句 <span class="bluecheck">◆</span></strong><span class="muted">@iron_masuku · 午前4:21</span></div><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p><div class="post-quote"><div class="quote-top">調停コンペ・公式告知</div><p>Grok / ChatGPT / Claude / Gemini<br>誰がタイムラインを鎮める？</p></div><div class="engagement"><a class="action" href="#prologue">${svgIcons.message} プロローグへ</a><button class="action" data-act="share" data-id="prologue">${svgIcons.share} リンクを共有</button></div></div>`;
 }
 function buildCharacterPage(){
  $('#castGrid').innerHTML=CAST.map(c=>`<button class="person-card" data-person="${c.id}" type="button"><img src="${asset(c.id+'.webp')}" loading="lazy" alt="${c.name}のイメージイラスト"><strong>${c.name}</strong><span>${c.role}</span><p>${c.quote}</p></button>`).join('');
@@ -320,7 +320,7 @@ function buildCharacterPage(){
 }
 function showCharacter(id){const c=CAST.find(x=>x.id===id)||RESIDENTS.find(x=>x.id===id);if(!c)return;$('#modalImg').src=c.role.includes('／')&&CAST.some(x=>x.id===id)?asset(c.id+'.webp'):profileAsset(c.id);$('#modalImg').alt=c.name+'のイメージ';$('#modalName').textContent=c.name;$('#modalRole').textContent=c.role;$('#modalText').textContent=c.detail||('アカウント '+c.handle+'。本作のタイムラインに登場する架空のアカウント。');$('#modalNote').hidden=!['chatgpt','claude','gemini','grok'].includes(c.id);$('#modalQuote').textContent=c.quote||'';$('#modal').hidden=false;document.body.style.overflow='hidden';$('#closeModal').focus()}
 function closeCharacter(){$('#modal').hidden=true;document.body.style.overflow=''}
-function showGallery(){const data=[['ep1','絵師の比較画像','post-compare.webp'],['ep2','白衣の写真','post-whitecoat.webp'],['ep4','丸印のついた路線図','post-route-map.webp'],['ep4','スカイツリーが見える浴室','post-skytree-bath.webp'],['ep4','入浴剤で濁ったユニットバス','post-bath-water.webp'],['ep4','同じユニットバス','post-bath-dry.webp'],['ep5','黄金色のスープ','post-gold-soup.webp'],['ep6','無関係な富士山','post-fuji-twilight.webp'],['ep6','富士山の写真','post-fuji-photo.webp'],['extra2','凍結祭り（画像は非表示）','redacted-exhibit.svg']];$('#mediaGrid').innerHTML=data.map(([id,title,file])=>`<a class="media-tile" href="#${id}"><img src="${asset(file)}" alt="${escapeHtml(title)}の物語用イメージ" loading="lazy"><div class="media-copy"><strong>${title}</strong><small>この投稿のある話を見る ↗</small></div></a>`).join('')}
+function showGallery(){const data=[['ep1','絵師の比較画像','post-compare.webp'],['ep2','白衣の写真','post-whitecoat.webp'],['ep4','丸印のついた路線図','post-route-map.webp'],['ep4','スカイツリーが見える浴室','post-skytree-bath.webp'],['ep4','入浴剤で濁ったユニットバス','post-bath-water.webp'],['ep4','同じユニットバス','post-bath-water.webp'],['ep5','黄金色のスープ','post-gold-soup.webp'],['ep6','無関係な富士山','post-fuji-twilight.webp'],['ep6','富士山の写真','post-fuji-photo.webp'],['extra2','凍結祭り（画像は非表示）','redacted-exhibit.svg']];$('#mediaGrid').innerHTML=data.map(([id,title,file])=>`<a class="media-tile" href="#${id}"><img src="${asset(file)}" alt="${escapeHtml(title)}の物語用イメージ" loading="lazy"><div class="media-copy"><strong>${title}</strong><small>この投稿のある話を見る ↗</small></div></a>`).join('')}
 function showBookmarks(){const ids=getSaved();const items=EPISODES.filter(e=>ids.includes(e.id));$('#bookmarksFeed').innerHTML=items.length?items.map(makeTweet).join(''):'<div class="empty">まだ保存したエピソードはありません。<br>投稿の「保存」を押すとここに表示されます。</div>'}
 async function showSearch(query=''){
  const q=query.trim().toLowerCase(),target=$('#searchResults');
@@ -347,10 +347,19 @@ function markSpaceTalk(msg){
   label.textContent='🎙 スペースで発言';
   msg.insertBefore(label,msg.firstChild);
 }
-function dmRule(chapterId, runIndex){
+function dmRule(chapterId, runIndex, run){
+  // 同一話の中でもDMの相手は場面ごとに変わる。直前の会話の相手を引き継がない。
+  // 第6話: 午後11時のClaude→枡句は、アデとのやり取りとは別のDM。
+  if(chapterId==='ep6'){
+    const speakers=run.map(({msg})=>cleanDmName(msg.querySelector('.nm')?.textContent||''));
+    const conversation=run.map(({msg})=>msg.querySelector('.pb')?.textContent||'').join(' ');
+    if(speakers.includes('Claude') && conversation.includes('その仕組みは、公正ですか')){
+      return {header:'異論・枡句', outgoing:'Claude'};
+    }
+    return {header:'アデ', outgoing:'ChatGPT'};
+  }
   const defaults={
     ep4:{header:'ミナト・キラリ',outgoing:'ChatGPT'},
-    ep6:{header:'アデ',outgoing:'ChatGPT'},
     final:{header:'たわむれ研究所',outgoing:'Claude'},
     extra2:{header:'ハルカ',outgoing:'ChatGPT'}
   };
@@ -383,7 +392,7 @@ function styleDmMessage(msg, rule){
   }
 }
 function wrapDmRun(run, chapterId, runIndex){
-  const rule=dmRule(chapterId, runIndex) || {header:'ダイレクトメッセージ', outgoing:''};
+  const rule=dmRule(chapterId, runIndex, run) || {header:'ダイレクトメッセージ', outgoing:''};
   const wrapper=document.createElement('section');
   wrapper.className='dm-thread';
   const head=document.createElement('div');
