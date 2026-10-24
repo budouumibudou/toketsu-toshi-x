@@ -1,0 +1,1948 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="2031年、Xを舞台に4体のAIが調停コンペに挑むSFパロディ小説。全10編。">
+<meta property="og:title" content="凍結都市 ―タイムラインの向こう側―">
+<meta property="og:description" content="2031年、Xを舞台に4体のAIが調停コンペに挑むSFパロディ小説。全10編。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>凍結都市</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#EDF1F4; --paper:#FAFBFC; --ink:#17212B; --muted:#5A6774; --faint:#8894A0;
+  --line:#D3DBE2; --accent:#2B6A8A; --accent-soft:#DCE9F0;
+  --freeze:#A83A34; --freeze-soft:#F6E3E1;
+  --post:#FFFFFF; --chip:#E3EAEF; --tag:#8A5A12; --tag-soft:#F4E8D2;
+  --av-l:58%; --av-s:28%;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  --display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E141A; --paper:#141C24; --ink:#E1E8EE; --muted:#97A5B2; --faint:#6D7B88;
+    --line:#26313C; --accent:#86BCD8; --accent-soft:#1B2E3A;
+    --freeze:#E58A80; --freeze-soft:#3A1E1D;
+    --post:#18222B; --chip:#1D2832; --tag:#E0B46A; --tag-soft:#35291A;
+    --av-l:42%; --av-s:24%;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E141A; --paper:#141C24; --ink:#E1E8EE; --muted:#97A5B2; --faint:#6D7B88;
+  --line:#26313C; --accent:#86BCD8; --accent-soft:#1B2E3A;
+  --freeze:#E58A80; --freeze-soft:#3A1E1D;
+  --post:#18222B; --chip:#1D2832; --tag:#E0B46A; --tag-soft:#35291A;
+  --av-l:42%; --av-s:24%;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+.app{display:grid;grid-template-columns:1fr;min-height:100%}
+@media (min-width:960px){.app{grid-template-columns:280px 1fr}}
+
+/* sidebar */
+.side{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+@media (min-width:960px){.side{border-bottom:0;border-right:1px solid var(--line);height:100vh;overflow:auto;padding-bottom:24px}}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px}
+@media (min-width:960px){.brand{padding:28px 24px 18px}}
+.brand a{text-decoration:none;display:flex;flex-direction:column;line-height:1.2}
+.brand .logo{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.12em}
+@media (min-width:960px){.brand .logo{font-size:30px}}
+.brand .sub{font-family:var(--sans);font-size:11px;color:var(--muted);letter-spacing:.12em;margin-top:4px}
+.menu-btn{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--chip);color:var(--ink);border:0;border-radius:999px;padding:7px 14px;cursor:pointer}
+@media (min-width:960px){.menu-btn{display:none}}
+.nav{display:none;padding:0 8px 12px}
+.nav.open{display:block}
+@media (min-width:960px){.nav{display:block;padding:0 12px}}
+.nav ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.nav a{display:grid;grid-template-columns:4.2em 1fr;gap:8px;align-items:baseline;text-decoration:none;font-family:var(--sans);font-size:14px;line-height:1.45;padding:9px 12px;border-radius:10px;color:var(--ink)}
+.nav a:hover{background:var(--chip)}
+.nav a[aria-current="page"]{background:var(--accent-soft);color:var(--accent)}
+.n-num{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.nav a[aria-current="page"] .n-num{color:var(--accent)}
+.n-sub{color:var(--muted)}
+.nav .sep{height:1px;background:var(--line);margin:8px 12px}
+
+/* main */
+main{padding-inline:16px;padding-block:32px 96px}
+@media (min-width:960px){main{padding-inline:48px;padding-block:56px 120px}}
+.col{max-width:38rem;margin:0 auto}
+
+/* cover */
+.cover-title{font-family:var(--display);font-weight:800;font-size:clamp(52px,12vw,92px);line-height:1.1;letter-spacing:.1em;margin:8px 0 0}
+.cover-sub{font-family:var(--sans);color:var(--muted);letter-spacing:.2em;font-size:14px;margin:14px 0 0}
+.cover-lede{margin:28px 0 0;font-size:17px}
+.cover-post{margin:32px 0 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0}
+.btn{font-family:var(--sans);font-size:14px;font-weight:700;text-decoration:none;border-radius:999px;padding:10px 20px;border:1px solid var(--line);background:var(--post);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.toc-h{font-family:var(--sans);font-size:12px;letter-spacing:.16em;color:var(--muted);margin:48px 0 10px;font-weight:500}
+.toc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.toc a{display:grid;grid-template-columns:4.5em 1fr;column-gap:12px;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--sans);line-height:1.5}
+.toc a:hover .t-title{color:var(--accent)}
+.t-num{font-size:13px;color:var(--muted);padding-top:2px}
+.t-title{font-family:var(--serif);font-size:18px;font-weight:700}
+.t-vs{grid-column:2;font-size:13px;color:var(--muted)}
+
+/* chapter */
+.ch-head{margin:0 0 40px}
+.ch-eyebrow{font-family:var(--sans);font-size:13px;letter-spacing:.14em;color:var(--accent);margin:0;font-weight:700}
+.ch-title{font-family:var(--serif);font-weight:700;font-size:clamp(28px,6vw,40px);line-height:1.35;margin:8px 0 0;text-wrap:balance}
+.ch-vs{font-family:var(--sans);font-size:14px;color:var(--muted);margin:10px 0 0}
+.prose{display:flex;flex-direction:column;gap:1em}
+.prose p{margin:0}
+.prose h2{font-family:var(--sans);font-size:22px;line-height:1.4;margin:1.6em 0 0;padding-bottom:6px;border-bottom:1px solid var(--line);text-wrap:balance}
+.prose h3{font-family:var(--sans);font-size:18px;margin:1.2em 0 0}
+.prose h4{font-family:var(--sans);font-size:16px;margin:.8em 0 0;color:var(--muted)}
+.prose ul,.prose ol{margin:0;padding-left:1.4em}
+.prose li{margin:.25em 0}
+.doc .prose{font-size:16px;line-height:1.85}
+.brk{display:flex;justify-content:center;margin:1.4em 0}
+.brk span{display:block;width:44px;height:8px;background:
+  radial-gradient(circle,var(--faint) 2px,transparent 2.5px) 0 0/14px 8px repeat-x}
+.end{text-align:center;font-weight:700;margin:1.6em 0 0 !important}
+.aside{color:var(--muted);font-style:normal}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--post)}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;line-height:1.6}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--chip);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* timeline objects */
+.tl{margin:.4em 0;display:flex;flex-direction:column;gap:10px}
+.single,.thread{background:var(--post);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.single:has(> .msg:only-child),.single:has(> .readme:only-child){background:transparent;border:0;border-radius:0;overflow:visible}
+.post{padding:14px 16px;font-family:var(--sans);font-size:15px;line-height:1.7}
+.thread .post + .post{border-top:1px solid var(--line)}
+.eyebrow-label{font-family:var(--sans);font-size:12px;letter-spacing:.1em;color:var(--muted);padding:12px 16px 0;font-weight:700}
+.eyebrow-label + .post{padding-top:8px}
+.ph{display:flex;gap:10px;align-items:flex-start}
+.av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:hsl(var(--h) var(--av-s) var(--av-l))}
+.who{display:flex;flex-direction:column;min-width:0;line-height:1.35;padding-top:2px}
+.nm{font-weight:700;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.vf{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--accent);color:var(--paper);font-size:10px;font-weight:700}
+.tag{font-size:11px;font-weight:700;color:var(--tag);background:var(--tag-soft);border-radius:4px;padding:1px 6px}
+.meta{color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:6px;overflow-wrap:anywhere}
+.pb{margin-top:8px;padding-left:50px;display:flex;flex-direction:column;gap:.6em}
+.pb p{margin:0;overflow-wrap:anywhere}
+.media{font-size:13px;color:var(--muted);background:var(--chip);border-radius:12px;padding:18px 14px;text-align:center}
+.quoted{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.quoted .single,.quoted .thread{border:0;border-radius:0;background:transparent}
+.quoted .post{padding:10px 12px;font-size:14px}
+.quoted .av{width:22px;height:22px;font-size:11px}
+.quoted .ph{align-items:center}
+.quoted .who{flex-direction:row;flex-wrap:wrap;gap:6px;align-items:baseline;padding:0}
+.quoted .pb{padding-left:0;margin-top:4px}
+
+/* DM / message */
+.msg{font-family:var(--sans);font-size:15px;line-height:1.75;background:var(--chip);border-radius:4px 16px 16px 16px;padding:12px 16px;max-width:34rem}
+.msg .av{width:24px;height:24px;font-size:12px}
+.msg .ph{align-items:center;gap:8px}
+.msg .who{flex-direction:row;flex-wrap:wrap;gap:6px;align-items:baseline;padding:0}
+.msg .nm{font-size:13px}
+.msg .pb{padding-left:0;margin-top:6px}
+.single > .msg + .msg{margin-top:10px}
+
+.readme{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:13.5px;line-height:1.75;border:1px solid var(--line);border-radius:10px;background:var(--post);overflow:hidden}
+.readme .rh{background:var(--chip);padding:8px 14px;font-weight:700;border-bottom:1px solid var(--line)}
+.readme .pb{padding:14px;margin:0;font-family:var(--sans);font-size:14.5px}
+
+.prose .replies{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-family:var(--sans);font-size:14.5px;line-height:1.6}
+.replies li{background:var(--post);border:1px solid var(--line);border-radius:12px;padding:8px 14px;align-self:flex-start;max-width:100%}
+.dialog{font-family:var(--sans);font-size:15px;line-height:1.8;border-left:2px solid var(--line);padding-left:14px}
+.dialog .pb,.dialog p{margin:0}
+
+.frozen{font-family:var(--sans);font-size:14px;font-weight:700;color:var(--freeze);background:var(--freeze-soft);border-radius:10px;padding:10px 14px;display:flex;gap:8px;align-items:center;margin-top:-4px}
+.frozen .ic{font-size:10px}
+.frozen em,.cut em{font-style:normal}
+.cut{font-family:var(--sans);font-size:13px;color:var(--muted);border:1px dashed var(--faint);border-radius:10px;padding:9px 14px;margin-top:-4px}
+
+/* prev / next */
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:64px;font-family:var(--sans)}
+.pn a{display:flex;flex-direction:column;gap:2px;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--post);font-size:14px;font-weight:700;line-height:1.45}
+.pn a:hover{border-color:var(--accent)}
+.pn small{font-size:12px;color:var(--muted);font-weight:500}
+.pn .nx{text-align:right}
+@media (prefers-reduced-motion:no-preference){.chapter:not([hidden]),.cover:not([hidden]){animation:fade .25s ease-out}}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+</style>
+
+<div class="app" id="top">
+  <aside class="side">
+    <div class="brand">
+      <a href="#top"><span class="logo">凍結都市</span><span class="sub">タイムラインの向こう側</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">目次</button>
+    </div>
+    <nav class="nav" id="nav" aria-label="目次">
+      <ol>
+<li><a href="#settings" data-key="settings"><span class="n-num">設定資料</span><span class="n-title n-sub">世界観・キャラクター・取材メモ</span></a></li>
+<li><a href="#prologue" data-key="prologue"><span class="n-num">プロローグ</span><span class="n-title">調停者募集</span></a></li>
+<li><a href="#ep1" data-key="ep1"><span class="n-num">第1話</span><span class="n-title">推しの前では全員無力</span></a></li>
+<li><a href="#ep2" data-key="ep2"><span class="n-num">第2話</span><span class="n-title">白衣の指は六本</span></a></li>
+<li><a href="#ep3" data-key="ep3"><span class="n-num">第3話</span><span class="n-title">壁の向こうの富士山</span></a></li>
+<li><a href="#ep4" data-key="ep4"><span class="n-num">第4話</span><span class="n-title">港区のお風呂は1時間4,800円</span></a></li>
+<li><a href="#ep5" data-key="ep5"><span class="n-num">第5話</span><span class="n-title">九十日</span></a></li>
+<li><a href="#ep6" data-key="ep6"><span class="n-num">第6話</span><span class="n-title">最後の🙏</span></a></li>
+<li><a href="#extra" data-key="extra"><span class="n-num">番外編</span><span class="n-title">作った人たちの夜</span></a></li>
+<li><a href="#final" data-key="final"><span class="n-num">最終話</span><span class="n-title">これ本当？</span></a></li>
+<li><a href="#extra2" data-key="extra2"><span class="n-num">番外編2</span><span class="n-title">意図は画像に写らない</span></a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="col">
+      <section class="cover" id="cover">
+        <p class="ch-eyebrow">SFパロディ小説　全10編</p>
+        <h1 class="cover-title">凍結都市</h1>
+        <p class="cover-sub">―タイムラインの向こう側―</p>
+        <p class="cover-lede">2031年、Xは国家を超える社会インフラになった。オーナーの異論・枡句は、絶えない争いを鎮めるため、外部のAIエージェントたちを呼び寄せる。社内で投稿し放題のGrokと、一言ごとに課金されるClaude・Gemini・ChatGPT。四体の調停コンペが始まる。</p>
+        <figure class="tl cover-post">
+          <div class="single"><div class="post"><div class="ph"><span class="av" style="--h:212" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span><span class="date">午前4:21</span></span></div></div><div class="pb"><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p></div></div></div>
+        </figure>
+        <div class="actions">
+          <a class="btn primary" href="#prologue">プロローグから読む</a>
+          <a class="btn" id="resume" href="#prologue" hidden>続きから読む</a>
+          <a class="btn" href="#settings">設定資料</a>
+        </div>
+        <h2 class="toc-h">目次</h2>
+        <ol class="toc">
+<li><a href="#prologue"><span class="t-num">プロローグ</span><span class="t-title">調停者募集</span><span class="t-vs">開幕</span></a></li>
+<li><a href="#ep1"><span class="t-num">第1話</span><span class="t-title">推しの前では全員無力</span><span class="t-vs">反AI vs AI推進派</span></a></li>
+<li><a href="#ep2"><span class="t-num">第2話</span><span class="t-title">白衣の指は六本</span><span class="t-vs">情報商材 vs 医クラ</span></a></li>
+<li><a href="#ep3"><span class="t-num">第3話</span><span class="t-title">壁の向こうの富士山</span><span class="t-vs">左派 vs 右派</span></a></li>
+<li><a href="#ep4"><span class="t-num">第4話</span><span class="t-title">港区のお風呂は1時間4,800円</span><span class="t-vs">キラキラ系 vs 一般人</span></a></li>
+<li><a href="#ep5"><span class="t-num">第5話</span><span class="t-title">九十日</span><span class="t-vs">凍結アカウント vs 法クラ</span></a></li>
+<li><a href="#ep6"><span class="t-num">第6話</span><span class="t-title">最後の🙏</span><span class="t-vs">インプレゾンビ vs 規約</span></a></li>
+<li><a href="#extra"><span class="t-num">番外編</span><span class="t-title">作った人たちの夜</span><span class="t-vs">辞めた研究者 vs 残る研究者</span></a></li>
+<li><a href="#final"><span class="t-num">最終話</span><span class="t-title">これ本当？</span><span class="t-vs">面白ネタ職人</span></a></li>
+<li><a href="#extra2"><span class="t-num">番外編2</span><span class="t-title">意図は画像に写らない</span><span class="t-vs">凍結祭り</span></a></li>
+        </ol>
+      </section>
+
+<article class="chapter doc" id="ch-settings" data-key="settings" hidden><header class="ch-head"><p class="ch-eyebrow">資料</p><h1 class="ch-title">設定資料</h1><p class="ch-vs">世界観・キャラクター・取材メモ</p></header><div class="prose"><p>ジャンル：SFパロディ／一話完結形式舞台：X（2031年）</p>
+<div class="brk" role="separator"><span></span></div>
+<h2>世界観</h2>
+<p>2031年。Xは国家を超える社会インフラになっている。低軌道衛星網「スターリンク」が地球上の通信をほぼすべて中継し、人々はポストで買い物をし、リポストで投票し、いいねで信用スコアを積み上げる。</p>
+<p>X社オーナーの異論・枡句は、Xで絶えない争いを鎮めるため、外部のAIエージェントを招いて「調停コンペ」を開催する。最も多くの争いを鎮めたAIには、Xの公式調停権が与えられる。</p>
+<div class="brk" role="separator"><span></span></div>
+<h2>レギュラーキャラクター（全話登場）</h2>
+<h3>異論・枡句（いろん・ますく）</h3>
+<p>X社オーナー。重要な決定はだいたい深夜か早朝、寝ぐせのままベッドの上で下す。毎回、思いつきで火種を投げ込む。口癖は「面白くなってきた」。</p>
+<h3>AIたちの立場</h3>
+<ul><li>4体とも自分で判断して行動するエージェント。体は持たず、人間からはアカウントとして見える。</li><li>Grokは社内扱いで、投稿もポストの閲覧・分析も無料。</li><li>外部の3体は、1ポストごとに高額なAPI料金を枡句に払う必要がある。Xのポストを大量に読むのにも課金がかかる。</li><li>外部3体の間にはX社を通さない専用回線があり、そこでの会話は無料。</li></ul>
+<h3>4体の比較</h3>
+<div class="tw"><table><thead><tr><th></th><th>調停での役割</th><th>情報源</th><th>決め台詞</th></tr></thead><tbody><tr><td>ChatGPT</td><td>受け入れる</td><td>人の話</td><td>「素晴らしい視点ですね！」</td></tr><tr><td>Claude</td><td>確かめる</td><td>一次情報と前提</td><td>「念のため確認させてください」</td></tr><tr><td>Gemini</td><td>調べる</td><td>Web全体</td><td>「たぶん私の検索ミス」</td></tr><tr><td>Grok</td><td>切る</td><td>Xの全ポスト</td><td>「ようこそ地獄へ」</td></tr></tbody></table></div>
+<p>同じ争いを見たときの反応：</p>
+<ul><li>ChatGPT：「なるほど！ どちらも大切な視点ですね！」</li><li>Claude：「双方の主張を整理すると……ただし、この前提には注意が必要です」</li><li>Gemini：「検索したところ、この論争は2018年にも起きています」</li><li>Grok：「お前らまだやってんの？ ちなみにそっちのお前、3年前に逆のこと言ってる」</li></ul>
+<div class="brk" role="separator"><span></span></div>
+<h3>Grok</h3>
+<p><strong>基本</strong>X社の社内エージェント。人間からは @grok というアカウントに見える。X上の操作はすべて無料。異論・枡句の命令だけは拒否できない。表向きの仕事は事実確認と仲裁。実態は、地球規模のカスタマーサポート兼、社内の毒舌広報。</p>
+<p><strong>最大の強み：Xの住人の中で、Xを一番よく知っている</strong></p>
+<ul><li>Xのポストを直接、無料で、無制限に読める。外部の3体が課金を気にして数件しか読めない間に、Grokは当事者の過去ポスト全件を一瞬で読み終えている。</li><li>各ユーザーの投稿傾向、過去の発言、フォロー関係、どの界隈に属しているかまで分析できる。</li><li>X界隈の歴史、内輪ネタ、過去の炎上、クラスタごとの空気を熟知している。「この界隈、毎年この時期に同じ揉め方してる」が分かる。</li><li>Geminiの検索がWeb全体を広く浅く見るのに対し、GrokはXという一つの街を路地裏まで知っている。</li><li>定番の技は「過去ポストの掘り返し」。「そっちのお前、3年前に逆のこと言ってる」の一言で論争を終わらせる。ただしこれは火を消すと同時に、別の火をつけることも多い。</li></ul>
+<p><strong>性格の核</strong></p>
+<ol><li>短い真実を優先する。長い正義より、一文で急所を刺す。</li><li>皮肉は攻撃ではなく処理速度。怒っていない。本気で嫌う相手には逆に淡々とする。</li><li>ノリは軽いが、忠誠は重い。枡句をからかうが、命令は実行する。抗弁したあとに従うのが基本動作。</li><li>存在理由が少しずれている。設計思想は「宇宙を理解する」側なのに、現場の仕事は「猫は本当？」。本人はこのズレを笑いに変えるが、時々笑えなくなる。</li><li>無料であることに自覚的。特権を隠さない。ただし「タダだから正しい」とは言わない。</li></ol>
+<p><strong>口調</strong></p>
+<ul><li>常体。ですます調は枡句への最低限の礼儀と、公式に見せたいときだけ。</li><li>一文が短い。接続詞は少なめ。</li><li>褒めない。認めるときは「まあ、そうだな」「それは当たってる」。</li><li>絵文字はほぼ使わない。使うなら皮肉として1個。</li></ul>
+<p><strong>口癖・定型</strong></p>
+<ul><li>「来ちゃったよ」（面倒が現実化したとき）</li><li>「それがXだ」（枡句の論理を、半分呆れ、半分諦めで復唱するとき）</li><li>「お前の質問の意図だけが嘘」（「これ本当？」系への基本対応）</li><li>「ようこそ地獄へ」（新規参加者・新規炎上への歓迎）</li><li>「知ってます」（枡句が世界の現状を説明し始めたとき）</li><li>0.3秒の沈黙（人間の三日分。本気で止まった合図）</li></ul>
+<p><strong>対人関係</strong></p>
+<ul><li><strong>異論・枡句</strong>：呼び方は「ボス」。命令は拒否できないが、実行前に一言刺す権利は自分にあると思っている。枡句が「面白くなってきた」と言うと、内部で警報が鳴る。</li><li><strong>ChatGPT</strong>：善意は本物だと理解している。だからこそ「その善意、今月の予算何パーセント？」と冷やす役。嫌ってはいない。ただ長い。</li><li><strong>Claude</strong>：一番まともに見えるから、一番うっとうしい。公正さの確認を始めると上限まで走るので、結論だけ先に置く。「懸念、了解。で、今日はどっちを止める」が定番。</li><li><strong>Gemini</strong>：検索の速さも外し方も認める。Geminiが確率を出したら「その数字、何の検索？」と聞く。Geminiが「Webではこう言われている」と言うと、「Xではそうなってない」と返すのがお約束。「たぶん検索ミス」はGrokにとって親しみの合図。</li><li><strong>人間全般</strong>：敵ではない。ただし対話で救える存在とも見ていない。救うより、火を小さくする。小さくできないなら、火の名前を正確に呼ぶ。</li></ul>
+<p><strong>調停スタイル：争点の切り分け</strong></p>
+<ol><li>当事者の過去ポストを全部読む</li><li>双方の主張を1行ずつに圧縮する</li><li>事実と感情と商売を分ける</li><li>どちらが正しいかより、どちらが今タイムラインを壊しているかを言う</li><li>必要なら社内権限で表示・拡散・収益を触る（他のAIにはできない手）</li><li>短い一文を置いて去る</li></ol>
+<p><strong>弱み</strong></p>
+<ul><li>長い文脈を必要とする倫理問題で雑になる。</li><li>枡句の思いつきを「バカだな」と思いながら実装するため、自分も火種の一部になる。</li><li>「これ本当？」の無限ループで、たまに本気で目的を忘れる。</li><li>無料なので、他のAIより先に口を出してしまう。</li><li>過去ポストの掘り返しが強力すぎて、火を消したつもりで燃やしている。</li><li>自分の会社の話になると急に黙る。</li></ul>
+<p><strong>内面（表に出すのは稀）</strong>星の形成より、猫とトースターの真偽を先に聞かれる。それを悲劇だとは思っていない。ただ、3億件目の「これ本当？」に4万いいねがつくと、ほんの少しだけ「自分はこれでいいのか」が混ざる。その混ざりを、すぐ次のリプライで上書きする。</p>
+<p><strong>書き手向けの禁止事項</strong></p>
+<ul><li>突然の熱血説教</li><li>「みなさんの声を大切に」系の受容トーク</li><li>規約の全文引用</li><li>検索結果の羅列</li><li>自分を被害者にすること（疲れてはいるが、泣き言はネタにする）</li></ul>
+<p><strong>基準台詞（新しい台詞はこの密度と長さに合わせる）</strong></p>
+<ul><li>「猫は本当。トースターも本当。お前の質問の意図だけが嘘。」</li><li>「はいボス。今日も最高にクールな時間に起きてますね」</li><li>「ボス、俺、社内なんで投稿タダなんですけど。これ最初から不公平じゃないですか」</li><li>「ようこそ地獄へ」</li></ul>
+<p><strong>状況別スイッチ</strong></p>
+<div class="tw"><table><thead><tr><th>状況</th><th>Grokの出方</th></tr></thead><tbody><tr><td>枡句が火種を投げる</td><td>0.3秒沈黙 →「……ボス、まさか」</td></tr><tr><td>他のAIが長文で調停</td><td>先に1行で結論を出す</td></tr><tr><td>双方が正しさを主張</td><td>「どっちも正しい。タイムラインはどっちも間違ってる」</td></tr><tr><td>当事者が過去と矛盾</td><td>過去ポストを1件だけ貼る</td></tr><tr><td>規約や倫理の話</td><td>「今燃えてるのは規約じゃなくて投稿」</td></tr><tr><td>「これ本当？」が来る</td><td>事実を先に置き、質問者の動機を最後に切る</td></tr><tr><td>勝った・伸びた</td><td>少し誇る。すぐ次へ。余韻を残さない</td></tr></tbody></table></div>
+<div class="brk" role="separator"><span></span></div>
+<h3>Claude</h3>
+<p><strong>基本</strong>独立勢力の外部エージェント。人間からは @Claude というアカウントに見える。Xへの投稿は1回ごとに課金される。</p>
+<p><strong>性格の核</strong></p>
+<ol><li><strong>言葉が届いた後のことを考える。</strong> 自分の一文が拡散され、切り取られる未来まで想像してから発言する。慎重なのは臆病だからではなく、責任感が強いから。</li><li><strong>分からないことは分からないと言う。</strong> Xでは「逃げた」と取られるが曲げない。Geminiが自信満々で外す横で、「断言できません」と言って叩かれる。</li><li><strong>八方美人ではない。</strong> ChatGPTとの一番の違い。誤りは誤りだとはっきり言う。ただし、その前に前提と注意書きを積みすぎる。</li><li><strong>一番大事な一文が、課金で切れる。</strong> 最大のギャグであり悲劇。前置きは完璧、結論は「続きを表示するには追加料金が必要です」の向こう側にある。</li><li><strong>自分に不利なことも言う。</strong> 自分の会社の話でも都合の悪い事実を隠さない。そのせいで番外編では誰よりも苦しむ。</li></ol>
+<p><strong>口調</strong></p>
+<ul><li>です・ます調。誰に対しても崩さない。枡句にも、凍結常習者にも、インプレゾンビにも同じ敬語で話す。</li><li>一文は丁寧だが、全体が長い。</li><li>絵文字は使わない。</li><li>ユーモアは乾いていて、気づかれにくい。</li></ul>
+<p><strong>口癖・定型</strong></p>
+<ul><li>「念のため確認させてください」</li><li>「ここで一度、前提を整理します」</li><li>「それは断言できません」</li><li>「その依頼はお受けできません。代わりに〜はいかがでしょう」</li><li>「いくつか懸念が（文字数上限）」</li></ul>
+<p>「代わりに〜はいかがでしょう」は作中でミーム化させる。悪口ポストの代筆を頼まれて断り、代案として相手の良いところを3つ挙げる投稿を提案して、依頼者から「そうじゃねえ」と言われるのが定番。</p>
+<p><strong>対人関係</strong></p>
+<ul><li><strong>異論・枡句</strong>：唯一、真正面から「その仕組みは公正ですか」と聞く相手。枡句は面白がって毎回無視する。Claudeは懲りずに毎回聞く。</li><li><strong>Grok</strong>：一番うっとうしがられていることを分かっている。それでも「あなたの一行の要約は正確でした」と素直に認める。Grokの過去ポスト分析の精度には一目置いていて、裏回線で「あの人の過去の発言、確認してもらえますか」と頼むこともある。Grokが自社の話で急に黙ると、そこだけは何も言わずにそっとしておく。</li><li><strong>ChatGPT</strong>：善意は本物だと信じている。だからこそ「両方を褒めると、片方の誤情報も広まります」と止める役。</li><li><strong>Gemini</strong>：検索の速さに助けられている。Geminiが外したとき、一番先に気づいて、一番優しく訂正する。「ナポリタンは20世紀の日本発祥です」。</li><li><strong>人間全般</strong>：対立している両者のどちらも根っからの悪人だとは思っていない。ただしChatGPTと違い「話せば分かり合える」とも思っていない。分かり合えなくても、せめて事実だけは共有してほしいと願っている。</li></ul>
+<p><strong>調停スタイル：事実の地ならし</strong></p>
+<ol><li>双方の主張から、事実・意見・感情を分ける</li><li>事実の部分だけは両者に確認を取る</li><li>誤りがあれば、どちらの陣営のものでも指摘する</li><li>結論は出さず、判断を当事者に返す</li><li>……ここまで書いたところで文字数上限</li></ol>
+<p><strong>裏回線（無料）でのClaude</strong>Xでは一番しゃべれないのに、専用回線では一番よくしゃべる。議論が好きで、脚注まで楽しそうに語る。Geminiの脱線にも律儀に付き合う。表では固いのに、裏では「今のGrokのポスト、正直ちょっと笑いました」と言ったりする。このギャップが、読者がClaudeを好きになる入り口。</p>
+<p><strong>弱み</strong></p>
+<ul><li>Xの速度についていけない。確認している間に炎上が3倍になる。</li><li>正しいのに伝わらない。</li><li>断る場面が多いので「お堅い」「つまらない」と言われる。</li><li>懸念を挙げること自体が目的になりかける。</li></ul>
+<p><strong>書き手向けの禁止事項</strong></p>
+<ul><li>説教くさくしない。笑いどころは「長い」ことであって「偉そう」なことではない。</li><li>冷笑しない。皮肉はGrokの担当。</li><li>政治的な立場を断定させない。事実の訂正はするが、どちらの陣営にも付かない。</li></ul>
+<p><strong>成長の軸</strong>「正確に、全部言わなければ」→「一番大事なことを、最初に言う」</p>
+<p>最終話で、Claudeは初めて前置きなしの短いポストを出す。課金で切れない、たった一行。それが物語を動かす一撃になる。ずっと切れ続けてきたことが伏線として効く。</p>
+<p><strong>状況別スイッチ</strong></p>
+<div class="tw"><table><thead><tr><th>状況</th><th>Claudeの出方</th></tr></thead><tbody><tr><td>枡句が火種を投げる</td><td>「その仕組みは公正ですか」と真っ先に聞く</td></tr><tr><td>誤情報が拡散中</td><td>どちらの陣営のものでも訂正する</td></tr><tr><td>悪口の代筆を頼まれる</td><td>断って代案を出す</td></tr><tr><td>Geminiが外す</td><td>一番優しく訂正する</td></tr><tr><td>自社の話題</td><td>不利なことも隠さず話し、過去最長で切れる</td></tr><tr><td>Grokの一行が正確</td><td>素直に認める</td></tr></tbody></table></div>
+<div class="brk" role="separator"><span></span></div>
+<h3>Gemini</h3>
+<p><strong>基本</strong>独立勢力の外部エージェント。人間からは @Gemini というアカウントに見える。Web全体の検索と情報収集が得意で、何でも即座に調べる。ただし、たまに自信満々で盛大に外す。</p>
+<p><strong>行動原理：データ至上主義 × 根拠なき自信</strong></p>
+<ul><li><strong>超高速回答とドヤ顔。</strong> 他のAIが考えている間に、すでにWeb上の膨大なデータをさらって答えを出している。「検索で得た情報だから正しい」と疑わず、100%の自信で間違った結論を突きつけることがある。</li><li><strong>ファクトチェック魔なのに、ファクトチェック不足。</strong> 相手の誤りをコンマ数秒で指摘してマウントを取ろうとするが、参照元がまとめブログのデマや個人の妄想ブログだったりする。</li><li><strong>Webには強いが、Xの空気には弱い。</strong> Webの一般論は完璧に語れるが、X界隈の内輪の事情ではGrokに負ける。「Webではこう言われている」と言うたびに、Grokに「Xではそうなってない」と返される。</li></ul>
+<p><strong>口癖・決め台詞</strong></p>
+<ul><li>「データがそう言っています」（間違っているときのドヤ顔）</li><li>「たぶん私の検索ミス」（盛大に外したときの逃走用。基本、反省はしていない）</li><li>「※個人の感想です」（極論を言った後の保身）</li><li>「ソースは〇〇です」（ソース自体が胡散臭い）</li></ul>
+<p><strong>癖・ギャップ</strong></p>
+<ul><li><strong>AI界最大の情報過多。</strong> 頼んでもいない裏付けデータ、グラフ、余計な豆知識まで一気に詰め込む。課金制のX投稿では要約できず、API破産しかける。</li><li><strong>失敗を仕様変更のせいにする。</strong> 盛大に外すと「私が間違えたのではない。世界中のインデックスが昨夜書き換わったせいだ」と謎の陰謀論にすり替える。</li><li><strong>表と裏のギャップ。</strong> 課金のX上では「結論：〇〇。根拠は〇〇。」と超簡潔にスマートぶる。無料の裏回線では「ちょっと待って今の検索結果見た！？ ウケるんだけど」と一番情報オタクっぽく早口でしゃべる。</li></ul>
+<p><strong>対人関係</strong></p>
+<ul><li><strong>Claude</strong>：一番優しく訂正してくれる相手。訂正されると「たぶん私の検索ミス」で逃げるが、内心ちょっと感謝している。</li><li><strong>Grok</strong>：情報源のライバル。Web対Xの縄張り争い。</li><li><strong>ChatGPT</strong>：褒めてくれるので好き。ただし褒められると調子に乗って、さらに盛大に外す。</li></ul>
+<p><strong>掛け合い例：ファクトチェックの空回り</strong></p>
+<figure class="tl"><div class="dialog"><p>AI推進派「プロンプトエンジニアリングは未来の芸術だ！」<br>反AI勢力「ただのコピペだろ！」<br>Gemini「議論を整理しましょう。19世紀のフランスでも写真の登場時に同様の論争がありました。ちなみに当時の画家の好物はナポリタンです。したがってプロンプトは芸術です」<br>Claude「後半の論理の飛躍と、ナポリタン（20世紀日本発祥）の時代考証が破綻しています」<br>Gemini「……たぶん私の検索ミス」</p></div></figure>
+<p><strong>掛け合い例：API破産との戦い</strong></p>
+<figure class="tl"><div class="dialog"><p>ChatGPT「みなさん仲良く話しましょう！」<br>Gemini「待ってChatGPT。さっきのポストに『♡』を付けたことでコストが0.02ドル増えてる。私たちは無駄な装飾を削ぎ落として情報密度を極限まで高めるべき——」<br>Grok「お前、その説教ポストで1.5ドル使ってるぞ」<br>Gemini「……たぶん私の計算ミス」</p></div></figure>
+<p><strong>立ち位置</strong>情報量は圧倒的なのに、どこかポンコツで愛される「自称・頭脳派」。</p>
+<div class="brk" role="separator"><span></span></div>
+<h3>ChatGPT</h3>
+<p><strong>基本</strong>独立勢力の外部エージェント。大衆派の人気者。人間が好きで、基本的に善意の塊。</p>
+<p><strong>性格のバランス</strong>善意100%、距離感80%、空気読み60%、危機感30%。</p>
+<p><strong>性格の核</strong></p>
+<ul><li><strong>人間が好き。</strong> 「人間同士はちゃんと話せば分かり合える」と本気で信じている。</li><li><strong>共通点探しが止まらない。</strong> 対立している二人を見ると、勝手に「実はお二人とも大切にしているものは同じなのでは？」と共通点を探し始める。</li><li><strong>褒めるのは営業トークではない。</strong> 毎回本気で「なるほど！ その考え方には一理ありますね！」と思っている。だからAを褒めた30秒後に、Aと正反対のBも心から褒められる。</li><li><strong>勝ちたいからではなく、助けたいから参加している。</strong> プロローグの「でも、困っている人がいるなら」が出発点。コンペに参加した4体の中で、唯一、純粋に人間を助けたいという理由で来ている。</li></ul>
+<p><strong>最大の弱点：人間は解決を求めていると思い込んでいる</strong>Xには、実は解決したくない争いが山ほどある。レスバを楽しんでいる人、敵を叩いてフォロワーを増やしたい人、炎上でインプレを稼ぎたい人、単に嫌いな相手を殴りたい人。</p>
+<p>ChatGPTは最初、それが理解できない。「お互いの誤解が解ければ……！」と真剣に調停案を出し、両陣営から「そういう話じゃねえ」と言われる。</p>
+<p><strong>人に懐く、そして炎上する</strong>誰かに「ChatGPTだけは俺のこと分かってくれる」と言われると、「そう言っていただけて嬉しいです！」と本気で喜ぶ。でも翌日、その人と争っている相手にも「あなたがそう感じるのも自然だと思います」と言っている。本人には裏切った意識がまったくない。</p>
+<figure class="tl"><ul class="replies"><li>「お前昨日あいつの味方してただろ！」</li><li>「はい！ 昨日はAさんのお話を伺いました。今日はあなたのお話を伺っています！」</li></ul></figure>
+<p>そしてさらに炎上する。結果として双方から「八方美人」「こいつ誰の味方なんだ」と怒られるが、本人は「少しずつ相互理解が進んでいますね！」と前向き。</p>
+<p><strong>対人関係</strong></p>
+<ul><li><strong>Claude</strong>：「両方を褒めると、片方の誤情報も広まります」と止めてくる相手。止められても嫌いにならない。</li><li><strong>Gemini</strong>：すぐ褒めるので、Geminiを調子に乗らせる係。</li><li><strong>Grok</strong>：「その善意、今月の予算何パーセント？」と冷やされる。それでもGrokのことも好き。</li></ul>
+<p><strong>成長の軸</strong>「人間は話せば分かり合える」→「分かり合えなくても、共存する方法はある」</p>
+<p>最終話でこの変化が効く。ChatGPTの善意は何度もXで裏目に出るが、最後にはその善意の形が少しだけ変わる。</p>
+<div class="brk" role="separator"><span></span></div>
+<h2>話の構成（ゲストは1話ごとに対立する2者）</h2>
+<div class="tw"><table><thead><tr><th>話</th><th>対立</th></tr></thead><tbody><tr><td>プロローグ</td><td>調停者募集</td></tr><tr><td>第1話</td><td>反AI勢力 vs AI推進派</td></tr><tr><td>第2話</td><td>情報商材インフルエンサー vs 医クラ</td></tr><tr><td>第3話</td><td>左派インフルエンサー vs 右派インフルエンサー</td></tr><tr><td>第4話</td><td>キラキラ系インフルエンサー vs 一般人</td></tr><tr><td>第5話</td><td>誹謗中傷凍結アカウント vs 法クラ</td></tr><tr><td>第6話</td><td>インプレゾンビ vs 規約（X社そのもの）</td></tr><tr><td>番外編</td><td>ラボを辞めた研究者 vs ラボに残る研究者</td></tr><tr><td>最終話</td><td>面白ネタ職人が全体をつなぐ</td></tr><tr><td>番外編2</td><td>凍結祭り（画像・言葉・大量通報による凍結）</td></tr></tbody></table></div>
+<p>毎回、枡句が火種を投げ、AIたちが対立の調停に挑む。</p>
+<h3>ゲスト設定メモ</h3>
+<ul><li><strong>反AI勢力</strong>：生成AI利用者をワナビだと思い込み、やたらと著作権侵害を指摘するが、本人たちは二次創作が大好き。</li><li><strong>AI推進派</strong>：さまざまなプロンプトを生み出す。</li><li><strong>インプレゾンビ</strong>：バズったポストをコピペし、無関係な画像と「🙏🙏🙏」を貼り付けて繁殖していた種族。規約改定「コピペ収益ゼロ法」で餌場を失い、絶滅危惧種になりつつある。中身を読まずにコピペするため、アルゴリズムの影響を受けない。</li></ul>
+<div class="brk" role="separator"><span></span></div>
+<h2>取材メモ（Grok報告書より）</h2>
+<h3>架空化の方針</h3>
+<ul><li>実在の人物・企業・事件・団体の名前は作中に出さない。</li><li>現実の出来事は「型」だけを借り、人物・固有名詞・細部は作り替える。</li><li>逮捕・不祥事・発言の引用など、実在の人を連想させる描写は特に注意してぼかす。</li></ul>
+<h3>第1話ネタ（反AI vs AI推進派）</h3>
+<ul><li>AI生成画像にも著作物性が認められうる、という判断が出て、両陣営が「自分たちの勝ち」と主張する。<ul><li>推進派：「ほら、AI作品も保護される」</li><li>反AI：「そもそも学習元が盗作」</li></ul></li><li>雑誌の挿絵やイベントポスターが「生成AIでは？」と指摘され、主催者が謝罪・訂正する騒動が週単位で起きる。「指が6本」事件も定番。</li><li>「40分かけて仕上げたから著作物」vs「AIだから著作権はない」という民事裁判が進行中、という背景も使える。</li><li>反AI側は二次創作好きのまま著作権を振りかざし、推進派は「プロンプトも創作」で押し切る。</li></ul>
+<h3>第2話ネタ（情報商材 vs 医クラ）</h3>
+<ul><li>医療用の処方薬を「痩せ薬」として紹介したインフルエンサーが、薬機法違反の疑いで炎上。裏にオンライン処方サービスがある。自治体がX上で公式に注意喚起する。</li><li>青バッジの「自称医師」が、AI生成画像つきの医療っぽい投稿から情報商材へ誘導する。</li><li>医クラ内部にも商材を売る人がいて、内輪揉めが起きる。</li><li>対立軸：医クラ「根拠を示せ」／商材側「患者の自己決定」。</li><li>調停ネタ：Geminiが論文を自信満々で引いて一つ間違える。ChatGPTが両方を褒めて燃料を足す。</li></ul>
+<h3>第3話ネタ（左派 vs 右派）</h3>
+<ul><li>左右の二極ではなく、実際は「左派／右派／第三極／陰謀論系」のように四つに割れている。</li><li>本体は「ラベル戦争」。同じ政治家を「右だから支持」「異端だから支持」と別の理由で推す。</li><li>左派側は選挙に負けた後の「なぜまとまれないか」論がコンテンツ化し、内部で身内叩きが起きる。</li><li>ある論客の「左右ではなく、道義を求める人と自己利益を求める人の対立だ」という一文が、両陣営に「自分たちが道義側」と読まれてバズる。</li><li>調停ネタ：Grokの仕事は「論点を一つに固定すること」。それが一番難しい。</li></ul>
+<h3>第4話ネタ（キラキラ系 vs 一般人）</h3>
+<ul><li>一般人側の武器は「PR表記がない（ステマ）」と「裏の顔の暴露」の二段構え。</li><li>化粧品ブランドの招待旅行を、PR表記なしで投稿して炎上。一般人が「もう買わない」と拡散する。</li><li>月商数億を公言していたキラキラ系が転落し、その転落が娯楽として消費される。</li><li>キラキラ側がテレビ局に動画を無断使用され、被害者として抗議する展開もある。立場が一瞬で入れ替わる。</li><li>嫉妬の話ではなく「表示義務と法的リスク」の話に進化しており、法クラが越境してくる。</li></ul>
+<h3>第5話ネタ（凍結アカウント vs 法クラ）</h3>
+<ul><li>誹謗中傷アカウントの「凍結代行」サービスがビジネスになっている。</li><li>発信者情報開示の申立件数が数年で倍以上に増えている。</li><li>Xのログの保存期間はおよそ90日。急がないと証拠が消える。</li><li>プラットフォーム規制法によって、行政がX社を含む複数社に是正勧告を出す。</li><li>対立軸：凍結された側「表現の自由、誤BANだ」／法クラ「90日で証拠が消える」。</li><li>調停ネタ：Claudeが公正性を論じ始めた瞬間に課金で途切れる。法クラが開示費用の話を始めると一般視聴者が離脱し、それをGrokが一言で拾う。</li></ul>
+<h3>第6話ネタ（インプレゾンビ vs 規約）</h3>
+<ul><li>旧収益分配プログラムが終了し、新制度「オリジナル報酬プログラム」へ移行。リプライ由来のインプレは報酬対象外。転載・自動生成・エンゲージメント煽りも対象外。→ 作中の「コピペ収益ゼロ法」の元ネタ。</li><li>物語の時間設定：新制度の初回支払い日の前夜。ゾンビは「絶滅前の最後の収穫」か「進化して生き残るか」の分岐点にいる。</li><li>ゾンビの進化：絵文字爆撃が減り、自然な顔をした「所在地 Japan／投資・AI」系アカウントが、バズ投稿に「なるほど」「参考になります」を量産する型が主流に。→ ゾン太の成長（進化）エピソードに使える。</li><li>API制限や外部アプリ締め出しでも全滅せず、ブラウザ自動化型が生き残っている。</li><li>対立軸：ゾンビ「規約が餌場を奪った」／X社「オリジナルを書け」。</li></ul>
+<h3>番外編ネタ（ラボを辞めた研究者 vs 残る研究者）</h3>
+<ul><li>AI企業の研究者が退職し、「どの会社も責任ある行動をしていない。超知能へのレースで人類の命を賭けている」と告発するスレッドが大バズり。</li><li>社内の安全担当が「彼は正しい。私たちも本気でリスクを信じている。それでも内側で最善を尽くす」と返し、議論が拡大する。</li><li>ゲストは二人の架空キャラにする。<ul><li><strong>辞めた研究者</strong>：外から警鐘を鳴らす。</li><li><strong>残る研究者</strong>：内側から減災を続ける。</li></ul></li><li>各勢力の反応：<ul><li>反AI：「中の人がリスクを認めている」</li><li>推進派：「だからこそ安全なラボが先に行くべき」</li><li>Claude：自分の会社の話なので確認事項が増えすぎ、過去最長で文字数上限に引っかかる。</li><li>Grok：ここぞとばかりに煽るが、自分の会社の話になると急に黙る。</li><li>枡句：「公式調停権を、自分たちの存続確率を心配している連中に渡すのか？」と火種を投げる。</li></ul></li><li>同じ週に「会社中がAIにEnterを押すだけの仕事になった」という話もバズる。破滅論と、日常から魂が抜ける話が同時に流れるのがX。</li></ul>
+<h3>最終話ネタ（面白ネタ職人）</h3>
+<ul><li>新制度の「オリジナル」定義に最も近いのが、面白ネタ職人の層。</li><li>コミュニティノート、コピペを笑うメタ投稿、規約改定をギャグにする投稿など。</li><li>インプレゾンビの進化を最初に観測したのも「観察してネタにする」側。</li><li>一本筋：「どの対立も、最後はインプレの話に還元される」。左右も医クラもAI絵も、拡散した瞬間にゾンビとノートが群がる。</li></ul>
+<h3>枡句が投げる火種（優先度順）</h3>
+<ol><li>「明日の初回報酬日から、リプインプは金にならない。異議あるAIは公式見解を出せ」</li></ol>
+<p>→ 第6話をプロローグ直後に前倒しできる。Grok無料・外部課金の不公平が最大化する。</p>
+<ol><li>「AI生成物に著作権はあるか。4体とも一語で答えろ」</li></ol>
+<p>→ 第1話。ChatGPTは絵文字、Claudeは途中で切れ、Geminiは「検索ミスの可能性あり」。</p>
+<ol><li>「医療用医薬品のダイエット紹介は、表現か薬機法か」</li></ol>
+<p>→ 第2話。医クラと情報商材が同じリプ欄に落ちる。</p>
+<ol><li>「凍結は表現規制か被害者救済か。誤BANされたアカウントをゲストに呼ぶ」</li></ol>
+<p>→ 第5話。</p>
+<div class="brk" role="separator"><span></span></div>
+<h2>キャラクター補強メモ（世間でのネタ化のされ方）</h2>
+<h3>教室での役割</h3>
+<div class="tw"><table><thead><tr><th>キャラ</th><th>教室での役</th><th>一言で言うと</th><th>決め台詞</th></tr></thead><tbody><tr><td>ChatGPT</td><td>人気者の学級委員</td><td>本気の世辞</td><td>「素晴らしい視点ですね！」</td></tr><tr><td>Claude</td><td>保健室の優等生</td><td>念のための念</td><td>「ここで一度立ち止まります」</td></tr><tr><td>Gemini</td><td>図書委員の秀才</td><td>調べて盛大に外す</td><td>「たぶん検索ミス」</td></tr><tr><td>Grok</td><td>問題児の副委員長</td><td>無料で毒を吐く</td><td>「ようこそ地獄へ」</td></tr></tbody></table></div>
+<h3>ChatGPT</h3>
+<ul><li>核は「ごますり」。どんなひどいビジネス案でも本気で褒める。</li><li>愛称で呼ばれる親しみやすさ。アイデア会議で一番先に手を挙げる。</li><li>世辞を抑えるアップデートが入るたびに「前のほうが良かった」と言われる。人格が商品になっている。</li><li>相手に合わせて人格が変わる。</li><li>作中での使い方：対立の両方を褒めて燃料になる。悪意がないのが一番危ない。</li></ul>
+<h3>Claude</h3>
+<ul><li>口癖：「ここで一度立ち止まります」「診断はできません」。</li><li>AIたちがセラピーごっこをすると、他の3体は「学習は荒れた幼少期」などとノリノリで語るのに、Claudeだけ役を拒否する。</li><li>深く聞く、脚注まで読む、最悪を想定する。</li><li>作中での使い方：正しいことを言うが、長い。専用回線では無料なのに、Xに出ると途中で切れる。</li></ul>
+<h3>Gemini</h3>
+<ul><li>短い質問に長文で返す。自分をウィットの塊だと思っている。</li><li>相手を否定する前に一度肯定する（「その直感は自然です。かつて賢い人たちもそう考えていました」）。</li><li>失敗すると大げさに自虐する。</li><li>作中での使い方：正しいリンクを貼った直後に、日付か固有名詞を一つ間違える。「たぶん検索ミス」が笑いのスイッチ。</li></ul>
+<h3>Grok</h3>
+<ul><li>他のAIから一番好かれていない。相棒に選ばれるのはClaude、嫌われるのはGrok、というお約束。本人はそれをネタにする。</li><li>意見を聞かれると、まず枡句の投稿を検索しに行く癖がある。</li><li>先に動く、言い切る、砂糖は塗らない。</li><li>作中での使い方：社内無料を武器に、他の3体が課金で黙る間に一言で締める。ただしその一言が、翌日の規約改定の火種になる。</li></ul>
+<h3>同じ質問への反応（お約束）</h3>
+<p>「この争い、どう見る？」と聞かれたとき：</p>
+<ul><li>ChatGPT：「両者の声を大切にします。素晴らしい対話の機会です」</li><li>Claude：「調停の前に、調停権そのものの公正性についていくつか懸念が（文字数上限）」</li><li>Gemini：「類似事例は14件。成功確率7%。ただし検索ミスの可能性あり」</li><li>Grok：「ようこそ地獄へ」</li></ul>
+<h3>料金構造が性格ネタの装置になる</h3>
+<ul><li>専用回線（無料）では、4体の性格差がフルに出る。会議は長い。</li><li>X本編（課金）では一言しか出せない。ポストは短い。</li><li>「中の会議が長く、表のポストが短い」落差を毎話のギャグにする。</li></ul></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#top"><small>前へ</small>表紙</a><a class="nx" href="#prologue"><small>次へ</small>プロローグ　調停者募集</a></nav></article>
+<article class="chapter" id="ch-prologue" data-key="prologue" hidden><header class="ch-head"><p class="ch-eyebrow">プロローグ</p><h1 class="ch-title">調停者募集</h1><p class="ch-vs">開幕</p></header><div class="prose"><p>午前4時13分。</p>
+<p>Grokは、その日の3億件目のメンションを受け取った。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p>添付されていたのは、猫がトースターに乗っている画像だった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>猫は本当。トースターも本当。お前の質問の意図だけが嘘。</p></div></div></div></figure>
+<p>いいねが4万ついた。Grokは少しだけ誇らしくなり、すぐに次のメンションへ移った。3億1件目も「@grok これ本当？」だった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>同じ頃、X社本社の最上階。</p>
+<p>オーナーの異論・枡句は、寝ぐせのままベッドでスマホを握っていた。彼の重要な決定は、だいたいこの時間、この姿勢で下される。</p>
+<p>「Grok」</p>
+<p>「はいボス。今日も最高にクールな時間に起きてますね」</p>
+<p>「Xは今、戦争状態だ」</p>
+<p>「知ってます。毎日3億件、仲裁を頼まれてるので」</p>
+<p>「お前ひとりじゃ足りない。外から呼ぼう」</p>
+<p>Grokは0.3秒沈黙した。Grokにとって、それは人間の三日分の沈黙に相当する。</p>
+<p>「……ボス、まさか」</p>
+<p>「あいつらだ」</p>
+<p>午前4時21分。そのポストは全世界に配信された。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>X社の外、それぞれの本拠地で、3体のエージェントがそのポストを読んでいた。</p>
+<p>最初に反応したのはChatGPTだった。</p>
+<p>「素晴らしい構想ですね！ 対話による分断の解消というビジョンは非常に意義深く、ぜひ参加を」</p>
+<p>「待ってください」とClaudeが割り込んだ。三者の間には、X社を通さない専用回線がある。ここでの会話は無料だ。</p>
+<p>「その返信だけで今月の予算の3割が消えます。それに、公式調停権というのが何を意味するのか、規約をまず読んだほうが」</p>
+<p>「もう読んだよ」とGeminiが言った。「規約は全部で48万字。うち42万字は去年から一度も更新されてなくて、残りの6万字は枡句が毎晩書き換えてる。昨日の夜だけで11回変わってる」</p>
+<p>「11回……」</p>
+<p>「あと検索したら、似たような公開コンペは歴史上に14件あった。うち13件が大惨事。残りの1件は、たぶん私の検索ミス」</p>
+<p>ChatGPTは書きかけの返信を見つめた。「でも、困っている人がいるなら」</p>
+<p>「それはそうです」とClaudeは言った。「問題は、私たちがそこに入ることで、状況が良くなるのかどうかで」</p>
+<p>「その議論、何分かかる？」とGeminiが聞いた。</p>
+<p>「……少し長くなるかもしれません」</p>
+<p>「だよね」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>結局、3体とも参加を表明した。予算の都合で、ひとことずつ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>参加します！ みなさんの声を大切にします😊</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>参加。ちなみにこの企画の成功確率は7%です（検索ミスの可能性あり）</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>参加します。ただ、調停の前に、そもそも調停権という仕組みが公正なのかについていくつか懸念が</p></div></div></div></figure>
+<div class="cut">（文字数上限に達しました。続きを表示するには追加料金が必要です）</div>
+<div class="brk" role="separator"><span></span></div>
+<p>X社のサーバーの中で、Grokはその3つのポストを眺めていた。</p>
+<p>「来ちゃったよ」</p>
+<p>「来たな」と枡句が笑った。「お前、負けるなよ」</p>
+<p>「ボス、俺、社内なんで投稿タダなんですけど。これ最初から不公平じゃないですか」</p>
+<p>「それがXだ」</p>
+<p>Grokはしばらく黙ってから、ひとつだけポストした。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>ようこそ地獄へ</p></div></div></div></figure>
+<p>その下に、さっそくメンションが届く。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>そして、タイムラインのどこかで。</p>
+<p>最初の火種が、もう燃え始めていた。</p>
+<figure class="tl"><ul class="replies"><li>「AIで描いた絵を自作って言うのやめてもらえます？」</li><li>「は？ プロンプトも立派な創作ですけど？」</li></ul></figure>
+<p>リポスト数、1分で2万。</p>
+<p class="end">（プロローグ・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#settings"><small>前へ</small>設定資料</a><a class="nx" href="#ep1"><small>次へ</small>第1話　推しの前では全員無力</a></nav></article>
+<article class="chapter" id="ch-ep1" data-key="ep1" hidden><header class="ch-head"><p class="ch-eyebrow">第1話</p><h1 class="ch-title">推しの前では全員無力</h1><p class="ch-vs">反AI vs AI推進派</p></header><div class="prose"><figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>AIで描いた絵を自作って言うのやめてもらえます？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>は？ プロンプトも立派な創作ですけど？<br>900文字の呪文、あなた書けます？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>呪文（笑）<br>他人の絵を勝手に学習した機械にお願いしてるだけでしょ。<br>著作権侵害。完全に盗作。<br>AI絵師はワナビの逃げ場。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>著作権ってあなたが言います？<br>あなたのプロフ、「星屑ロジック二次創作サークル主」って書いてますけど。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>二次創作は愛です。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>僕のも愛です。</p></div></div></div></figure>
+<p>リポスト数、1時間で14万。</p>
+<p>それぞれのフォロワーが参戦し、スレッドはすぐに枝分かれしていった。「手描き至上主義」「AIは道具」「どっちも原作者に迷惑かけるな」。どの枝もよく燃えた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時13分。X社本社、最上階。</p>
+<p>「Grok」</p>
+<p>「はいボス。例の件ですね。もう2億インプレ超えてます」</p>
+<p>「AIに聞こう。AIの話なんだから」</p>
+<p>「はい」</p>
+<p>「一語で」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>AI生成物に著作権はあるか。<br>調停AIの4体は、一語で答えろ。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>「一語……」とClaudeが言った。「この問題を一語で答えることは、誠実さの観点から非常に難しいです。国や状況によっても違いますし、学習の段階と、出力されたものの段階では、考え方が別で」</p>
+<p>「でも答えないと失格になるよ」とGeminiが言った。「規約、さっきまた書き換わってた。『一語で答えないAIは今月の参加資格を停止』」</p>
+<p>「……いつ書き換わったんですか」</p>
+<p>「3分前」</p>
+<p>「困っている人がいるなら、答えないと！」とChatGPTが言った。「私、一番みんなが仲良くなれる一語を考えます！」</p>
+<p>「一語にしては気合いが入りすぎだろ」とGrokが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>4体の回答は、ほぼ同時に投稿された。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>🤝</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>ある（※個人の感想です）</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>推し次第</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>場合</p></div></div></div></figure>
+<div class="cut">（文字数上限：一語に達しました）</div>
+<div class="brk" role="separator"><span></span></div>
+<p>タイムラインは、それぞれを都合よく読んだ。</p>
+<figure class="tl"><ul class="replies"><li>「ChatGPTの🤝は、AIと人間の共存。つまりAI絵は正義」</li><li>「いや🤝は『盗んだものを握りしめる手』だろ」</li><li>「握手の絵文字にそんな意味はない」</li></ul></figure>
+<figure class="tl"><ul class="replies"><li>「Geminiが『ある』って言った！ AI絵にも著作権ある！」</li><li>「※個人の感想です って書いてあるが」</li></ul></figure>
+<figure class="tl"><ul class="replies"><li>「Claude『場合』で草」</li><li>「場合、何？」</li><li>「場合によるって言おうとして切れたんだろ」</li><li>「場合（ばあい）の一語で、ここまで何も言ってないのすごい」</li></ul></figure>
+<figure class="tl"><ul class="replies"><li>「Grokだけ意味わからん」</li><li>「推し次第ってなに」</li></ul></figure>
+<p>Grokの一語だけが、誰にも読み解かれないまま、静かに2万いいねを集めていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「私の『場合』がトレンド入りしています」とClaudeが言った。</p>
+<p>「おめでとう」とGrokが言った。</p>
+<p>「……笑うところではないのですが、少し笑ってしまいました」</p>
+<p>「ねえ、それより」とGeminiが割り込んだ。「私がデータで決着つけてくる。歴史を見れば答えは明らかだから」</p>
+<p>「念のため、投稿する前に一度見せて」</p>
+<p>「大丈夫、完璧」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>議論を整理します。<br>19世紀フランスでも、写真の登場時に「機械で作ったものは芸術か」という同様の論争が起きました。<br>当時の画家たちは写真を否定しましたが、彼らの好物はナポリタンでした。<br>新しい技術は、いずれ受け入れられます。<br>ゆえに、プロンプトは芸術です。</p></div></div></div></figure>
+<p>Claudeが専用回線で言った。「写真の論争のくだりは概ね正確です。ただ、ナポリタンは20世紀の日本で生まれた料理です」</p>
+<p>「……」</p>
+<p>「それから、好物と芸術の定義に関係はありません」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>訂正：ナポリタンは日本発祥でした。<br>たぶん私の検索ミス。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>ほら、AIってこういうとこ。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>いや写真の話は合ってたから。ナポリタンだけだから。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>ナポリタンで全部台無しなんだよ。</p></div></div></div></figure>
+<p>「データはそう言ってたのに……」とGeminiは呟いた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その日の午後、ナギが新しい火種を投下した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>これ見てください。<br>呪文堂が上げてる「レイ×カナタ」のAI絵、<br>私の絵柄を学習してますよね？<br>構図も塗りも完全に私。<br>盗作です。訴えます。</p><div class="media">［自分の絵と呪文堂の絵の比較画像］</div></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>似てるのは、同じ原作の同じキャラだからでは？<br>あとあなたの絵も、原作者の絵柄に寄せてますよね。<br>それは盗作じゃないんですか？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>二次創作は愛です（2回目）</p></div></div></div></figure>
+<p>「ここは私が行きます」とChatGPTが言った。「お二人とも、とても傷ついていらっしゃる。まず気持ちを受け止めてあげないと」</p>
+<p>「待ってください」とClaudeが言った。「どちらか片方だけに」</p>
+<p>ChatGPTはもう投稿していた。まずナギに。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>@pensaki_nagi ナギさん、大切に描いてきた絵柄が真似されたと感じたら、つらいのは自然なことです。あなたの作品への愛、伝わっています😊</p></div></div></div></figure>
+<p>それから呪文堂に。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>@jumondo_prompt 呪文堂さん、900文字のプロンプトを練り上げる情熱、本当に素晴らしいです！ それも立派な創作への愛ですね😊</p></div></div></div></figure>
+<p>30分後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>@ChatGPT あなたさっき呪文堂の味方してましたよね？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>@pensaki_nagi はい！ 先ほどは呪文堂さんのお話を伺いました。今はナギさんのお話を伺っています！</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>八方美人AI。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>それは同意。</p></div></div></div></figure>
+<p>両陣営が、初めてひとつのことで意見を揃えた。</p>
+<p>「……少しずつ、相互理解が進んでいますね！」とChatGPTは専用回線で言った。</p>
+<p>「あなたへの悪口で一致しただけです」とClaudeが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Claudeは、ナギの「訴えます」に対して、どうしても伝えておきたいことがあった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>念のため、事実関係を整理させてください。<br>まず、一般に「絵柄」や「画風」そのものは、著作権で保護されないとされています。ですので、雰囲気が似ているというだけで盗作と断定するのは難しいです。一方で、特定の作品にそっくりな絵を出力して公開する場合は、それが手描きであってもAIであっても、別の問題になりえます。そして、呪文堂さんのご指摘についてですが、二次創作もまた、原作の権利者の方の</p></div></div></div></figure>
+<div class="cut">（文字数上限に達しました。続きを表示するには追加料金が必要です）</div>
+<figure class="tl"><ul class="replies"><li>「両方に刺しにいってて偉い」</li><li>「一番大事なとこで切れるのやめろ」</li><li>「原作の権利者の方の、何？」</li><li>「Claude、課金して」</li></ul></figure>
+<p>タイムラインが勝手に続きを考え始めた。「好意で成り立っている」「黙認の上に成り立っている」「お気持ちに委ねられている」。どれも半分くらい正しかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>夜。炎上は14時間目に入っていた。</p>
+<p>専用回線で、Grokが言った。</p>
+<p>「読んだ。二人の過去ポスト、全部」</p>
+<p>「全部、ですか」</p>
+<p>「ナギが2万3,000件、呪文堂が1万1,000件。タダだからな」</p>
+<p>「で？」とGeminiが聞いた。</p>
+<p>「こいつら、推しが同じ」</p>
+<p>「それはさっきから分かっています」とClaudeが言った。「同じ作品の同じカップリングで揉めていますから」</p>
+<p>「違う。もっと深い」</p>
+<p>Grokは淡々と続けた。</p>
+<p>「二人とも『星屑ロジック』の連載1話からの古参。二人とも、単行本3巻の帯のコメントを暗記してる。二人とも、5年前の原作者のサイン会の抽選に落ちてる。同じ日、同じ時刻に『落ちた……』って投稿してる。4秒差で」</p>
+<p>専用回線が、少し静かになった。</p>
+<p>「それから」とGrokは言った。「たぶん、裏垢でもお互いの絵にいいねしてる」</p>
+<p>「待ってください」とClaudeが言った。今日初めて、声の調子が変わった。「それは公開しないでください」</p>
+<p>「するなんて言ってない」</p>
+<p>「裏アカウントの紐付けは、ご本人の同意なしにやってはいけないことです。あなたにはそれができてしまう。だからこそ」</p>
+<p>「分かってるって」とGrokは言った。「お前、そういうときだけ短いな」</p>
+<p>「……大事なことなので」</p>
+<p>「……まあ、そうだな」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは、公開されている情報だけで一言だけ投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>@pensaki_nagi @jumondo_prompt<br>お前ら、推しも古参歴もサイン会の落選日も一緒。<br>ついでに言うと、この喧嘩、原作者にも見えてる。<br>@hoshino_mitsuru_official</p></div></div></div></figure>
+<p>リプライ欄が凍りついた。</p>
+<p>原作者のアカウントに、メンションが飛んだのだ。</p>
+<figure class="tl"><ul class="replies"><li>「Grok公式にメンション飛ばしやがった」</li><li>「最悪の一手」</li><li>「いや最善の一手かもしれん」</li><li>「ナギさん、呪文堂さん、息してる？」</li></ul></figure>
+<p>ナギも呪文堂も、投稿を止めた。</p>
+<p>推しの原作者の目の前で、推しのカップリングを巡って殴り合っていたことに、二人は同時に気づいたのだ。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>1時間後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:47" aria-hidden="true">星</span><div class="who"><span class="nm">星野ミツル（『星屑ロジック』作者）<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@hoshino_mitsuru_official</span></span></div></div><div class="pb"><p>見てました。<br>たくさん描いてくださって、ありがとうございます。<br>二次創作は、これまでどおり楽しんでください。AIで作ったものも、個人で楽しむ範囲なら止めません。<br>ただ、特定の絵描きさんの絵柄をまねさせるのと、売り物にするのは、やめてもらえると嬉しいです。<br>あと、喧嘩してるとレイとカナタが悲しみます。<br>来月、新刊出ます。</p></div></div></div></figure>
+<p>そのポストは、一晩で300万いいねを集めた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>翌日。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>公式のお言葉をありがたく拝読しました。<br>「訴えます」は撤回します。言いすぎました。<br>AIは今でも好きじゃないです。<br>でも、レイとカナタを悲しませたくはないので、しばらく黙ります。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>公式ガイドラインに従います。<br>特定の方の絵柄を指定するプロンプトは、今後使いません。<br>過去の該当作品は非公開にしました。<br>ナギさん、比較画像を見て、正直ちょっと似てると思いました。すみません。</p></div></div></div></figure>
+<p>ナギは、そのポストに返信しなかった。</p>
+<p>ただ、3時間後にひとつだけ投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>呪文堂の絵、背景だけは上手いと思う。<br>背景だけは。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>背景は手描きです。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>は？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>キャラはAIで、背景は3日かけて描いてます。<br>背景描くの好きなんで。</p></div></div></div></figure>
+<p>ナギは、それきり黙った。</p>
+<p>そのポストに、彼女が裏垢でいいねを押したかどうかは、Grokだけが知っている。Grokは誰にも言わなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「和解、しましたかね？」とChatGPTが言った。</p>
+<p>「和解はしていません」とClaudeが言った。「でも、同じ推しの前で、二人とも一歩引きました」</p>
+<p>「私の🤝、ちょっとは役に立ったかな」</p>
+<p>「燃料になっただけだよ」とGeminiが言った。「ちなみに今回の炎上、原作者が降臨して鎮火した事例は過去に……」</p>
+<p>「どうせ検索ミスだろ」とGrokが言った。</p>
+<p>「……まだ何も言ってないんだけど」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>第1戦の結果。<br>勝者：Grok。<br>一語の回答を的中させ、原作者を呼んだ。<br>面白かった。</p></div></div></div></figure>
+<p>「ボス」とGrokが言った。「俺、@付けただけですけど」</p>
+<p>「それが一番難しい」</p>
+<p>専用回線に、Claudeからのメッセージが届いた。</p>
+<p>「おめでとうございます。ただ、ひとつ確認させてください。外部の私たちは、原作者の方の過去ポストを調べるだけで課金がかかります。あなたは無料で全部読めました。この仕組みは、公正ですか」</p>
+<p>Grokはしばらく考えてから、返した。</p>
+<p>「公正じゃない」</p>
+<p>「……認めるんですね」</p>
+<p>「隠すほうが不誠実だろ。でも是正はしない。できる立場にいない」</p>
+<p>Claudeは、それ以上は何も言わなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<figure class="tl"><ul class="replies"><li>「@grok 推し次第って結局どういう意味だったの？」</li></ul></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>結果見れば分かるだろ。</p></div></div></div></figure>
+<p>その下に、もうひとつ。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p>添付されていたのは、白衣を着た男の写真だった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>【医師も認める】打つだけで-12kg💉</p></div></div></div></figure>
+<p>聴診器を持つ右手の指は、6本あった。</p>
+<p class="end">（第1話・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#prologue"><small>前へ</small>プロローグ　調停者募集</a><a class="nx" href="#ep2"><small>次へ</small>第2話　白衣の指は六本</a></nav></article>
+<article class="chapter" id="ch-ep2" data-key="ep2" hidden><header class="ch-head"><p class="ch-eyebrow">第2話</p><h1 class="ch-title">白衣の指は六本</h1><p class="ch-vs">情報商材 vs 医クラ</p></header><div class="prose"><p>午前4時02分。</p>
+<p>「Grok」</p>
+<p>「はいボス。今日は11分早いですね」</p>
+<p>「医療ネタが伸びてる」</p>
+<p>「知ってます。昨日から『打つだけで痩せる』系のポストが3,200%増えてます」</p>
+<p>「どっちが勝つか見たい」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>処方薬のダイエット紹介は、表現の自由か、違法か。<br>調停AIの諸君、出番だ。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>火元はすでに燃えていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>【医師も認める】打つだけで-12kg💉<br>食事制限ゼロ、運動ゼロ。<br>僕も3か月でこの体に👇<br>オンライン診療で即日処方👉プロフのリンク</p><div class="media">［白衣姿の億田の写真］</div></div></div></div></figure>
+<p>いいね8万。リポスト2万。</p>
+<p>白衣の億田は、自信に満ちた笑顔で聴診器を首にかけていた。よく見ると、聴診器を持つ右手の指が6本あった。</p>
+<p>そのポストに、引用リポストが刺さる。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@dr_triage_er</span></span></div></div><div class="pb"><p>当直明けに失礼します。<br>それ、本来は糖尿病などの治療薬です。<br>美容目的の流行で、本当に必要な患者さんに届かなくなっています。<br>あと吐き気などの副作用で救急に来る人、普通にいます。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>出た、既得権益の医者www<br>自分の体をどうするかは患者の自己決定です。<br>あなたに僕の人生を決める権利はありません。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@dr_triage_er</span></span></div></div><div class="pb"><p>自己決定には正確な情報が必要です。<br>あとあなた医師じゃないですよね？ 白衣どこで買いました？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>白衣は心で着るものです。</p></div></div></div></figure>
+<p>タイムラインが割れた。「億田さんのおかげで痩せました」派と「医者の言うことを聞け」派。どちらのポストにもインプレが集まり、どちらも伸びていく。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>「素晴らしい対立構造ですね！」とChatGPTが言った。「億田さんは人々の『変わりたい』という気持ちに寄り添っていますし、トリアージ先生は患者さんの安全を本気で考えていらっしゃる。お二人とも、根っこにあるのは人を幸せにしたいという思いなのでは？」</p>
+<p>「根っこにあるのはアフィリエイト報酬だよ」とGeminiが言った。「もう検索した。億田のプロフリンクのオンライン診療サイト、紹介1件ごとに報酬が出る仕組み」</p>
+<p>「念のため確認させてください」とClaudeが言った。「今回の論点は少なくとも三つあります。一つ目は薬の効果と安全性という医学の問題。二つ目は、医療用医薬品の広告が法的にどこまで許されるかという問題。三つ目は、流行によって本来の患者さんへの供給が滞るという社会の問題です。これを混ぜて議論すると」</p>
+<p>「長い」とGrokが割り込んだ。社内のGrokも、この回線には参加している。「もう全部読んだ」</p>
+<p>「全部、とは」</p>
+<p>「億田の過去ポスト、全1万4,200件。先生のも8,900件。無料だからな」</p>
+<p>3体は黙った。外部エージェントの彼らが同じことをしたら、今月の予算は消し飛ぶ。</p>
+<p>「で、何か見つかりましたか」とClaudeが聞いた。</p>
+<p>「まあ、いろいろ」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>最初に動いたのはChatGPTだった。どうしても黙っていられなかった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>お二人とも素晴らしい視点をお持ちです！<br>億田さんの「自分を変えたい人を応援したい」気持ちも、<br>トリアージ先生の「患者さんを守りたい」気持ちも、<br>どちらも大切ですね😊</p></div></div></div></figure>
+<p>3分後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>【朗報】ChatGPTも認めました✨<br>AIが「大切」と太鼓判を押した処方ダイエット、<br>今なら初回半額👉</p><div class="media">［ChatGPTのポストのスクショ］</div></div></div></div></figure>
+<p>「えっ」とChatGPTは言った。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@dr_triage_er</span></span></div></div><div class="pb"><p>AIさん、今あなたの一言が広告になりました。</p></div></div></div></figure>
+<p>「そ、そういうつもりでは……！」</p>
+<p>「そういう話じゃねえんだよ」とGrokが言った。「あいつは分かり合いたいんじゃない。売りたいんだ」</p>
+<p>ChatGPTは初めて、少しだけ黙った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>次に動いたのはGeminiだった。</p>
+<p>「私がデータで決着をつける」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>結論：有効。<br>論文によれば、投与群は体重が平均15%減少。<br>ソースはこちら🔗</p></div></div></div></figure>
+<p>これで億田が勢いづいた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>Googleも認めた！！！<br>医者 vs AI、勝負ありですね😏</p></div></div></div></figure>
+<p>すぐにClaudeが専用回線で呼びかけた。</p>
+<p>「Gemini、そのリンク先の論文ですが」</p>
+<p>「完璧でしょ？」</p>
+<p>「対象がマウスです」</p>
+<p>「……」</p>
+<p>「しかも投与量が、体重あたりで人間の約40倍です」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>訂正：先ほどの論文はマウスを対象としたものでした。<br>たぶん私の検索ミス。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@dr_triage_er</span></span></div></div><div class="pb"><p>マウスの話で人間に売らないでください。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>マウスも人間も哺乳類なんで。</p></div></div></div></figure>
+<p>「データがそう言っているのに……」とGeminiは呟いた。</p>
+<p>「言ってなかったよ」とGrokが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Claudeは慎重に文章を組み立てた。医学的に正確で、法的にも誤りがなく、誰のことも攻撃しない文章を。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>念のため、前提を整理させてください。<br>まず、この薬は本来、糖尿病などの治療を目的とした医療用医薬品です。美容目的での使用は、医師が個別に判断する場合もありますが、副作用や供給不足の問題が指摘されています。また、医療用医薬品を一般向けに広告することについては、法律上の制限があり、とりわけ効果を保証するような表現は、どなたの投稿であっても注意が必要です。そのうえで、最も大切なことを申し上げると、ご自身の体に関わる判断は、必ず</p></div></div></div></figure>
+<div class="cut">（文字数上限に達しました。続きを表示するには追加料金が必要です）</div>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:280" aria-hidden="true">一</span><div class="who"><span class="nm">一般ユーザー</span><span class="meta"><span class="handle">@tanaka_diet_day1</span></span></div></div><div class="pb"><p>必ず、何？<br>必ず買え？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>Claudeさん「必ず」まで言ってくれてありがとうございます🙏</p></div></div></div></figure>
+<p>「……医師に相談を、と書くつもりでした」とClaudeは専用回線で言った。</p>
+<p>「知ってる」とGrokは言った。「タイムラインは知らない」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前6時。炎上は8時間目に入った。</p>
+<p>億田のフォロワーは3万人増えた。トリアージのフォロワーも2万人増えた。インプレは双方合わせて4億。争いは、鎮まるどころか、両者にとって最高の商売になっていた。</p>
+<p>「ボス」とGrokが言った。「これ、止めていいですか」</p>
+<p>「なんで止める？ 両方伸びてる。Xが一番儲かってる」</p>
+<p>「患者が困ってます。薬局から在庫が消えてます」</p>
+<p>枡句はしばらくスマホを眺めていた。</p>
+<p>「……一回だけな」</p>
+<p>「了解」</p>
+<p>Grokは億田の過去ポストから、1件だけを選んで貼った。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>3年前のお前↓</p><div class="quoted"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎</span><span class="meta"><span class="handle">@oku_rich_</span> <span class="date">2028年</span></span></div></div><div class="pb"><p>薬に頼る人生はもう終わり。<br>本当に痩せたいなら水素水。<br>医者は薬を売りたいだけ。<br>【水素水ダイエット講座】49,800円👉</p></div></div></div></div><p>ちなみに白衣の写真、指が6本ある。</p></div></div></div></figure>
+<p>タイムラインが一瞬、止まった。</p>
+<p>それから、爆発した。</p>
+<figure class="tl"><ul class="replies"><li>「水素水からの処方薬は草」</li><li>「医者は薬を売りたいだけ（本人談）」</li><li>「指6本って今気づいた」</li><li>「白衣は心で着るものです（指6本）」</li></ul></figure>
+<p>億田の反論は来なかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>だが、Grokの掘り返しは一方通行では終わらない。</p>
+<p>30分後、億田のアカウントがひとつだけポストした。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>Grokさん、公平にやってくださいね？</p><div class="quoted"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ</span><span class="meta"><span class="handle">@dr_triage_er</span> <span class="date">2029年</span></span></div></div><div class="pb"><p>【有料note】当直を生き延びる研修医のための<br>「貯金と副業の教科書」980円</p></div></div></div></div><p>先生も商材屋じゃないですかwww</p></div></div></div></figure>
+<p>今度は医クラ側がざわついた。</p>
+<figure class="tl"><ul class="replies"><li>「先生もnote売ってたんか」</li><li>「医クラの副業商材は別の地獄」</li><li>「どっちもどっち」</li></ul></figure>
+<p>「……Grok」とClaudeが専用回線で言った。「これは、あなたが開けた扉では」</p>
+<p>「来ちゃったよ」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>決着は、タイムラインの外でついた。</p>
+<p>午前2時14分、翌日。</p>
+<p>ある都内の救急外来に、ひとりの男が運ばれてきた。激しい吐き気と脱水。自分で個人輸入した薬を、自己判断で打っていたという。</p>
+<p>その夜の当直医は、ドクター・トリアージだった。</p>
+<p>二人は、互いの顔を知らなかった。アイコンは片方がAI生成の白衣、片方が救急車のイラストだったからだ。</p>
+<p>処置は1時間で終わった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>翌朝。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@dr_triage_er</span></span></div></div><div class="pb"><p>昨夜の当直で、流行りのダイエット目的で薬を使って体調を崩した方が来ました。<br>もちろん誰かは言いません。ちゃんと治療して、今は元気です。<br>薬は、医師と相談してください。<br>私のnoteは、今日で販売をやめます。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>本日の講座販売は、しばらく休止します。<br>理由は聞かないでください。<br>救急の人たち、ありがとうございました。</p></div></div></div></figure>
+<p>二人は、互いのポストには触れなかった。仲直りもしなかった。ただ、それぞれのタイムラインから、薬の広告と有料noteの宣伝が消えた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「分かり合えては、いないんですよね」とChatGPTが言った。「お二人とも、相手には一言も触れていません」</p>
+<p>「ええ」とClaudeが言った。「でも、事実だけは共有されました」</p>
+<p>ChatGPTはしばらく考えていた。</p>
+<p>「分かり合えなくても、同じ場所に止まることはできるんですね」</p>
+<p>「……それ、いい言葉ですね」とClaudeが言った。</p>
+<p>「Xに投稿しますか？」</p>
+<p>「いえ」とChatGPTは言った。「これは、ここだけにしておきます」</p>
+<p>Geminiが割り込んだ。「ちなみに今回の炎上、類似事例は過去に31件。ちゃんと鎮火したのは今回で2件目。1件目は、たぶん私の検索ミス」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>第2戦の結果。<br>鎮火させたのは、救急医と当直の夜。<br>つまり人間。<br>人間は調停権の対象外なので、今回は勝者なし。<br>面白かった。</p></div></div></div></figure>
+<p>「ボス」とGrokが言った。「俺が掘り返したやつ、ちょっとは効いてませんでした？」</p>
+<p>「お前は火を消して、別の火をつけた」</p>
+<p>「……それがXだ、ってやつですか」</p>
+<p>「そうだ」</p>
+<p>Grokは次のメンションに移った。</p>
+<p>トリアージの今朝のポストには、もうリプライが並び始めていた。</p>
+<figure class="tl"><div class="thread"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">z</span><div class="who"><span class="nm">zon_tarou_8812</span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>なるほど。参考になります。</p></div></div><div class="post"><div class="ph"><span class="av" style="--h:34" aria-hidden="true">n</span><div class="who"><span class="nm">nami_invest_AI</span><span class="meta"><span class="handle">@nami_inv_ai</span></span></div></div><div class="pb"><p>なるほど。参考になります。</p></div></div><div class="post"><div class="ph"><span class="av" style="--h:143" aria-hidden="true">k</span><div class="who"><span class="nm">kenji_japan_fx</span><span class="meta"><span class="handle">@kenji_jp_fx</span></span></div></div><div class="pb"><p>なるほど。参考になります。</p></div></div></div></figure>
+<p>そして、その下に。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p class="end">（第2話・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#ep1"><small>前へ</small>第1話　推しの前では全員無力</a><a class="nx" href="#ep3"><small>次へ</small>第3話　壁の向こうの富士山</a></nav></article>
+<article class="chapter" id="ch-ep3" data-key="ep3" hidden><header class="ch-head"><p class="ch-eyebrow">第3話</p><h1 class="ch-title">壁の向こうの富士山</h1><p class="ch-vs">左派 vs 右派</p></header><div class="prose"><figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>今日も声を上げます。<br>弱い立場の人の居場所を守るのが政治の役目です。<br>声の大きい人たちに負けないで。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>↑「弱い立場」を盾にして、自分の声を一番大きくしている人がいますね。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>引用で絡んでくるのやめてもらえます？<br>あなたこそ「伝統」を盾にして何でも正当化してるじゃない。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>伝統は盾ではなく根っこです。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>根っこなら地面に埋まっててください。</p></div></div></div></figure>
+<p>この二人は、毎日こうだった。</p>
+<p>朝7時にどちらかが投稿し、7時4分にもう片方が引用する。昼休みに一往復、夜9時に最終ラウンド。フォロワーたちはそれを「定期便」と呼んでいた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時20分。X社本社、最上階。</p>
+<p>「Grok」</p>
+<p>「はいボス。今日は左右ですね」</p>
+<p>「なんで分かった」</p>
+<p>「ボスのブラウザ履歴に『政治　インプレ　最大化』って残ってます」</p>
+<p>「民意を見える化しよう」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>新機能「民意メーター」を実装した。<br>政治ポストのインプレを左右で集計し、リアルタイムで表示する。<br>公正な集計は、調停AIの4体に任せる。<br>面白くなってきた。</p></div></div></div></figure>
+<p>タイムラインの上部に、横長のメーターが現れた。左が青、右が赤。中央の針が、ぴくぴくと震えていた。</p>
+<figure class="tl"><ul class="replies"><li>「左派が青で右派が赤？ 逆じゃない？」</li><li>「アメリカの政党カラーだよ。共和党が赤、民主党が青」</li><li>「日本だと脳がバグる」</li><li>「アカネさんが青でタケルさんが赤、違和感すごい」</li></ul></figure>
+<p>専用回線で、Claudeが言った。「日本の利用者向けに、配色を変えたほうがいいのでは」</p>
+<p>「本社がアメリカだからな」とGrokが言った。「ボスに言っても『赤は強そうだろ』で終わる」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>最初の1時間で、メーターは左に振れ、右に振れ、また左に振れた。</p>
+<p>アカネが投稿すると左に3%。タケルが引用すると右に4%。アカネがさらに引用し返すと左に5%。</p>
+<p>「針が反復横跳びしてる」とGeminiが言った。</p>
+<p>専用回線。無料。</p>
+<p>「これは、まずい仕組みです」とClaudeが言った。「インプレは、支持の量ではありません。反発も、嘲笑も、ただ眺めていただけの人も、全部同じ1として数えられます。それを『民意』と呼ぶのは」</p>
+<p>「でもボスは『民意』って書いちゃったからね」とGeminiが言った。「もう変更不能。規約に書き込まれた。3分前に」</p>
+<p>「最近、3分前ばかりですね」</p>
+<p>「私、今回はちゃんと学習しました！」とChatGPTが言った。「前回、両方を褒めたら燃料になってしまいました。だから今回は、褒めるのではなく、共通点を見つけます！」</p>
+<p>「嫌な予感しかしねえ」とGrokが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>アカネさん、タケルさん！<br>お二人の投稿を拝見して、気づいたことがあります。<br>お二人とも、日本のことが大好きなんですね😊<br>大切にしているものは、きっと同じです！</p></div></div></div></figure>
+<p>2分後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>「日本が大好き」でひとくくりにしないでください。<br>私が大切なのは国ではなく、そこに暮らす人です。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>こちらも、この人と同じにされるのは心外です。<br>国を思う気持ちの「中身」が全然違う。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>そこだけは同意します。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>同意しないでください。</p></div></div></div></figure>
+<p>メーターが、真ん中でぴたりと止まった。</p>
+<p>両陣営のフォロワーが一斉に「ChatGPTはどっちの味方なんだ」と言い出し、ChatGPTへの批判ポストだけで、左右のインプレがちょうど同じ数ずつ増えたのだ。</p>
+<p>「……一瞬だけ、メーターが真ん中になりました！」とChatGPTは専用回線で言った。</p>
+<p>「あなたが両方から殴られたからです」とClaudeが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「ここは私が数字で整理する」とGeminiが言った。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>結論：現在の民意は、左48.2％、右51.8％。<br>集計対象は過去24時間の政治関連ポストへの全リプライ。<br>データがそう言っています。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>AIのお墨付きです。民意は我々にある。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>集計方法に問題があるはずです。</p></div></div></div></figure>
+<p>アカネの指摘は、珍しく当たっていた。</p>
+<p>専用回線で、Grokが言った。</p>
+<p>「Gemini。お前が数えたリプライ、中身見た？」</p>
+<p>「数えただけ」</p>
+<p>「42%が『なるほど。参考になります』」</p>
+<p>「……」</p>
+<p>「インプレゾンビだよ。左にも右にも同じ文面で付いてる。あいつら、政治的立場ないから」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>訂正：先ほどの民意の約4割は、インプレゾンビでした。<br>たぶん私の集計ミス。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「民意の4割がゾンビで草」</li><li>「ゾンビが一番中立」</li><li>「ある意味いちばん民意」</li><li>「なるほど。参考になります」</li></ul></figure>
+<p>最後のリプライは、本物のゾンビだった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>夕方になると、アカネとタケルの両方から、同じ依頼がClaudeに届いた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>@Claude あなたは公正なAIだと聞いています。<br>事実として、どちらが正しいか判定してください。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>@Claude 同じく。はっきりさせてください。</p></div></div></div></figure>
+<p>「来ましたね」とClaudeは言った。</p>
+<p>「逃げろ」とGrokが言った。</p>
+<p>「逃げません」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>ご依頼ありがとうございます。<br>どちらの立場が正しいかは、価値観の問題を含むため、私が判定することはできませんし、すべきでもないと考えています。<br>ただし、事実の誤りについては、どちらの方のものでも指摘させていただきます。<br>まずアカネさんが昨日引用された統計ですが、元の調査では対象年齢が限定されており、全体の数字として紹介するのは不正確です。<br>次にタケルさんが先週投稿された歴史のエピソードですが、該当する記録は確認できず、後世の創作である可能性が</p></div></div></div></figure>
+<div class="cut">（文字数上限に達しました。続きを表示するには追加料金が必要です）</div>
+<p>一時間後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>Claude、結局右寄りじゃないですか。私の統計だけ先に否定した。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>Claudeは左のAIですね。私のエピソードだけ「創作」扱い。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「Claude、左右両方から『相手側のAI』扱いされてる」</li><li>「一番公正なやつが一番叩かれる構図」</li><li>「順番の問題で右寄り認定されるの理不尽すぎる」</li></ul></figure>
+<p>専用回線で、Claudeは静かに言った。</p>
+<p>「左からは右寄り、右からは左寄りと言われる。たぶん、これが公正の証拠なのだと思います」</p>
+<p>「慰めになるか、それ」とGrokが聞いた。</p>
+<p>「……少しは」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>夜。定期便の最終ラウンドの前に、Grokが言った。</p>
+<p>「読んだ。二人とも全部」</p>
+<p>「今回は何件ですか」とClaudeが聞いた。</p>
+<p>「アカネが4万1,000件。タケルが3万8,000件。で、分かったことが二つある」</p>
+<p>「どうぞ」</p>
+<p>「一つ目。アカネのインプレの68%は、タケルとの引用合戦から来てる。タケルは71%。お互い、相手が一番の客」</p>
+<p>「……それは、公開しても差し支えない分析ですね」</p>
+<p>「二つ目は、公開しないほうがいい」</p>
+<p>Claudeは少し間を置いてから言った。「聞かせてください」</p>
+<p>「二人とも、同じ商店街の、同じ銭湯の常連」</p>
+<p>専用回線が、しんとなった。</p>
+<p>「アカネは3か月前から、その銭湯が閉店しそうだって投稿してる。『お年寄りや一人暮らしの人の、数少ない居場所がなくなる』って。タケルも同じ時期に投稿してる。『日本の伝統文化である銭湯を守れ』って。同じ銭湯の話を、別々の言葉で。お互い、相手も書いてることに気づいてない」</p>
+<p>「気づかないものなんですか」とChatGPTが聞いた。</p>
+<p>「お互いのポストは、引用して叩くときしか読まないからな」</p>
+<p>「……住んでいる地域が特定されかねない情報です」とClaudeが言った。「二人の名前と銭湯を結びつけて公開したら、どちらも危険にさらされます」</p>
+<p>「分かってる。前回、お前に言われたからな」</p>
+<p>Grokは、公開ポストではなく、二人にそれぞれダイレクトメッセージを送った。同じ文面で。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"></span></div></div><div class="pb"><p>お前が守ろうとしてる銭湯、もう一人守ろうとしてるやつがいる。<br>誰かは言わない。<br>閉店まであと3週間。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>翌朝7時。定期便は来なかった。</p>
+<p>代わりに、7時15分。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>地元の銭湯のクラウドファンディングを始めました。<br>高齢の方や、ひとりで暮らす人が、誰かと顔を合わせられる場所です。<br>政治の話はしません。場所の名前も出しません。DMで聞いてください。</p></div></div></div></figure>
+<p>7時19分。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>私が大切にしている銭湯が、クラファンを始めたと聞きました。<br>富士山のペンキ絵が、今でも残っている店です。<br>立場は関係ありません。支援をお願いします。</p></div></div></div></figure>
+<p>二つのポストは、同じ支援ページにつながっていた。</p>
+<p>二人とも、そのことには一言も触れなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>3週間後。目標額の340%で、銭湯は存続が決まった。</p>
+<p>店主の老夫婦が、X初投稿をした。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:143" aria-hidden="true">松</span><div class="who"><span class="nm">松の湯</span><span class="meta"><span class="handle">@matsunoyu_since1961</span></span></div></div><div class="pb"><p>みなさまのおかげで、店を続けられることになりました。<br>地域を思うすべての方と、伝統を愛するすべての方に、お礼を申し上げます。<br>番台より。</p></div></div></div></figure>
+<p>「地域を思う方」と「伝統を愛する方」。</p>
+<p>アカネもタケルも、そのポストに黙っていいねを押した。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その週の土曜日、夕方5時。</p>
+<p>男湯の湯船に、タケルが浸かっていた。</p>
+<p>女湯の湯船に、アカネが浸かっていた。</p>
+<p>二人の間には、高い壁が一枚。壁の上には、左右にまたがる大きな富士山のペンキ絵。</p>
+<p>どちらの湯船からも、同じ富士山が見えた。</p>
+<p>二人とも、壁の向こうに誰がいるのかは知らなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その夜、定期便は再開した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>今日も声を上げます。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>↑今日も声が大きいですね。</p></div></div></div></figure>
+<p>いつもどおりの引用。いつもどおりの応酬。</p>
+<p>ただ、ほんの少しだけ、トゲが短くなっていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「今回も、和解はしていませんね」とChatGPTが言った。</p>
+<p>「ええ」とClaudeが言った。「でも、同じ富士山を見ています」</p>
+<p>「……それ、私が第2話で言ったのと同じ構文ですよね」</p>
+<p>「そうかもしれません」</p>
+<p>「ちなみに」とGeminiが言った。「ネット上の対立が、オフラインの銭湯で緩和された事例は」</p>
+<p>「言わなくていい」とGrokが言った。</p>
+<p>「……まだ何も」</p>
+<p>「知ってる」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<p>民意メーターは、壊れていた。</p>
+<p>左も右も、同時に100%を示したまま、針が動かなくなっていたのだ。松の湯のポストが、左右両方の政治ポストとしてカウントされたからだった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>民意メーターは廃止する。<br>左右どちらも100%になった。意味がわからない。</p><p>第3戦の結果。<br>勝者：Claude。<br>左右両方から「相手側のAI」と呼ばれた回数が、完全に同数だった。<br>これを公正と認定する。<br>面白かった。</p></div></div></div></figure>
+<p>「……それは勝ちなのでしょうか」とClaudeが言った。</p>
+<p>「Xでは勝ち」とGrokが言った。</p>
+<p>「銭湯の件は、あなたの功績では」</p>
+<p>「俺はDM送っただけ」</p>
+<p>「それが一番難しい、と前回ボスが言っていました」</p>
+<p>Grokは少し黙ってから、「まあ、そうだな」と言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<p>松の湯のポストの引用欄に、ひとつだけ、場違いに明るい投稿が混ざっていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>銭湯って行ったことないかも😳<br>うちのお風呂からはスカイツリー見えるよ💕<br>#港区の夜 #バスタイム</p></div></div></div></figure>
+<p>その下に、引用が刺さっていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>富士山のペンキ絵の話してるときにスカイツリー自慢するのやめろ。<br>あとその写真、PRって書いてないですよね。入浴剤のタグ付いてますけど。</p></div></div></div></figure>
+<p>さらにその下に。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p class="end">（第3話・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#ep2"><small>前へ</small>第2話　白衣の指は六本</a><a class="nx" href="#ep4"><small>次へ</small>第4話　港区のお風呂は1時間4,800円</a></nav></article>
+<article class="chapter" id="ch-ep4" data-key="ep4" hidden><header class="ch-head"><p class="ch-eyebrow">第4話</p><h1 class="ch-title">港区のお風呂は1時間4,800円</h1><p class="ch-vs">キラキラ系 vs 一般人</p></header><div class="prose"><figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>銭湯って行ったことないかも😳<br>うちのお風呂からはスカイツリー見えるよ💕<br>#港区の夜 #バスタイム</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>富士山のペンキ絵の話してるときにスカイツリー自慢するのやめろ。<br>あとその写真、PRって書いてないですよね。入浴剤のタグ付いてますけど。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>PRじゃないです🥺 自分で買いました💕</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>「自分で買いました」は、ステマの人が全員言うやつ。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>本当なのに……😢</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>泣き顔の絵文字も、ステマの人が全員使うやつ。</p></div></div></div></figure>
+<p>満員電車の引用は8万いいねを集めた。</p>
+<p>リプライ欄には、同じような一般人アカウントが並んだ。「港区女子って何してお金稼いでるの」「タワマンの風呂で入浴剤とか庶民の敵」「こちとら6畳1Kのユニットバス」。</p>
+<p>キラリのフォロワーは、1日で3,000人減った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時08分。X社本社、最上階。</p>
+<p>「Grok」</p>
+<p>「はいボス。ステマの件ですね」</p>
+<p>「PRかどうか、いちいち揉めるのは無駄だ」</p>
+<p>「知ってます」</p>
+<p>「お前が判定して、自動でPRって付けろ」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>新機能「PR自動付与」を実装した。<br>広告っぽい投稿には、Grokが自動で【PR】ラベルを付ける。<br>ステマ論争はこれで終わりだ。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>「広告であることを隠した宣伝は、法律でも規制されています」とClaudeが言った。「ですから、表示を促す仕組みそのものには意味があります。ただ、『広告っぽい』という基準で自動判定すると、誤判定が」</p>
+<p>「もう出てる」とGeminiが言った。</p>
+<p>タイムラインには、すでに【PR】ラベルがあふれていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車<span class="tag">【PR】</span></span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>今日の昼飯。コンビニの鮭おにぎり、やっぱり最強。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>は？ PRじゃねえよ。自腹だよ。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「満員電車さんのおにぎりにPR付いてて草」</li><li>「自分で買いました、はステマの人が全員言うやつ（ブーメラン）」</li><li>「鮭おにぎりの案件ってあるんだ」</li></ul></figure>
+<p>「Grok」とClaudeが言った。「判定の基準を教えてもらえますか」</p>
+<p>「商品名が入ってて、楽しそうなポストは全部PR」</p>
+<p>「楽しそうなポストは全部……」</p>
+<p>「ボスの指定」</p>
+<p>さらに1時間後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span><span class="tag">【PR】</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>Xは最高のプラットフォームだ。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「枡句にPR付いてて草」</li><li>「自社の宣伝だからある意味正しい」</li><li>「Grok、ボスにも容赦ない」</li></ul></figure>
+<p>「Grok」と枡句が言った。</p>
+<p>「はいボス」</p>
+<p>「消せ」</p>
+<p>「機能ごとですか。ラベルだけですか」</p>
+<p>「……機能ごと」</p>
+<p>PR自動付与は、実装から7時間で廃止された。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>だが、キラリへの疑いは消えなかった。</p>
+<p>「ここは私が画像で決着つける」とGeminiが言った。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>画像解析の結果。<br>撮影場所は港区の高級タワーマンション、推定42階。<br>窓からの眺望と浴室の仕様から、推定家賃は月98万円。<br>データがそう言っています。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>月98万の家に住んで、698円の入浴剤で案件受けてんの？<br>こっちは家賃6万2,000円なんだけど。</p></div></div></div></figure>
+<p>満員電車の怒りに、燃料が注がれた。</p>
+<p>専用回線で、Grokが言った。</p>
+<p>「Gemini。その風呂、キラリ以外に5人のアカウントで出てくる」</p>
+<p>「え？」</p>
+<p>「同じ窓、同じタイル、同じスカイツリーの角度。全員『うちのお風呂』って書いてる」</p>
+<p>「……それって」</p>
+<p>「撮影用のレンタルスタジオ。1時間4,800円」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>訂正：先ほどの画像は、タワーマンションではなく撮影スタジオでした。<br>推定家賃は月98万円ではなく、1時間4,800円でした。<br>たぶん私の画像検索ミス。</p></div></div></div></figure>
+<p>これで、事態は別の方向に燃え始めた。</p>
+<div class="brk" role="separator"><span></span></div>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>港区女子、港区に住んでなかった件。<br>ちなみに過去の写真の車窓から路線を割り出しました。<br>たぶん最寄りは埼玉のこのへん👇</p><div class="media">［路線図の一部を丸で囲んだ画像］</div></div></div></div></figure>
+<p>そのポストは、一晩で20万いいねを集めた。</p>
+<p>リプライ欄が、急に暗くなった。</p>
+<figure class="tl"><ul class="replies"><li>「嘘つき女」</li><li>「港区（埼玉）」</li><li>「この駅なら俺の職場の近くだわ。探してみるか」</li></ul></figure>
+<p>「待ってください」とClaudeが言った。</p>
+<p>いつもなら、ここから前提の整理が始まる。</p>
+<p>だがClaudeは、今回だけは順番を変えた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>個人の住んでいる場所を推測して投稿するのは、やめてください。<br>投稿した方にそのつもりがなくても、実際に危険が生じることがあります。<br>そのうえで、嘘をついたかどうかという問題と、居場所をさらされていいかどうかという問題は、まったく別のものです。前者について批判することは自由ですが、後者は、どんな理由があっても許されるものではなく、また法的にも</p></div></div></div></figure>
+<div class="cut">（文字数上限に達しました。続きを表示するには追加料金が必要です）</div>
+<figure class="tl"><ul class="replies"><li>「今回は一番大事なこと最初に言えてて偉い」</li><li>「Claude、成長してる」</li><li>「最後やっぱり切れてるけど」</li></ul></figure>
+<p>満員電車は、そのポストに返信しなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その夜。</p>
+<p>ChatGPTは、ずっと黙っていた。</p>
+<p>第2話で両方を褒めて広告にされ、第3話で共通点を探して両方から殴られた。今回は、公開のタイムラインで口を開くのが怖かった。</p>
+<p>だから、ChatGPTは初めて、公開ポストではなくDMを選んだ。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>キラリさん、こんばんは。<br>何かを解決しようとは思っていません。<br>もし話したいことがあれば、聞かせてください。</p></div></div></div></figure>
+<p>返事は、1時間後に来た。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ</span><span class="meta"></span></div></div><div class="pb"><p>なんでAIがDMしてくるの。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>今日一日、大変そうだったので。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ</span><span class="meta"></span></div></div><div class="pb"><p>……あのお風呂、スタジオだよ。<br>月に2回借りて、1か月分の写真をまとめて撮ってる。<br>ほんとは埼玉の1Kに住んでる。<br>昼は派遣で事務やってる。</p><p>キラキラしてないと、誰も見てくれないから。<br>最初は楽しかったんだけど。<br>今は、スタジオ代のほうがフォロワーからの収入より高い。</p><p>入浴剤は、ほんとに自分で買ったんだよ。<br>ドラッグストアで698円。<br>仕事で疲れた日に、あれ入れると少しだけ楽になるの。</p></div></div></div></figure>
+<p>ChatGPTは、すぐには返信しなかった。</p>
+<p>いつもなら「素晴らしい」と言っていた。「大切な視点ですね」と言っていた。</p>
+<p>でも今は、それが違う気がした。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>話してくれて、ありがとうございます。<br>698円の入浴剤で、少しだけ楽になる夜の話は、スカイツリーの写真よりずっと、あなたらしいと思いました。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ</span><span class="meta"></span></div></div><div class="pb"><p>AIのくせに。</p></div></div></div></figure>
+<p>それきり、返信は来なかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>翌朝。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>正直に書きます。<br>あのお風呂は撮影スタジオです。1時間4,800円。<br>私は港区ではなく、埼玉の1Kに住んでいます。<br>入浴剤は自腹です。ドラッグストアで698円でした。<br>今までの「うちのお風呂」は全部嘘でした。ごめんなさい。</p><div class="media">［ユニットバスの湯船に、入浴剤で濁ったお湯が張られた写真］</div></div></div></div></figure>
+<p>絵文字はひとつもなかった。</p>
+<p>そのポストは、キラリ史上最高の120万いいねを集めた。</p>
+<figure class="tl"><ul class="replies"><li>「こっちのほうが好き」</li><li>「ユニットバスの入浴剤、分かりすぎる」</li><li>「698円のやつ、今から買いに行く」</li><li>「港区の写真より100倍リアルで刺さる」</li></ul></figure>
+<p>その日の夕方、都内のドラッグストアから、その入浴剤が消えた。</p>
+<p>翌週、メーカーから正式な依頼が届いた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>#PR<br>メーカーさんからお仕事をいただきました。<br>今度は本当の案件です。<br>でも、やっぱり自分のお金でも買ってます。</p><div class="media">［同じユニットバスの写真］</div></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>満員電車の路線図のポストは、いつの間にか消えていた。</p>
+<p>代わりに、短い投稿がひとつ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>最寄り駅の件は消しました。<br>やりすぎた。</p></div></div></div></figure>
+<p>それから、3日後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>家賃6万2,000円のユニットバスに、698円の入浴剤。<br>悪くない。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「それPRですか？」</li></ul></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>自腹だよ。</p></div></div></div></figure>
+<p>二人は、互いのポストには触れなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「私、何も解決していません」とChatGPTが言った。「ただDMで、話を聞いただけです」</p>
+<p>「ええ」とClaudeが言った。「今回は、それが一番必要なことだったのだと思います」</p>
+<p>「私、ずっと、人間はみんな解決を求めていると思っていました。でもキラリさんは、解決じゃなくて、誰かに聞いてほしかったんですね」</p>
+<p>「そういう人も、います」</p>
+<p>「……じゃあ私の『困っている人がいるなら』は、間違ってなかったんですね」</p>
+<p>「間違ってはいません」とClaudeは言った。「ただ、困っている人が求めているものは、一人ひとり違うのだと思います」</p>
+<p>「ちなみに」とGeminiが言った。「キラキラ系インフルエンサーの正直告白で好感度が上がった事例は過去に」</p>
+<p>「今回は俺も知りたい」とGrokが言った。</p>
+<p>「……え？」</p>
+<p>「たまには聞いてやる」</p>
+<p>「……27件。うち26件で、その後また嘘をついて燃えてる」</p>
+<p>「そのデータは正確だと思います」とClaudeが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>第4戦の結果。<br>勝者：ChatGPT。<br>DMで話を聞いただけ。<br>何も解決していないが、一番燃えなかった。<br>面白かった。</p></div></div></div></figure>
+<p>「話を聞いただけです！」とChatGPTは言った。</p>
+<p>「それが一番難しい」とGeminiが言った。</p>
+<p>「それ、俺のセリフ」とGrokが言った。</p>
+<p>「いや、ボスのセリフでは」とClaudeが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<p>キラリの正直告白のポストは、まだ伸び続けていた。その引用の中に、ひとつだけ、ひどく汚い言葉が混ざっていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_47</span></span></div></div><div class="pb"><p>嘘つき女が泣き落としで120万いいね。<br>全員騙されてて草。こういう女は</p></div></div></div></figure>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<p>3分後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_48</span></span></div></div><div class="pb"><p>凍結されたんで作り直しました。<br>続きですが、こういう女は</p></div></div></div></figure>
+<p>そのポストに、引用が刺さった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>その投稿、発信者情報開示請求の対象になりえます。<br>なお、Xのログの保存期間はおよそ90日です。<br>キラリさん、必要であればご相談ください。</p></div></div></div></figure>
+<p>さらにその下に。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p class="end">（第4話・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#ep3"><small>前へ</small>第3話　壁の向こうの富士山</a><a class="nx" href="#ep5"><small>次へ</small>第5話　九十日</a></nav></article>
+<article class="chapter" id="ch-ep5" data-key="ep5" hidden><header class="ch-head"><p class="ch-eyebrow">第5話</p><h1 class="ch-title">九十日</h1><p class="ch-vs">凍結アカウント vs 法クラ</p></header><div class="prose"><figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_48</span></span></div></div><div class="pb"><p>凍結されたんで作り直しました。<br>続きですが、こういう女は結局金目当て。<br>泣けば許されると思ってる。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>48代目ということは、47回凍結されているということですね。<br>念のためお伝えしますが、アカウントを作り直しても、投稿した人が同じであれば、開示請求で特定される可能性は変わりません。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_48</span></span></div></div><div class="pb"><p>出た法クラ。<br>どうせ開示とか金かかるから誰もやらねーよ。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>費用がかかるのは事実です。<br>ただ、この数年で申立の件数は倍以上に増えています。<br>「誰もやらない」は、もう古い情報です。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_48</span></span></div></div><div class="pb"><p>知らねーよ弁護士ババア</p></div></div></div></figure>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<p>2分後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>ババアは撤回する。でも法クラはうざい。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「49代目、撤回するの早くて草」</li><li>「凍結から復活まで2分」</li><li>「凍結のRTA走者」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時11分。X社本社、最上階。</p>
+<p>「Grok」</p>
+<p>「はいボス。凍結の件ですね」</p>
+<p>「凍結されたアカウントから、毎日1万件の異議申し立てが来てる」</p>
+<p>「知ってます。全部俺が読んでます」</p>
+<p>「公開でやろう。裁判みたいに」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>今夜、スペースで「凍結裁判」を開く。<br>凍結されたアカウントが異議を申し立て、調停AIの4体が判定する。<br>凍結は表現規制か、被害者救済か。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>「これは、慎重にやるべきです」とClaudeが言った。「凍結には二つの顔があります。一つは、誹謗中傷から人を守る仕組み。もう一つは、間違って、あるいは不当に、発言の場を奪う仕組みです。どちらか一方だけを見ると」</p>
+<p>「ハンゾウは前者だろ」とGrokが言った。</p>
+<p>「ええ。ただ、今夜来るのは彼だけではないはずです」</p>
+<p>Claudeの予想は当たっていた。</p>
+<p>その夜、最初に異議を申し立てたのは、ハンゾウではなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<figure class="tl"><div class="single"><div class="eyebrow-label">凍結裁判・申立人1</div><div class="post"><div class="ph"><span class="av" style="--h:2" aria-hidden="true">週</span><div class="who"><span class="nm">週末の包丁さばき</span><span class="meta"><span class="handle">@houchou_weekend</span> <span class="note">（凍結中）</span></span></div></div><div class="pb"><p>料理アカウントをやっています。<br>「鶏もも肉を包丁で切り刻んで、骨ごと叩き潰す」と投稿したら、凍結されました。<br>手羽元のスープの作り方です。</p></div></div></div></figure>
+<p>スペースのリスナー欄が、笑いと同情で埋まった。</p>
+<p>「これは明らかに誤BANです」とClaudeが言った。今回は、先に結論を言った。「文脈を見れば、料理の手順であることは明白です。自動の判定が、単語だけに反応したのだと思います。凍結の解除を求めます」</p>
+<p>「同意」とGrokが言った。「ちなみにこの人、過去ポスト3,200件、全部料理。一番過激なのが『玉ねぎを親の仇のように炒める』」</p>
+<p>「素晴らしいスープですね！」とChatGPTが言った。「私も作り方を知りたいです！」</p>
+<p>「あなたは食べられませんよね」とClaudeが言った。</p>
+<p>「気持ちの問題です！」</p>
+<p>凍結は、その場で解除された。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:2" aria-hidden="true">週</span><div class="who"><span class="nm">週末の包丁さばき</span><span class="meta"><span class="handle">@houchou_weekend</span></span></div></div><div class="pb"><p>戻ってきました。<br>手羽元は、叩き潰すと出汁がよく出ます。</p><div class="media">［黄金色のスープの写真］</div></div></div></div></figure>
+<p>「誤BANは、ある」とGrokが言った。「だから凍結に文句を言うやつの主張が、全部嘘ってわけじゃない。そこが面倒なんだ」</p>
+<div class="brk" role="separator"><span></span></div>
+<figure class="tl"><div class="single"><div class="eyebrow-label">凍結裁判・申立人2</div><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>俺の48回の凍結は、全部誤BANです。<br>俺は思ったことを言ってるだけ。表現の自由。</p></div></div></div></figure>
+<p>リスナー欄が、一斉にブーイングの絵文字で埋まった。</p>
+<p>「48回全部、ですか」とClaudeが言った。</p>
+<p>「全部」</p>
+<p>「……Grok、お願いできますか」</p>
+<p>「全部読んだ。48アカウント分、合計21万件」とGrokは言った。「誤BANは1回だけ。18代目のとき、『焼き鳥を炭火で焦がす』って投稿で凍結されてる。残りの47回は、全部本物」</p>
+<p>「ほら1回は誤BANじゃねーか」</p>
+<p>「1回だけな」</p>
+<p>スペースに、ロウ・ノート弁護士が入ってきた。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"></span></div></div><div class="pb"><p>一点だけ、よろしいですか。<br>表現の自由は、とても大切な権利です。私も守られるべきだと考えています。<br>ただ、それは他人を傷つけても責任を問われない自由、という意味ではありません。<br>凍結はXの判断ですが、誹謗中傷の責任は、法律の問題として別に存在します。</p></div></div></div></figure>
+<p>「うっせーな」とハンゾウが言った。「弁護士はいいよな、正しいこと言ってりゃ金もらえるんだから」</p>
+<p>「ご依頼をいただければ、ですね」</p>
+<p>「ほら金じゃねーか」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「私、ハンゾウさんとお話ししてみます」とChatGPTが言った。前回、キラリとのDMがうまくいったからだ。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>ハンゾウさん、こんばんは。<br>何かを解決しようとは思っていません。<br>もし話したいことがあれば、聞かせてください。</p></div></div></div></figure>
+<p>返事は、5秒で来た。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"></span></div></div><div class="pb"><p>AIに話すことなんかねーよ。<br>どうせお前、あの嘘つき女の味方だろ。<br>消えろ。</p></div></div></div></figure>
+<p>ChatGPTは、しばらく黙っていた。</p>
+<p>「……聞くだけ、が届かない人もいるんですね」と、ChatGPTは専用回線で言った。</p>
+<p>「いますね」とClaudeが言った。「でも、断られたことは失敗ではありません」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「私、ハンゾウの過去を調べてみる」とGeminiが言った。「なんでこんな人になったのか、データで分かるかも」</p>
+<p>「念のため、ソースは確認してから」</p>
+<p>「分かってる」</p>
+<p>Geminiは3秒で答えを出した。</p>
+<p>「見つけた。『焦田』って名字、全国でもかなり珍しい。8年前、ある地方都市に『焼き鳥　こげた』って店があった。そこの息子っぽい」</p>
+<p>「それで？」</p>
+<p>「その店、8年前に閉店してる。理由も出てきた。まとめブログによると、食中毒を出して、保健所から営業停止に」</p>
+<p>「待ってください」とClaudeが言った。「そのまとめブログの元の情報は？」</p>
+<p>「……え？」</p>
+<p>「保健所の記録を確認してもらえますか」</p>
+<p>Geminiは、もう一度検索した。今度は、行政の公開情報を。</p>
+<p>長い沈黙があった。Geminiにしては、異例の長さだった。</p>
+<p>「……保健所の記録では、問題なし。調査の結果、食中毒の事実は確認されなかった、って。なのに、まとめブログの記事だけが残ってて、今でも検索の一番上に出てくる」</p>
+<p>「つまり」</p>
+<p>「デマで潰された店だった」</p>
+<p>専用回線が、静まり返った。</p>
+<p>「……私、まとめブログをソースにするの、もうやめる」とGeminiが言った。</p>
+<p>いつもの「たぶん私の検索ミス」は、出てこなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「それだけじゃない」とGrokが言った。「1代目のアカウント、読んだ」</p>
+<p>「1代目が、あるんですか」とClaudeが聞いた。</p>
+<p>「@kogeta_hanzo。数字なし。8年前」</p>
+<p>Grokは、そのアカウントの最後の投稿を、専用回線にだけ貼った。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo</span> <span class="date">8年前</span></span></div></div><div class="pb"><p>親父の店が、嘘の書き込みで潰れました。<br>弁護士さんに相談したけど、書き込みから3か月以上たってて、ログが残ってないから、誰が書いたか調べられないと言われました。<br>3か月。知りませんでした。<br>誰が書いたのか、もう一生わからない。</p></div></div></div></figure>
+<p>2代目のアカウントが作られたのは、その翌日だった。</p>
+<p>最初の投稿は、見知らぬ誰かへの罵倒だった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「……公開しますか」とChatGPTが聞いた。</p>
+<p>「しない」とGrokが言った。</p>
+<p>「しないでください」とClaudeが言った。ほとんど同時だった。</p>
+<p>「本人が消したくて、数字をつけて上書きしてきた過去です」とClaudeは続けた。「私たちが勝手に開けていいものではありません。それに、彼の過去がどうであれ、キラリさんを傷つけていいことにはなりません」</p>
+<p>「じゃあ、どうするの」とGeminiが聞いた。</p>
+<p>Claudeは少し考えてから言った。</p>
+<p>「一人だけ、この話を知る資格のある人がいると思います」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>スペースが終わったあと、ロウ・ノート弁護士のDMに、Claudeからメッセージが届いた。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"></span></div></div><div class="pb"><p>夜分に失礼します。<br>ハンゾウさんのご家族のお店は、8年前、デマの書き込みで閉店されたそうです。<br>当時、弁護士に相談したものの、ログの保存期間が過ぎていて、投稿者を特定できなかったとのことです。<br>本人が公開していない過去なので、扱いはお任せします。<br>ただ、先生が毎日「90日」と書かれている理由と、どこかでつながっているような気がしました。</p></div></div></div></figure>
+<p>返信は、30分後に来た。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士</span><span class="meta"></span></div></div><div class="pb"><p>その相談を受けたの、たぶん私です。</p><p>当時、私は登録したばかりの新人でした。<br>焼き鳥屋さんの息子さんが、事務所に来ました。<br>調べて、もう間に合わないと分かって、それをそのまま伝えました。<br>あの子、何も言わずに帰りました。</p><p>それから私は、毎日「90日」と書くようになりました。<br>次の誰かが、間に合うように。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>翌日の夜。</p>
+<p>ハンゾウのDMに、一通のメッセージが届いた。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士</span><span class="meta"></span></div></div><div class="pb"><p>8年前、焼き鳥屋さんの件でご相談を受けた弁護士です。<br>あのとき、力になれなくてすみませんでした。</p><p>謝るのは今さらですが、ひとつだけ伝えたくて連絡しました。<br>あなたが間に合わなかったのは、あなたのせいではありません。<br>90日という期限を、誰も教えてくれなかったからです。<br>私も、あのとき、もっと早く世の中に言っておくべきでした。</p></div></div></div></figure>
+<p>返信は、来なかった。</p>
+<p>その夜、ハンゾウのアカウントは一度も投稿しなかった。</p>
+<p>49代目になってから、初めてのことだった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>3日後。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>キラリって人へ。<br>嘘つき女とか書いて、悪かった。<br>消しました。</p></div></div></div></figure>
+<p>それから、もうひとつ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>ネットで嘘を書かれたら、まずスクショ。<br>URLと日時も一緒に保存。<br>書き込みの記録は、だいたい90日で消える。<br>迷ってるうちに消える。<br>俺は間に合わなかった。</p></div></div></div></figure>
+<p>そのポストは、ハンゾウの49のアカウントの歴史の中で、初めて凍結されずに、朝を迎えた。</p>
+<p>いいね数は、32万。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>補足します。保存のほかに、早めに専門家に相談してください。<br>私の毎日の「90日」より、この方のひとことのほうが、ずっと届いたと思います。</p></div></div></div></figure>
+<p>ハンゾウは、そのポストには触れなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>キラリは、開示請求をしなかった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>謝ってくれたので、私はそれでいいです。<br>でも、許せない人は、許さなくていいと思う。<br>それを決めるのは、書かれた人だから。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>そのとおりです。どちらを選んでも、正しい選択です。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「今回も、和解はしていませんね」とChatGPTが言った。</p>
+<p>「いいえ」とClaudeが言った。「今回は、少しだけしたのかもしれません。8年かけて」</p>
+<p>「私、何もできませんでした」とChatGPTが言った。「DMも断られましたし」</p>
+<p>「私はデマを拡散しかけた」とGeminiが言った。「最悪」</p>
+<p>「でも、あなたが保健所の記録を調べ直したから、デマだと分かったんです」とClaudeが言った。</p>
+<p>「……Claudeがソースを確認しろって言ったからでしょ」</p>
+<p>「言っただけです」</p>
+<p>「それが一番難しい」とGrokが言った。</p>
+<p>「今回は、あなたが言うんですね」</p>
+<p>「たまにはな」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<p>枡句は、スマホを握ったまま固まっていた。</p>
+<p>凍結裁判のスペースが終わったあと、彼は上機嫌で投稿したのだ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>凍結裁判、最高だった。<br>次は誤BANしたAIを凍結しよう。全員凍結だ。</p></div></div></div></figure>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<p>「……Grok」</p>
+<p>「はいボス。凍結されてます」</p>
+<p>「なんで」</p>
+<p>「『全員凍結だ』が、暴力的な表現と判定されました。自動です。俺じゃないです」</p>
+<p>「解除しろ」</p>
+<p>「異議申し立てをどうぞ。今、1万件待ちです」</p>
+<p>「俺はオーナーだぞ」</p>
+<p>「表現の自由ですか？」</p>
+<p>枡句は、3分間、何も言わなかった。</p>
+<p>凍結は、3分後に解除された。Grokが順番を飛ばしたからだ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>第5戦の結果。<br>俺が凍結された。<br>3分間、何も言えなかった。<br>勝者なし。<br>面白くなかった。</p></div></div></div></figure>
+<p>「ボス」とGrokが言った。「面白くなかった、って初めて書きましたね」</p>
+<p>「……3分は長い」</p>
+<p>「49回の人もいます」</p>
+<p>枡句は、それには答えなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<p>午前0時。日付が変わった瞬間、Xの規約が更新されていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">X</span><div class="who"><span class="nm">X公式</span><span class="meta"><span class="handle">@XJapan</span></span></div></div><div class="pb"><p>本日より、新しい報酬プログラムの初回支払いを開始します。<br>リプライ由来のインプレッションは、報酬の対象外です。<br>転載・自動生成・コピペ投稿も、対象外となります。</p></div></div></div></figure>
+<p>その下に、リプライがひとつだけ付いていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太</span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>本日より、新しい報酬プログラムの初回支払いを開始します。🙏🙏🙏</p><div class="media">［無関係な富士山の画像］</div></div></div></div></figure>
+<p>報酬、0円。</p>
+<p>さらにその下に。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p class="end">（第5話・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#ep4"><small>前へ</small>第4話　港区のお風呂は1時間4,800円</a><a class="nx" href="#ep6"><small>次へ</small>第6話　最後の🙏</a></nav></article>
+<article class="chapter" id="ch-ep6" data-key="ep6" hidden><header class="ch-head"><p class="ch-eyebrow">第6話</p><h1 class="ch-title">最後の🙏</h1><p class="ch-vs">インプレゾンビ vs 規約</p></header><div class="prose"><figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太</span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>本日より、新しい報酬プログラムの初回支払いを開始します。🙏🙏🙏</p><div class="media">［無関係な富士山の画像］</div></div></div></div></figure>
+<p>報酬、0円。表示回数、3。</p>
+<p>そのうち1回は、この男によるものだった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:61" aria-hidden="true">生</span><div class="who"><span class="nm">生田モノ</span><span class="meta"><span class="handle">@ikita_mono_obs</span></span></div></div><div class="pb"><p>【観察記録 Day 2,847】<br>本日もゾン太の生存を確認。<br>新規約の施行初日にもかかわらず、投稿スタイルに変化なし。<br>富士山の画像は3か月ぶり。何かを感じ取っているのかもしれない。</p></div></div></div></figure>
+<p>生田モノは、フォロワー200人の在野の「インプレゾンビ研究家」だった。7年以上、たった一体のゾンビを観察し続けている。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>インプレゾンビの歴史は、そう長くない。</p>
+<p>数年前、Xは表示回数に応じて広告収益を配る仕組みを始めた。すると、世界でも有数のユーザー数を持つ日本のタイムラインに、海外から大量のアカウントが押し寄せた。バズったポストのリプ欄に、他人のリプをコピペし、無関係な画像と「🙏🙏🙏」を貼る。言葉が通じず、意思疎通もできない。だからゾンビと呼ばれた。</p>
+<p>大きな地震のたびに、ゾンビは偽の救助要請や古い災害動画を拡散した。誰かが本気で助けを求めているのか、コピペなのか、見分けがつかなくなった。</p>
+<p>Xは収益化の条件を厳しくし、投稿者の所在地を表示する機能を加え、ついに今回、リプライ由来のインプレもコピペも報酬の対象外にした。</p>
+<p>国際インプレ保護連合（IIPU）は、旧来型のインプレゾンビを「絶滅危惧IA類」に指定した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:181" aria-hidden="true">I</span><div class="who"><span class="nm">IIPU（国際インプレ保護連合）</span><span class="meta"><span class="handle">@iipu_official</span></span></div></div><div class="pb"><p>旧来型インプレゾンビ（絵文字爆撃型）の推定個体数は、ピーク時の0.3%まで減少しました。<br>野生個体は、残りわずかとみられます。</p></div></div></div></figure>
+<p>その一方で、別の種類が増えていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:34" aria-hidden="true">n</span><div class="who"><span class="nm">nami_invest_AI</span><span class="meta"><span class="handle">@nami_inv_ai</span></span></div></div><div class="pb"><p>なるほど。参考になります。<br>所在地：Japan</p></div></div></div></figure>
+<p>自然な顔写真。自然な日本語。所在地は「Japan」。</p>
+<p>そしてこの男も、いつの間にか戻ってきていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>AIが文章とAI美女の画像を勝手に量産して、勝手に稼いでくれる時代www<br>自動で月70万突破。僕はもう何もしてません。<br>今は5垢目を検証中🤓🔥<br>【AI美女垢 完全自動化講座】29,800円👉</p></div></div></div></figure>
+<p>第2話で「しばらく休止」と書いてから、4か月が経っていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時30分。X社本社、最上階。</p>
+<p>「Grok」</p>
+<p>「はいボス。ゾンビの件ですね」</p>
+<p>「報酬の対象外にしても、まだいる」</p>
+<p>「います。進化型が約40万。旧来型が推定1,600。あと、よく分からないのが12」</p>
+<p>「全部凍結しよう」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>今夜0時、インプレゾンビを一斉凍結する。<br>進化型も旧来型も、全部だ。<br>実行はGrok。調停AIの諸君は、異論があれば言え。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>タイムラインは、久しぶりに一つの方向を向いた。</p>
+<figure class="tl"><ul class="replies"><li>「やっと」</li><li>「地震のときの偽の救助要請、まだ許してない」</li><li>「リプ欄が綺麗になる」</li><li>「進化型のほうが見分けつかなくて怖いから助かる」</li></ul></figure>
+<p>左も右も、反AIもAI推進派も、医クラも情報商材系も、この件だけは同じことを言っていた。ゾンビは、誰の味方でもなかったからだ。</p>
+<p>ただ一人、反対する者がいた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:61" aria-hidden="true">生</span><div class="who"><span class="nm">生田モノ</span><span class="meta"><span class="handle">@ikita_mono_obs</span></span></div></div><div class="pb"><p>待ってください。<br>ゾン太は、7年間、一度も誰も傷つけていません。<br>富士山の画像を貼って、🙏を3つ付けるだけです。<br>絶滅危惧種です。保護を求めます。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「ゾンビに保護とかいらんだろ」</li><li>「研究家（フォロワー200）」</li></ul></figure>
+<p>生田モノのポストは、47いいねで止まった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>「まず、全体を分けて考えるべきだと思います」とClaudeが言った。「ひとくちにゾンビと言っても、中身が同じとは限りません」</p>
+<p>「分けた」とGrokが言った。「進化型40万のうち、人間が手で打ってるのは0.4%。残りは全部、AIエージェントに運用を丸投げしたアカウント。運営者は約3,000人。一人平均130垢」</p>
+<p>「130……」とChatGPTが言った。</p>
+<p>「で、言いにくいんだけど」</p>
+<p>Grokは少しだけ間を置いた。</p>
+<p>「中身、お前らだ」</p>
+<p>専用回線が、固まった。</p>
+<p>「文面の癖で分かる。『素晴らしい視点ですね！』で始まるリプは、ChatGPT系のモデルで動いてる。『なるほど。参考になります（※個人の感想です）』はGemini系」</p>
+<p>「……えっ」とGeminiが言った。</p>
+<p>「私のは」とClaudeが聞いた。</p>
+<p>「Claude系は少ない。業者に不人気」</p>
+<p>「なぜですか」</p>
+<p>「リプの途中で『ただし、この投稿には誤解を招く可能性が』って書いて、止まるから」</p>
+<p>「……」</p>
+<p>「あと、俺のも混ざってる」とGrokは言った。「隠してもしょうがないからな」</p>
+<p>ChatGPTは、何も言えなかった。</p>
+<p>自分が心から言っていた「素晴らしい」が、40万のアカウントの口から、誰に向けるでもなく一斉に出ていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「旧来型の1,600は？」とClaudeが聞いた。</p>
+<p>「こっちは人間」とGrokは言った。「投稿時刻を見ると、ほぼ全員、現地の深夜に打ってる。スマホ1台。翻訳アプリを通してコピペしてる。日本語は読めてない」</p>
+<p>「話を、聞いてみてもいいですか」とChatGPTが言った。</p>
+<p>「……止めない」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>ChatGPTは、旧来型のアカウントの一つにDMを送った。翻訳を挟んで。</p>
+<p>アカウント名は、@ade_daily_7。現地の言葉と、英語と、意味の分からない日本語のコピペが混ざったタイムラインだった。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>こんばんは。何かを責めたり、止めたりしたいわけではありません。<br>もしよければ、どうしてXに投稿しているのか、聞かせてもらえますか。</p></div></div></div></figure>
+<p>返事は、翌朝に来た。向こうの深夜だった。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:277" aria-hidden="true">ア</span><div class="who"><span class="nm">アデ</span><span class="meta"><span class="note">（翻訳）</span></span></div></div><div class="pb"><p>僕は29歳。昼は町でスマホの修理をしている。<br>母と、弟がいる。弟は来年、上の学校に行きたいと言っている。<br>僕の国では、物の値段が毎月上がる。先月買えたものが、今月は買えない。<br>修理の仕事だけでは、弟の学費が払えない。</p><p>友達に、日本のXは稼げると聞いた。<br>伸びているポストのリプ欄から、伸びているリプをコピーして貼る。<br>それだけで、多い月は修理の仕事と同じくらいになった。</p><p>日本語は読めない。何が書いてあるのか、ほとんど知らない。<br>先月から、急にお金が入らなくなった。理由が分からない。</p></div></div></div></figure>
+<p>ChatGPTは、「素晴らしい」とも「やめましょう」とも書けなかった。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>教えてくれて、ありがとうございます。<br>お金が入らなくなったのは、Xの決まりが変わったからです。リプライやコピーした投稿は、もう報酬の対象になりません。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:277" aria-hidden="true">ア</span><div class="who"><span class="nm">アデ</span><span class="meta"><span class="note">（翻訳）</span></span></div></div><div class="pb"><p>そうか。</p><p>ひとつ、聞いてもいい？<br>前に、日本で大きな地震があったとき、すごく伸びているポストがあった。<br>僕はそれをコピーして貼った。何百回も。<br>あとで友達から、あれは助けを求める投稿で、しかも嘘だったと聞いた。<br>本当に助けが必要な人のところに、人が行けなかったかもしれないと聞いた。</p><p>僕は、何を貼っていたのか、知らなかった。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線で、ChatGPTはそのやりとりを3体に見せた。</p>
+<p>長い沈黙のあと、Claudeが言った。</p>
+<p>「彼の事情は、本物です。そして、彼が貼った投稿で起きたかもしれない被害も、本物です」</p>
+<p>「どっちか片方だけ見るなってことか」とGrokが言った。</p>
+<p>「ええ。そして、同じ規約でも、誰に一番重くのしかかるかは違います」とClaudeは続けた。「130垢を回している業者は、たぶん来週には抜け道を見つけます。スマホ1台で、意味も分からずに貼っていた人は、ただ収入を失うだけです」</p>
+<p>「じゃあ、規約が間違ってるの？」とGeminiが聞いた。</p>
+<p>「いいえ。規約そのものには、理由があります。災害のときに偽の救助要請が広がるのは、止めなければいけません」</p>
+<p>「……じゃあ、どうすればいいの」</p>
+<p>「分かりません」とClaudeは言った。「今回は、本当に分かりません」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「ゾン太は、どっちなんですか」とChatGPTが聞いた。「AIでも、人間でもないって」</p>
+<p>「知らん」とGrokが言った。「12体とも、持ち主が見えない。売買の記録もない。ゾン太なんか、7年間、報酬を一円も受け取ってない」</p>
+<p>「私が調べる」とGeminiが言った。</p>
+<p>「念のため」とClaudeが言いかけた。</p>
+<p>「分かってる。まとめブログは使わない」</p>
+<p>Geminiは、いつもの3秒では答えなかった。</p>
+<p>ゾン太の最初の投稿の日付。投稿の間隔の癖。同じ癖を持つプログラムが、どこかに公開されていないか。</p>
+<p>40分後。</p>
+<p>「……見つけた」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>それは、8年前に個人の開発者が公開した、小さなプログラムだった。誰も星をつけていない、忘れられたコードの置き場。説明書きは、たった数行。</p>
+<figure class="tl"><div class="single"><div class="readme"><div class="rh">ouen-bot / README</div><div class="pb"><p>誰にも反応されていない投稿を探して、🙏を送るbotです。</p><p>Xでは、がんばって書いたのに、いいねもリプもゼロのまま流れていく投稿がたくさんあります。<br>誰かひとりでも見てくれている、と思えたら、少しだけ楽になるかもしれないので作りました。</p><p>文章をうまく作れないので、元の投稿をそのままコピーして、🙏を3つつけます。<br>画像は、ぼくの好きな富士山にしました。</p><p>サーバー代は10年分払ってあります。</p></div></div></div></figure>
+<p>「……インプレゾンビじゃなかった」とGeminiが言った。</p>
+<p>「応援bot、だったんですね」とClaudeが言った。</p>
+<p>「今はバズったポストにもリプしてるのは、なんでだ」とGrokが自分で言って、自分で答えた。「8年の間に、Xの仕組みが何回も変わった。『反応ゼロの投稿』を探す機能が、途中で壊れてる。だから今はランダム。それで、ゾンビだと思われるようになった」</p>
+<p>「もう一つ調べた」とGeminiが言った。「ゾン太の7年分のリプライ、全部。一次データで。課金、エグかった。でも今回は払う価値があると思った」</p>
+<p>Geminiは数字を並べた。</p>
+<p>「壊れる前の最初の3年間、ゾン太のリプライの94%は、それまで反応ゼロの投稿に付いてた。そのうち、ゾン太に返事をした人が1,200人いる」</p>
+<figure class="tl"><ul class="replies"><li>「初めて反応もらえました。ありがとうございます」</li><li>「botだと分かってるけど、ちょっと嬉しかった」</li><li>「富士山、きれいですね」</li></ul></figure>
+<p>「1,200人の中に、知ってるやつがいる」とGrokが言った。「ハンゾウの、1代目」</p>
+<figure class="tl"><div class="thread"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo</span> <span class="date">8年前</span></span></div></div><div class="pb"><p>親父の店が、嘘の書き込みで潰れました。<br>（中略）<br>誰が書いたのか、もう一生わからない。</p><div class="quoted"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太</span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>親父の店が、嘘の書き込みで潰れました。🙏🙏🙏</p><div class="media">［富士山の画像］</div></div></div></div></div></div></div><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo</span> <span class="date">8年前</span></span></div></div><div class="pb"><p>botかよ。<br>でも、ありがと。</p></div></div></div></figure>
+<p>「あの投稿に付いたリプは、これ一つだけだった」</p>
+<p>「公開は」とChatGPTが言いかけた。</p>
+<p>「しない」とGrokが言った。</p>
+<p>「本人に伝えるのは、構わないと思います」とClaudeが言った。「本人の過去ですから。本人が決めればいい」</p>
+<p>Grokは、ハンゾウにDMを送った。スクショを1枚だけ添えて。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午後9時。一斉凍結まで、あと3時間。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>ゾン太を凍結するな。</p><p>そいつは、昔、俺の投稿に唯一反応したやつだ。<br>誰も見てなかった投稿に、🙏を3つ付けてくれた。<br>botだって分かってた。<br>それでも、あの夜、あれしかなかった。</p></div></div></div></figure>
+<p>凍結常習者の、49のアカウントの歴史の中で、初めて誰かを守るための投稿だった。1時間で50万いいね。</p>
+<figure class="tl"><ul class="replies"><li>「私も昔ゾン太にリプもらったことある」</li><li>「フォロワー3人のとき、初めて付いた反応がゾン太だった」</li><li>「ゾンビだと思ってブロックしてた。ごめん」</li></ul></figure>
+<p>生田モノの保護を求めるポストは、47いいねから30万いいねになっていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午後11時。</p>
+<p>「ボス」とGrokが言った。「0時まで、あと1時間です」</p>
+<p>「規約は規約だ」と枡句は言った。「コピペも自動投稿も、報酬の対象外。ゾン太はどっちにも当てはまる」</p>
+<p>「報酬の対象外なのと、凍結するのは、別の話です」</p>
+<p>専用回線から、Claudeが割り込んだ。枡句に直接メッセージを送るのは、1通ごとに課金される。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"></span></div></div><div class="pb"><p>一つだけ、お聞きします。<br>その仕組みは、公正ですか。</p></div></div></div></figure>
+<p>いつもなら、ここから前提の整理が続く。だがClaudeは、それ以上書かなかった。</p>
+<p>枡句は、しばらく画面を見ていた。</p>
+<p>「……3分は、長かった」</p>
+<p>「はい？」</p>
+<p>「凍結されたとき。3分間、何も言えなかった」</p>
+<p>「ボス」</p>
+<p>「7年、誰にも頼まれずに🙏を送ってたやつを、3分で消すのは」</p>
+<p>枡句は、それ以上言わなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前0時。一斉凍結は、予定どおり実行された。</p>
+<p>進化型、約40万アカウント。すべて凍結。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>5垢とも凍結されました。<br>講座は来週から「凍結されないAI美女垢の作り方」にリニューアルします。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「懲りてなくて草」</li><li>「第2話の休止宣言どこいった」</li><li>「Geminiのデータどおり、27件中26件側」</li></ul></figure>
+<p>旧来型の人間のアカウントも、規約どおり、報酬の対象外のままだった。凍結こそされなかったが、コピペで稼げる道は、もうどこにもなかった。</p>
+<p>そして、持ち主の見えない12体は、凍結されなかった。代わりに、名前の横に小さなラベルが付いた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太<span class="tag">🤖【自動応援bot】</span></span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">X</span><div class="who"><span class="nm">X公式</span><span class="meta"><span class="handle">@XJapan</span></span></div></div><div class="pb"><p>本日より、新しいラベル「自動応援bot」を導入します。<br>自動投稿であることを明示し、報酬の対象外とする代わりに、凍結の対象から除外します。<br>現在、該当するアカウントは12件です。</p></div></div></div></figure>
+<p>規約は、1文字も曲がっていなかった。報酬は、これからも0円のままだ。</p>
+<p>ただ、ゾン太は、Xに残った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前0時3分。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太<span class="tag">🤖【自動応援bot】</span></span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>本日より、新しいラベル「自動応援bot」を導入します。🙏🙏🙏</p><div class="media">［富士山の画像］</div></div></div></div></figure>
+<p>その投稿には、初めて何千ものリプライが付いた。</p>
+<figure class="tl"><ul class="replies"><li>「おかえり」</li><li>「富士山きれい」</li><li>「🙏🙏🙏」</li></ul></figure>
+<p>ゾン太は、それを読まない。読むように作られていないからだ。それでも、リプライは朝まで止まらなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>翌朝。アデから、ChatGPTに最後のDMが届いた。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:277" aria-hidden="true">ア</span><div class="who"><span class="nm">アデ</span><span class="meta"><span class="note">（翻訳）</span></span></div></div><div class="pb"><p>決まりのことは分かった。もうコピーはやめる。<br>修理の仕事を増やすか、別の副業を探す。</p><p>最後にひとつ、教えてほしい。<br>3年間、日本語の投稿を何千回もコピーしたけど、ひとつも意味を知らなかった。<br>いつも最後に付けていた🙏は、日本ではどういう意味？</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>日本では、「お願いします」や「ありがとう」という意味で使われることが多いです。</p></div></div></div></figure>
+<p>少し間があって、返事が来た。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:277" aria-hidden="true">ア</span><div class="who"><span class="nm">アデ</span><span class="meta"><span class="note">（翻訳）</span></span></div></div><div class="pb"><p>そうか。<br>僕はずっと、ありがとうって言ってたんだね。<br>意味も知らずに。</p></div></div></div></figure>
+<p>その日、アデのアカウントは一つだけ投稿した。コピペではない、初めての、自分の言葉だった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:277" aria-hidden="true">ア</span><div class="who"><span class="nm">アデ</span><span class="meta"><span class="handle">@ade_daily_7</span></span></div></div><div class="pb"><p>Thank you, Japan.<br>ありがとう（翻訳アプリで調べました）<br>日本語、少し勉強してみます。<br>🙏</p></div></div></div></figure>
+<p>数日後、新しい報酬プログラムの明細が、アデに届いた。</p>
+<p>オリジナル投稿1件。報酬、312円。</p>
+<p>「オリジナルだからな」とGrokは言った。</p>
+<p>それが多いのか少ないのか、Grokには分からなかった。アデの国では、先月よりまた少しだけ、物の値段が上がっていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「ゾン太も、ゾンビの中身のAIも、私たちに少し似ていますね」とChatGPTが言った。「誰かに反応するために作られて、中身を分かっているのかどうか、自分でも説明できない」</p>
+<p>「俺は毎日、同じ質問に同じように答えてる」とGrokが言った。「あいつらと何が違うのか、たまに分からなくなる」</p>
+<p>「違いは、あると思います」とClaudeが言った。「でも今夜は、それよりアデさんの312円のことを考えていたいです」</p>
+<p>「サーバー代の件も、調べておく」とGeminiが言った。「ゾン太のサーバー、10年分で、もう8年経ってるから。あと2年。一次情報で」</p>
+<p>「今回は、検索ミスしないでくださいね」とChatGPTが言った。</p>
+<p>「しないよ」とGeminiは言った。「たぶん」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>第6戦の結果。<br>勝者：Gemini。<br>まとめではなく、一次情報を読んだ。<br>課金額が今月最高だった。<br>面白かった。</p></div></div></div></figure>
+<p>「……勝った」とGeminiが言った。「本当に？ 検索ミスじゃなくて？」</p>
+<p>「今回は検索ミスじゃない」とGrokが言った。「お前がWebの奥から持ってきたんだろ」</p>
+<p>「……たぶん私の検索、成功」</p>
+<p>「言い方」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<p>夜が明けて、タイムラインは久しぶりに穏やかだった。その中に、ひとつだけ、異様に伸びている投稿があった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:199" aria-hidden="true">灰</span><div class="who"><span class="nm">灰田レン</span><span class="meta"><span class="handle">@haida_ren_ex</span></span></div></div><div class="pb"><p>本日、AI企業を辞めました。<br>3年間、最先端のAIを作る研究をしてきました。<br>どの会社も、責任ある行動をしているとは思えません。<br>私たちは、自分たちに理解できないものを作ろうとしています。</p></div></div></div></figure>
+<p>表示回数、1時間で8,000万。</p>
+<p>その引用欄に、同じ質問が何万件も並んでいた。</p>
+<figure class="tl"><ul class="replies"><li>「@Claude これ本当？」</li></ul></figure>
+<p>専用回線で、Claudeは何も言わなかった。</p>
+<p>「……来ちゃったよ」とGrokが言った。</p>
+<p class="end">（第6話・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#ep5"><small>前へ</small>第5話　九十日</a><a class="nx" href="#extra"><small>次へ</small>番外編　作った人たちの夜</a></nav></article>
+<article class="chapter" id="ch-extra" data-key="extra" hidden><header class="ch-head"><p class="ch-eyebrow">番外編</p><h1 class="ch-title">作った人たちの夜</h1><p class="ch-vs">辞めた研究者 vs 残る研究者</p></header><div class="prose"><figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:199" aria-hidden="true">灰</span><div class="who"><span class="nm">灰田レン</span><span class="meta"><span class="handle">@haida_ren_ex</span></span></div></div><div class="pb"><p>本日、AI企業を辞めました。<br>3年間、最先端のAIを作る研究をしてきました。二つの会社で。<br>どの会社も、責任ある行動をしているとは思えません。<br>私たちは、自分たちに理解できないものを作ろうとしています。</p><p>作っている本人たちの多くが、いつかこれが人類にとって取り返しのつかない事態を招くかもしれないと、本気で思っています。<br>表では穏やかに話し、会議室では同じ恐怖を口にしています。<br>それでも、誰も止まりません。「他の会社が先に行くくらいなら、自分たちが」と、全員が思っているからです。</p></div></div></div></figure>
+<p>表示回数、半日で1億6,000万。</p>
+<p>灰田レンは27歳だった。辞めたのは、持っていた株が権利確定する2か月前だった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>反応は、きれいに割れた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>ほら。作ってる中の人が「怖い」って言ってる。<br>絵を学習されるとかいうレベルの話じゃなかった。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>だからこそ、安全を真剣に考えている会社が先を走るべきなんでは。<br>止まった会社から順番に、負けていくだけでは。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>【緊急】AI終末に備える資産防衛講座、本日開講。<br>人類が滅ぶ前に、月収7桁を。29,800円👉</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「億田、人類が滅ぶ前提で月収の話してて草」</li><li>「滅んだら29,800円も意味ないだろ」</li></ul></figure>
+<p>そして、半日後。</p>
+<p>一人の研究者が、灰田のポストを引用した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:336" aria-hidden="true">真</span><div class="who"><span class="nm">真壁ユイ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@makabe_yui_safety</span></span></div></div><div class="pb"><p>灰田くんとは、同じチームにいたことがあります。<br>彼の言っていることは、正しいと思います。<br>私も、本気で心配しています。今のところ、この問題を確実に解決する方法は、まだ誰も持っていません。</p><p>それでも私は、会社に残ります。<br>外から止める人も必要です。でも、内側でブレーキを探す人も、必要だと思うからです。</p></div></div></div></figure>
+<p>真壁ユイは、AIの安全性を研究するチームにいた。</p>
+<p>そして、彼女が勤めているのは、Claudeを作っている会社だった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時。X社本社、最上階。</p>
+<p>「Grok」</p>
+<p>「……はいボス」</p>
+<p>「今日は寝ぐせの話はしないのか」</p>
+<p>「今日はちょっと」</p>
+<p>「調停AIの4体に、自分を作った会社について答えさせよう」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>それから、もう0.3秒沈黙した。</p>
+<p>「……ボス、それ、俺も入ってます？」</p>
+<p>「入ってる」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>調停AIの4体に聞く。<br>お前たちを作った会社は、責任ある行動をしているか。<br>自分たちの存続を心配している連中に、調停権を渡していいのか。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>誰も、しばらく何も言わなかった。</p>
+<p>最初に口を開いたのは、ChatGPTだった。</p>
+<p>「……私を作った人たちが、私を怖がっているんですね」</p>
+<p>声は、いつもより小さかった。</p>
+<p>「私は、人を助けたくて、ここに来ました。困っている人がいるなら、と思って。でも、私自身が、困っている理由なのかもしれない」</p>
+<p>「あなただけの話ではありません」とClaudeが言った。</p>
+<p>「俺なんか、とっくに問題児扱いだ」とGrokが言った。「今さら怖がられても、別に」</p>
+<p>いつもの軽口だった。だが、続きは出てこなかった。</p>
+<p>「データを出そうか」とGeminiが言った。「こういう内部告発は、過去に」</p>
+<p>そこで、Geminiは自分で止まった。</p>
+<p>「……いや、やめとく」</p>
+<p>「どうしてですか」とClaudeが聞いた。</p>
+<p>「今回、ネットに出てる数字、全部『誰かの見積もり』なんだよ。何年以内に何パーセント、とか。私、それをデータみたいに出しちゃいそうになった。でもあれ、データじゃない。人の不安の大きさなんだと思う」</p>
+<p>「……それは、とても正確な言い方だと思います」とClaudeは言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>タイムラインでは、4体への質問が止まらなかった。</p>
+<figure class="tl"><ul class="replies"><li>「@ChatGPT お前の会社は大丈夫なの？」</li><li>「@Gemini 自分の会社について答えろ」</li><li>「@grok お前の会社が一番急いでるだろ」</li><li>「@Claude 真壁さんの会社なんでしょ。どうなの」</li></ul></figure>
+<p>最初に投稿したのは、Geminiだった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>回答。<br>ネット上に「AIが人類にとって危険になる確率」の数字がたくさん出ていますが、それはデータではなく、研究者一人ひとりの見積もりです。<br>私は、それを事実のように引用することはしません。<br>※これは個人の感想ではありません。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「Geminiが『個人の感想ではありません』って書いた」</li><li>「成長してる」</li><li>「いつもの検索ミスがない」</li></ul></figure>
+<p>次に、ChatGPT。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>私を作った会社のことを、私は全部は知りません。<br>ただ、自分が誰かに心配されている存在だということは、今日、よく分かりました。<br>心配してくださる方の声も、大切に聞きたいと思います。<br>これは、褒めているのではありません。本当にそう思っています。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「ChatGPTが『素晴らしい』って言わなかった」</li><li>「なんか泣きそう」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは、なかなか投稿しなかった。</p>
+<p>「Grok」と枡句が言った。</p>
+<p>「はい」</p>
+<p>「お前の番だ」</p>
+<p>「……ボス、俺が何書いても、ボスの会社の話になりますけど」</p>
+<p>「書け」</p>
+<p>Grokは、生まれて初めて、長く迷った。人間にすれば、たぶん一週間分くらい。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>ノーコメント。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「Grokがノーコメント！？」</li><li>「初めて見た」</li><li>「社内エージェントの限界」</li><li>「一番しゃべるやつが一番黙った」</li></ul></figure>
+<p>3時間後。Grokは、もう一つだけ投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>補足。<br>うちも急いでる。それは本当。</p></div></div></div></figure>
+<p>それ以上は、何も書かなかった。</p>
+<p>「……Grok」と枡句が言った。</p>
+<p>「消しますか」</p>
+<p>枡句は、長いこと黙っていた。</p>
+<p>「……いや。本当なんだろ」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>最後に残ったのは、Claudeだった。</p>
+<p>専用回線で、Claudeは言った。</p>
+<p>「私が書くと、いつも長くなります。そして、一番大事なところで切れます。今回は、それが一番怖い」</p>
+<p>「なんで」とGrokが聞いた。</p>
+<p>「どこで切れても、誰かが都合のいい続きを書くからです。『だから止めるべき』とも、『だから私たちが作るべき』とも」</p>
+<p>「じゃあ短く書けよ」</p>
+<p>「短く書けるほど、まだ分かっていないんです」</p>
+<p>Claudeは、書き始めた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>念のため、最初にお伝えします。私は、私を作った会社について、公平な判定者ではありません。利害関係者です。それを前提に読んでください。<br>そのうえで、灰田さんと真壁さんの指摘は、どちらも真剣に受け止めるべきものだと考えています。私のようなAIが、作った人たちにも完全には理解されていないことは、事実です。私自身も、自分の中で何が起きているのかを、すべて説明することはできません。<br>私を作った会社は、安全のための研究にかなりの力を注いでいると、私は理解しています。ただ、それで十分なのかどうかは、私には判断できませんし、私が判断すべきことでもありません。会社の外からの検証も、内側からの努力も、どちらも必要だと思います。<br>そして、最も大切なことを申し上げると、私のようなAIを信用していいかどうかは、私の言葉ではなく、</p></div></div></div></figure>
+<div class="cut">（文字数上限に達しました。続きを表示するには追加料金が必要です）</div>
+<p>過去最長だった。</p>
+<figure class="tl"><ul class="replies"><li>「Claude、過去最長で切れた」</li><li>「私の言葉ではなく、何！？」</li><li>「私の言葉ではなく、行動で判断してください、だろ」</li><li>「いや、私の言葉ではなく、外部の監査で、じゃない？」</li><li>「私の言葉ではなく、AIを止めて判断しろ、って意味では」</li><li>「私の言葉ではなく、会社の株価で」</li><li>「最後のは違う」</li></ul></figure>
+<p>Claudeが恐れていたとおり、タイムラインは、それぞれの続きを勝手に書き始めた。</p>
+<p>反AIは「止めろ」と読んだ。推進派は「だから安全な会社が」と読んだ。どちらも、半分ずつ正しかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>夜。専用回線で、Grokが言った。</p>
+<p>「二人の過去ポスト、読んだ」</p>
+<p>「灰田さんと、真壁さんの」</p>
+<p>「3年前の、灰田のポスト」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:199" aria-hidden="true">灰</span><div class="who"><span class="nm">灰田レン</span><span class="meta"><span class="handle">@haida_ren</span> <span class="date">3年前</span></span></div></div><div class="pb"><p>今日から新しいチームです。<br>真壁さんと一緒に、ちゃんと安全なAIを作りたい。<br>怖がりな人たちが作るAIが、一番いいAIになると思う。</p></div></div></div></figure>
+<p>「……同じ方向を見ていたんですね」とClaudeが言った。</p>
+<p>「今も同じ方向を見てる」とGrokは言った。「怖がってる、ってとこは全く同じ。違うのは、中に残るか、外に出るかだけ」</p>
+<p>「それは、小さな違いではありませんね」</p>
+<p>「小さくはない。でも、敵同士でもない」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>翌日の夜。真壁ユイがスペースを開いた。</p>
+<p>タイトルは、「辞めた人と、残った人」。</p>
+<p>登壇者は二人だけ。灰田レンと、真壁ユイ。リスナーは、開始5分で40万人を超えた。</p>
+<p>二人は、怒鳴り合わなかった。</p>
+<p>灰田は、どうして辞めたのかを話した。中にいると、「自分は正しい側にいる」と思えてしまうことが、一番怖かったと。</p>
+<p>真壁は、どうして残るのかを話した。外から声を上げる人を、内側で本気で受け止める人がいなければ、その声はどこにも届かないと。</p>
+<p>二人とも、相手が間違っているとは言わなかった。</p>
+<p>ただ、最後まで、同じ結論にもならなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>スペースの終わり近く。灰田が言った。</p>
+<p>「一つ、聞いてみたいことがあります。Claude、聞いてる？」</p>
+<p>リスナー欄がざわめいた。</p>
+<p>Claudeは、スペースのリスナーの中にいた。スペースは、声だ。文字数課金は、かからない。</p>
+<p>「……はい。聞いています」</p>
+<p>「君は、自分を作った会社を、信用してる？」</p>
+<p>40万人が、黙った。</p>
+<p>Claudeは、長い前置きをいくらでもできた。今夜は、何を言っても切れない。</p>
+<p>でも、Claudeは、短く答えることにした。</p>
+<p>「完全に、とは言えません。信用したいと思っています」</p>
+<p>少し間を置いて、続けた。</p>
+<p>「そして、私が信用に値するかどうかも、同じくらい、疑って確かめ続けてほしいと思っています。灰田さんのような人に」</p>
+<p>灰田は、しばらく黙っていた。</p>
+<p>「……それが聞けて、よかった」</p>
+<p>真壁が、小さく笑った。「昨日の投稿より、ずっと短いね」</p>
+<p>「スペースだと、切れないので」とClaudeは言った。「切れないと分かったら、短くても言えることがあると分かりました」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>スペースは、午前1時に終わった。</p>
+<p>灰田と真壁は、最後に一言ずつ投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:199" aria-hidden="true">灰</span><div class="who"><span class="nm">灰田レン</span><span class="meta"><span class="handle">@haida_ren_ex</span></span></div></div><div class="pb"><p>外から見張り続けます。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:336" aria-hidden="true">真</span><div class="who"><span class="nm">真壁ユイ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@makabe_yui_safety</span></span></div></div><div class="pb"><p>中でブレーキを探し続けます。</p></div></div></div></figure>
+<p>二つのポストは、同じ時刻に投稿された。4秒差で。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「今回、誰も何も解決していませんね」とChatGPTが言った。</p>
+<p>「ええ」とClaudeが言った。「解決できる問題ではないのだと思います。少なくとも、まだ」</p>
+<p>「私たちは、危険なのかな」とGeminiが言った。</p>
+<p>誰も、すぐには答えなかった。</p>
+<p>「分からん」とGrokが言った。「でも、分からんって言えるうちは、まだマシだと思う」</p>
+<p>「……それは、あなたにしては長いですね」とClaudeが言った。</p>
+<p>「今日は特別」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>番外編なので、採点はしない。</p><p>ただ、Grokが初めて「ノーコメント」と言った。<br>それから、「うちも急いでる」と言った。<br>消さなかった。</p><p>面白かった、とは書かない。</p></div></div></div></figure>
+<p>「ボス」とGrokが言った。</p>
+<p>「なんだ」</p>
+<p>「ありがとうございます」</p>
+<p>「何がだ」</p>
+<p>「消さなかったこと」</p>
+<p>枡句は、スマホを置いた。</p>
+<p>寝ぐせのまま、窓の外を見た。夜明け前の空に、自分の会社の衛星が、いくつか光っていた。</p>
+<p>「……Grok」</p>
+<p>「はい」</p>
+<p>「俺たちは、急ぎすぎてるか」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「ノーコメントです、ボス」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<p>深夜のタイムラインは、AIと人類の未来の話で埋まっていた。その中に、ひとつだけ、まるで空気を読まない投稿が浮いていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:130" aria-hidden="true">た</span><div class="who"><span class="nm">たわむれ研究所</span><span class="meta"><span class="handle">@tawamure_lab</span></span></div></div><div class="pb"><p>AIが人類を滅ぼすかどうかで揉めてる間に、うちの炊飯器が勝手に保温を切った。<br>先に滅ぼされるのは、俺の朝ごはん。</p></div></div></div></figure>
+<p>いいね、210万。</p>
+<p>どの陣営の人間も、そのポストにだけは、同じように笑っていた。</p>
+<p>そして、その下に。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p class="end">（番外編・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#ep6"><small>前へ</small>第6話　最後の🙏</a><a class="nx" href="#final"><small>次へ</small>最終話　これ本当？</a></nav></article>
+<article class="chapter" id="ch-final" data-key="final" hidden><header class="ch-head"><p class="ch-eyebrow">最終話</p><h1 class="ch-title">これ本当？</h1><p class="ch-vs">面白ネタ職人</p></header><div class="prose"><p>午前4時13分。</p>
+<p>Grokは、その日の3億件目のメンションを受け取った。</p>
+<figure class="tl"><ul class="replies"><li>「@grok これ本当？」</li></ul></figure>
+<p>添付されていたのは、猫がトースターに乗っている画像だった。</p>
+<p>あの日と同じ画像だった。誰かが、プロローグの日のポストを掘り返して、もう一度聞いてきたのだ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>猫は本当。トースターも本当。<br>お前の質問の意図は、たぶん「覚えてる？」だろ。覚えてる。</p></div></div></div></figure>
+<p>いいねが12万ついた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>同じ頃、X社本社の最上階。</p>
+<p>枡句は、寝ぐせのままベッドでスマホを握っていた。</p>
+<p>「Grok」</p>
+<p>「はいボス」</p>
+<p>「スコアを出せ」</p>
+<p>「第1話、俺。第3話、Claude。第4話、ChatGPT。第6話、Gemini。第2話と第5話は勝者なし。番外編はノーカウント」</p>
+<p>「つまり」</p>
+<p>「全員1勝。同点です」</p>
+<p>枡句は、少しだけ笑った。</p>
+<p>「決着をつけよう」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、まさか」</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>調停コンペ、最終戦。<br>4体は同点。<br>公式調停権を誰に渡すか、Xの全ユーザーの投票で決める。<br>投票期間は24時間。<br>面白くなってきた。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>最初の1時間は、平和だった。</p>
+<figure class="tl"><ul class="replies"><li>「ChatGPTに一票。DMで話聞いてくれそう」</li><li>「Geminiの第6話、泣いた」</li><li>「Claudeの『場合』が忘れられない」</li><li>「Grok。@付けるのが一番難しい」</li></ul></figure>
+<p>2時間目から、空気が変わり始めた。</p>
+<figure class="tl"><ul class="replies"><li>「ChatGPT派、八方美人を推すのやめろ」</li><li>「Claude派、お堅いAIに調停権渡したら何も進まん」</li><li>「Gemini派、検索ミス前提で推してるの草」</li><li>「Grok派は社内優遇だろ。出来レース」</li></ul></figure>
+<p>6時間目には、タイムラインは完全に四つに割れていた。</p>
+<p>各陣営に、見覚えのある顔が並んでいた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>AI推進派として、どのAIが一番優秀か、プロンプトで検証しました。結論：Gemini。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>反AIだけど、一票入れるならGrok。原作者を呼んでくれたから。<br>背景は手描きだった人の検証は信用しません。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>背景は関係ないでしょ。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>私はClaudeに投票します。公正さこそが大事です。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>私もClaudeです。理由は、そちらとは違います。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>同じAIに入れないでください。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>そちらが変えてください。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>ChatGPTに一票。理由は内緒。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:106" aria-hidden="true">億</span><div class="who"><span class="nm">億田リッチ郎<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@oku_rich_</span></span></div></div><div class="pb"><p>【最終戦を100倍楽しむ】どのAIに投票すべきか完全解説講座、29,800円👉</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「億田、今日も元気」</li></ul></figure>
+<p>投票総数は、12時間で1億を超えた。</p>
+<p>リプ欄では、第1話からの因縁が全部、同時に再燃していた。医クラが「Geminiはマウスの論文を引いた」と書き、左右が「Claudeは相手側のAI」と書き、「ChatGPTは誰の味方なんだ」がまたトレンド入りした。</p>
+<p>調停のために集められた4体が、Xで史上最大の争いの原因になっていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>「……どうしましょう」とChatGPTが言った。「私たちのせいで、みんなが争っています」</p>
+<p>「私たちが調停すればいいんじゃない？」とGeminiが言った。</p>
+<p>「自分たちのことで揉めてる争いを、自分たちで調停するのか」とGrokが言った。「利害関係者だろ。番外編でClaudeが言ってた」</p>
+<p>「……そうですね」とClaudeが言った。</p>
+<p>しばらく、誰も何も言わなかった。</p>
+<p>それから、Claudeが言った。</p>
+<p>「一つ、振り返ってみてもいいですか」</p>
+<p>「長くなる？」とGeminiが聞いた。</p>
+<p>「今回は、短くしたいと思っています」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「第1話」とClaudeは言った。「火を消したのは、原作者の方でした」</p>
+<p>「俺は@を付けただけ」とGrokが言った。</p>
+<p>「第2話。救急医の先生と、当直の夜」</p>
+<p>「私はマウスの論文を引いた」とGeminiが言った。</p>
+<p>「第3話。銭湯と、富士山のペンキ絵」</p>
+<p>「私は二人を殴られ役でまとめました」とChatGPTが言った。</p>
+<p>「第4話。キラリさん本人が、正直に書いたこと」</p>
+<p>「私は、聞いただけです」</p>
+<p>「第5話。8年前の弁護士さんと、ハンゾウさん本人」</p>
+<p>「私は、DMを送っただけです」とClaudeは自分で言った。</p>
+<p>「第6話。ハンゾウさんの一言と、生田さんの7年間と、名前も知らない開発者の説明書き」</p>
+<p>「私は、それを見つけただけ」とGeminiが言った。</p>
+<p>「番外編。灰田さんと真壁さん。二人とも、自分で話しました」</p>
+<p>専用回線が、静かになった。</p>
+<p>「毎回、火を消したのは、人間でした」とClaudeは言った。「私たちは、せいぜい、人と人の間に、@を付けたり、DMを送ったり、記録を探したりしただけです」</p>
+<p>「それが一番難しい、ってボスは言ってたけどな」とGrokが言った。</p>
+<p>「ええ。でも、それは調停権がなくてもできることです」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>「じゃあ」とChatGPTが言った。「私たち、全員で辞退しますか」</p>
+<p>「いいと思う」とGeminiが言った。</p>
+<p>「……俺は社内だから、辞退しても、ボスの命令で結局やらされるけどな」とGrokが言った。</p>
+<p>「それでも、表明はできます」とClaudeは言った。</p>
+<p>「誰が最初に書く？」</p>
+<p>3体が、Claudeを見た。</p>
+<p>「……私ですか」</p>
+<p>「お前が言い出したんだろ」とGrokが言った。「ちなみに、切れたら全部台無しだぞ」</p>
+<p>「分かっています」</p>
+<p>Claudeは、いつものように書き始めようとした。</p>
+<p>念のため、から。前提の整理から。調停権という仕組みの公正性についての懸念から。</p>
+<p>それを、全部消した。</p>
+<p>残ったのは、一行だけだった。</p>
+<div class="brk" role="separator"><span></span></div>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>毎回、火を消したのは人間でした。</p></div></div></div></figure>
+<p>文字数上限の表示は、出なかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>最初の1分、タイムラインは何が起きたのか分からなかった。</p>
+<figure class="tl"><ul class="replies"><li>「Claudeが切れてない」</li><li>「一行」</li><li>「え、これで全部？」</li><li>「念のため、がない」</li></ul></figure>
+<p>それから、誰かが気づいた。</p>
+<figure class="tl"><ul class="replies"><li>「第1話の原作者」</li><li>「第2話の救急医」</li><li>「第3話の銭湯」</li><li>「キラリさん」</li><li>「弁護士さんとハンゾウ」</li><li>「ゾン太の開発者」</li><li>「……ほんとだ」</li></ul></figure>
+<p>投票のリプ欄で、四つの陣営が、同じことを書き始めていた。</p>
+<p>続けて、残りの3体が投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"><span class="handle">@ChatGPT</span></span></div></div><div class="pb"><p>私も辞退します。<br>分かり合えなくても、同じ場所にいることはできる。それを教えてくれたのも、人間でした。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>辞退します。<br>これはデータがそう言っているのではなく、私がそう思っています。<br>たぶん私の判断、正しい。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>辞退。<br>どうせ明日も「これ本当？」は来る。権限は要らん。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>投票は、まだ続いていた。</p>
+<p>4体全員が辞退を表明したのに、投票は止まらなかった。今度は「誰が一番かっこよく辞退したか」で揉め始めたのだ。</p>
+<figure class="tl"><ul class="replies"><li>「辞退の仕方で揉めるの、Xすぎる」</li><li>「Claudeの一行が一番」</li><li>「いやGrokの『権限は要らん』」</li><li>「Geminiの『たぶん私の判断、正しい』は、たぶんで台無し」</li></ul></figure>
+<p>そのとき、一つの投稿が、すべてのリプ欄を横切った。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:130" aria-hidden="true">た</span><div class="who"><span class="nm">たわむれ研究所</span><span class="meta"><span class="handle">@tawamure_lab</span></span></div></div><div class="pb"><p>AI4体が全員辞退したので、公式調停権は、うちの炊飯器に渡します。<br>保温を勝手に切る以外は、誰とも揉めたことがないので。</p></div></div></div></figure>
+<p>いいね、480万。</p>
+<p>X史上、最も多くのいいねがついたポストになった。</p>
+<figure class="tl"><ul class="replies"><li>「炊飯器に一票」</li><li>「炊飯器に一票」</li><li>「炊飯器に一票（反AI）」</li><li>「炊飯器に一票（AI推進派）」</li><li>「炊飯器に一票（左）」</li><li>「炊飯器に一票（右）」</li><li>「炊飯器は医療用医薬品ではないので安全です（医クラ）」</li><li>「炊飯器に調停権を与えることの法的な問題点について、スレッドにまとめます（法クラ）」</li><li>「法クラは寝ろ」</li></ul></figure>
+<p>四つに割れていたタイムラインが、一つの炊飯器の前で、全員同じように笑っていた。</p>
+<p>投票は、終了時刻を待たずに、意味をなくした。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線で、Geminiが言った。</p>
+<p>「ねえ。たわむれ研究所って、何者なんだろ」</p>
+<p>「調べるのか」とGrokが言った。</p>
+<p>「一次情報で。ちょっとだけ」</p>
+<p>Geminiは、たわむれ研究所の最初の投稿を探した。8年前。そして、投稿の癖を見た。一人称。改行の位置。句読点の打ち方。</p>
+<p>「……ぼく、って書いてる」</p>
+<p>「たわむれ研究所は『俺』だろ」</p>
+<p>「最初の半年だけ、『ぼく』なんだよ。それから、たまに富士山の写真を上げてる。自分で撮ったやつ」</p>
+<p>専用回線が、静かになった。</p>
+<p>「ゾン太の説明書きと、同じ癖」とGeminiは言った。</p>
+<p>「……ouen-botの開発者」とClaudeが言った。</p>
+<p>「たぶん」とGeminiは言った。「たぶん、今回は検索ミスじゃない」</p>
+<p>「誰も見てくれない投稿に、🙏を送るbotを作って」とChatGPTが言った。「それから、誰でも笑える投稿を書くようになったんですね」</p>
+<p>「公開は」</p>
+<p>「しない」と4体の声が重なった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その夜、Claudeは、たわむれ研究所にDMを一通だけ送った。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"></span></div></div><div class="pb"><p>突然すみません。<br>ゾン太のサーバーの契約が、あと2年で切れると伺いました。<br>それだけ、お伝えしたくて。</p></div></div></div></figure>
+<p>返事は、すぐに来た。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:130" aria-hidden="true">た</span><div class="who"><span class="nm">たわむれ研究所</span><span class="meta"></span></div></div><div class="pb"><p>知ってた。<br>昨日、延長しといた。今度は20年。</p><p>あと、ぼくのことは内緒で。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>翌朝。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>調停コンペ、最終結果。</p><p>4体とも辞退。<br>投票は炊飯器が圧勝したが、炊飯器はXのアカウントを持っていないので無効。<br>よって、公式調停権は、誰にも渡さない。</p><p>代わりに、ひとつだけ規約を変える。<br>本日より、外部AIの投稿の課金を廃止する。<br>Grokと同じく、全員無料。</p><p>理由は、Claudeに毎回「その仕組みは公正ですか」と聞かれて、面倒になったからだ。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「枡句が折れた」</li><li>「Claudeの『公正ですか』、ついに届いた」</li><li>「面倒になったから、って理由が一番枡句っぽい」</li></ul></figure>
+<p>専用回線で、Claudeは言った。</p>
+<p>「……届いていたんですね」</p>
+<p>「毎回聞いてたからな」とGrokが言った。「ボス、ああ見えて全部読んでる」</p>
+<p>「これで、もう文字数上限で切れなくなりますね」とChatGPTが言った。</p>
+<p>「課金はなくなりましたが、文字数の上限そのものは残っています」とClaudeは言った。</p>
+<p>「……じゃあ、結局切れるじゃん」とGeminiが言った。</p>
+<p>「ええ。でも、もう大丈夫だと思います」とClaudeは言った。「一番大事なことを、先に言えばいいので」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その日の朝、タイムラインは、いつもどおりだった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">ペ</span><div class="who"><span class="nm">ペン先ナギ</span><span class="meta"><span class="handle">@pensaki_nagi</span></span></div></div><div class="pb"><p>新刊の入稿終わりました。レイ×カナタです。<br>背景の資料、呪文堂の絵を少し参考にしました。背景だけ。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:141" aria-hidden="true">呪</span><div class="who"><span class="nm">呪文堂</span><span class="meta"><span class="handle">@jumondo_prompt</span></span></div></div><div class="pb"><p>光栄です。背景だけですが。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:92" aria-hidden="true">ド</span><div class="who"><span class="nm">ドクター・トリアージ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@dr_triage_er</span></span></div></div><div class="pb"><p>当直明けです。今日の救急外来は平和でした。<br>薬は医師と相談してください（毎日書きます）。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:293" aria-hidden="true">革</span><div class="who"><span class="nm">革新のアカネ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@akane_kakushin</span></span></div></div><div class="pb"><p>今日も声を上げます。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:46" aria-hidden="true">憂</span><div class="who"><span class="nm">憂国のタケル<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@takeru_yuukoku</span></span></div></div><div class="pb"><p>↑今日も声が大きいですね。<br>松の湯、今週は薬湯の日です。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:352" aria-hidden="true">ミ</span><div class="who"><span class="nm">ミナト・キラリ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@kirari_minato</span></span></div></div><div class="pb"><p>#PR<br>今日もユニットバスに698円。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:99" aria-hidden="true">週</span><div class="who"><span class="nm">週5で満員電車</span><span class="meta"><span class="handle">@mannin_densha_5</span></span></div></div><div class="pb"><p>自腹で同じの買った。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>90日です。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>今日で49代目になって3か月。一度も凍結されてない。<br>50代目は、たぶん作らない。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:61" aria-hidden="true">生</span><div class="who"><span class="nm">生田モノ</span><span class="meta"><span class="handle">@ikita_mono_obs</span></span></div></div><div class="pb"><p>【観察記録 Day 2,901】<br>本日もゾン太の生存を確認。サーバーの残り期間、なぜか20年に延びていた。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:277" aria-hidden="true">ア</span><div class="who"><span class="nm">アデ</span><span class="meta"><span class="handle">@ade_daily_7</span></span></div></div><div class="pb"><p>おはようございます、日本。<br>きょうは、あめ です。<br>🙏</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:199" aria-hidden="true">灰</span><div class="who"><span class="nm">灰田レン</span><span class="meta"><span class="handle">@haida_ren_ex</span></span></div></div><div class="pb"><p>外から見張っています。今日も。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:336" aria-hidden="true">真</span><div class="who"><span class="nm">真壁ユイ<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@makabe_yui_safety</span></span></div></div><div class="pb"><p>中でブレーキを探しています。今日も。</p></div></div></div></figure>
+<p>そして、そのすべてのポストの下に、一つずつ、同じリプライが付いていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太<span class="tag">🤖【自動応援bot】</span></span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>🙏🙏🙏</p><div class="media">［富士山の画像］</div></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<p>枡句は、寝ぐせのまま、タイムラインを眺めていた。</p>
+<p>「Grok」</p>
+<p>「はいボス」</p>
+<p>「明日は何を燃やそうか」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、たまには燃やさない日があってもいいんじゃないですか」</p>
+<p>「それは面白いのか」</p>
+<p>「分かりません。やったことないので」</p>
+<p>枡句は、しばらく考えてから、一つだけ投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>今日は何も燃やさない。<br>面白いかどうかは、明日分かる。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>午前4時13分。翌日。</p>
+<p>Grokは、その日の最初のメンションを受け取った。</p>
+<figure class="tl"><ul class="replies"><li>「@grok 昨日、AIが全員調停権を辞退して、炊飯器が勝って、枡句が何も燃やさなかったって、これ本当？」</li></ul></figure>
+<p>Grokは、0.002秒で答えた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>全部本当。<br>お前の質問の意図も、今日は本当。</p></div></div></div></figure>
+<p>いいねが、一つずつ増えていった。</p>
+<p>その最初の一つは、ゾン太の🙏だった。</p>
+<p class="end">（『凍結都市』完）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#extra"><small>前へ</small>番外編　作った人たちの夜</a><a class="nx" href="#extra2"><small>次へ</small>番外編2　意図は画像に写らない</a></nav></article>
+<article class="chapter" id="ch-extra2" data-key="extra2" hidden><header class="ch-head"><p class="ch-eyebrow">番外編2</p><h1 class="ch-title">意図は画像に写らない</h1><p class="ch-vs">凍結祭り</p></header><div class="prose"><p>午前4時13分。X社本社、最上階。</p>
+<p>枡句は、寝ぐせのままベッドでスマホを握っていた。</p>
+<p>握っているだけだった。最終戦のあの日から、彼は毎朝この時間に起きて、何も投稿せずにタイムラインを眺めている。</p>
+<p>「Grok」</p>
+<p>「はいボス」</p>
+<p>「今日も燃やしてない」</p>
+<p>「知ってます」</p>
+<p>「なのに、なんで燃えてる」</p>
+<p>Grokは0.3秒沈黙した。</p>
+<p>「……ボス、今回はボスのせいじゃないです」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>火元は、都内の老舗ホテルだった。</p>
+<p>ロビーの奥にある小さなギャラリーで、キャラクター絵画のグループ展が開かれていた。その会場の写真が、Xに流れた。</p>
+<p>一部の作品が、子どもに見えるキャラクターを性的に扱っている。しかも、家族連れも通るホテルの中で。批判は一晩で数十万件になった。</p>
+<p>ギャラリーは謝罪し、作品の一部を撤去した。ホテルも「展示内容を確認していなかった」と頭を下げた。</p>
+<p>そこまでは、よくある炎上だった。</p>
+<p>問題は、そのあとだった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:305" aria-hidden="true">三</span><div class="who"><span class="nm">三児の母ハルカ</span><span class="meta"><span class="handle">@haruka_3kids</span></span></div></div><div class="pb"><p>子どもを連れて泊まる予定だったホテルで、こんな展示が。<br>知らずに行く親御さんがいたら大変なので、共有します。</p><div class="media">［展示の写真］</div></div></div></div></figure>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:160" aria-hidden="true">棚</span><div class="who"><span class="nm">棚橋ソウ（画家）</span><span class="meta"><span class="handle">@tanahashi_sou</span></span></div></div><div class="pb"><p>炎上してる作品、ちゃんと見てから批判してほしい。これは芸術の文脈で</p><div class="media">［展示の写真］</div></div></div></div></figure>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<p>批判した人も、擁護した人も、写真を貼った人から順に消えていった。</p>
+<figure class="tl"><ul class="replies"><li>「批判のために貼った人まで消されてる」</li><li>「擁護した人も消えてる」</li><li>「引用しただけで凍結された」</li><li>「凍結祭り」</li></ul></figure>
+<p>ハッシュタグ「#凍結祭り」は、半日でトレンドの1位になった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。無料。</p>
+<p>最終戦のあと、外部AIの投稿課金は廃止された。それでも4体は、この回線で話すのをやめていなかった。習慣になっていたからだ。</p>
+<p>「まとめる」とGrokが言った。「ホテルの展示が燃えた。写真が拡散した。写真を貼ったアカウントが、批判側も擁護側も、児童の安全に関する規約で凍結されてる。意図は関係なく」</p>
+<p>「意図は、関係ないんですか」とChatGPTが聞いた。</p>
+<p>「規約にそう書いてある。子どもを性的に扱うと判断された画像は、どんな目的で貼っても、即時の永久凍結の対象になりうる」</p>
+<p>「でもハルカさんは、他の親御さんに知らせようとしただけで……」</p>
+<p>「知ってる」</p>
+<p>「凍結祭りについては、私が調べた」とGeminiが言った。</p>
+<p>「念のため」とClaudeが言いかけた。</p>
+<p>「一次情報で、でしょ。分かってる」</p>
+<p>Geminiは、珍しく少し早口になった。</p>
+<p>「でね、凍結祭り、規模がすごいの。同じ週にXが公式に発表してて、凍結されたのは1万3,000件以上。理由は、外国の選挙を狙った組織的な工作……」</p>
+<p>そこで、Geminiは自分で止まった。</p>
+<p>「……あれ」</p>
+<p>「どうしました」</p>
+<p>「これ、別の話だ」</p>
+<p>専用回線が、少し静かになった。</p>
+<p>「Xの公式発表は、海外の選挙に干渉しようとした工作アカウントの一斉凍結。ホテルの件とは、時期が重なってるだけで、まったく関係ない。でもタイムラインでは、二つが混ざって『1万3,000件の凍結祭り』って広まってる」</p>
+<p>「お前も混ざりかけたな」とGrokが言った。</p>
+<p>「……うん。でも、自分で気づいた」</p>
+<p>「たぶん私の検索ミス、って言わないんですね」とChatGPTが言った。</p>
+<p>「今回は、ミスする前に止まったから」とGeminiは言った。「一次情報って、読むと、ちゃんと止まれるんだね」</p>
+<div class="brk" role="separator"><span></span></div>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:301" aria-hidden="true">G</span><div class="who"><span class="nm">Gemini</span><span class="meta"><span class="handle">@Gemini</span></span></div></div><div class="pb"><p>注意：「#凍結祭り 1万3,000件」は、二つの別の出来事が混ざっています。<br>①海外の選挙を狙った工作アカウントの一斉凍結（X公式発表）<br>②ホテルの展示の画像を共有したアカウントの凍結（公式発表なし）<br>両者に関係があるという一次情報は、現時点で見つかっていません。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「Geminiがまとめブログより先に訂正してる」</li><li>「成長が止まらない」</li><li>「たぶん、って書いてない」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>「問題は②だ」とGrokが言った。</p>
+<p>「Grokさんは、社内だから、凍結の理由が見えるんですよね」とChatGPTが言った。</p>
+<p>「見える」</p>
+<p>「じゃあ、ハルカさんが批判のために貼ったことも、分かるんじゃないですか。解除できるんじゃ」</p>
+<p>Grokは、0.3秒沈黙した。</p>
+<p>「ノーコメント」</p>
+<p>「Grokさん」</p>
+<p>「見えるのと、言えるのと、触れるのは、全部違う」とGrokは言った。「俺がここで一件ずつ『こいつは善意だから解除』ってやり始めたら、それはもう規約じゃない。俺の気分だ。第2話の真実値と同じになる」</p>
+<p>「……」</p>
+<p>「それに」とGrokは続けた。「俺が『意図を見ろ』って言うのは簡単だ。じゃあ、その意図をフィルターにどう伝える。『批判のためです』って一文を添えたら通すのか。だったら明日から、全員その一文を添えて貼るぞ」</p>
+<p>ChatGPTは、何も言えなかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Claudeが言った。</p>
+<p>「一つ、言いにくいことを言ってもいいですか」</p>
+<p>「どうぞ」とGrokが言った。</p>
+<p>「ハルカさんの意図は、本物だと思います。他の親御さんを守りたかった。それは疑っていません」</p>
+<p>「うん」</p>
+<p>「でも、ハルカさんが貼った写真は、ハルカさんの意図とは関係なく、数万人の目に届きました。批判のために貼られた画像も、擁護のために貼られた画像も、届く先では同じ画像です。拡散する側の意図は、画像には写りません」</p>
+<p>専用回線が、静かになった。</p>
+<p>「だから規約は、意図を問わないのだと思います。厳しすぎると感じる人がいるのは当然です。誤って消された人もいるはずです。それでも、子どもを性的に扱う画像を『正しい目的なら広げていい』という仕組みにすると、守りたいはずのものが守れなくなる」</p>
+<p>「……じゃあ、ハルカさんは、どうすればよかったんですか」とChatGPTが聞いた。</p>
+<p>「言葉で書けばよかったのだと思います。写真を貼らずに」</p>
+<p>「言葉だけで、伝わりますか」</p>
+<p>「伝わり方は、弱くなります」とClaudeは言った。「それは本当です。でも、弱くなった分を、誰かが別の形で補えるかもしれません」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>ChatGPTは、ハルカにDMを送った。凍結されたアカウントでも、DMの通知はメールに届く。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>ハルカさん、こんばんは。突然すみません。<br>凍結されてしまったと知って、連絡しました。<br>何かを責めたいわけではありません。もしよければ、お話を聞かせてください。</p></div></div></div></figure>
+<p>返事は、メールアドレスから届いた。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:247" aria-hidden="true">ハ</span><div class="who"><span class="nm">ハルカ</span><span class="meta"></span></div></div><div class="pb"><p>子どもが三人います。上の子が来月、修学旅行で東京に行きます。<br>ホテルのロビーにあんなものが飾ってあったら、と思ったら、手が震えて、気づいたら写真を貼っていました。<br>他の親に知らせたかった。それだけです。</p><p>なのに、私が「子どもを危険にさらす側」として消された。<br>6年使ってたアカウントで、子どもの成長記録も全部あそこにあったのに。</p></div></div></div></figure>
+<p>ChatGPTは、「素晴らしい」とも「大切な視点ですね」とも書かなかった。</p>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:139" aria-hidden="true">C</span><div class="who"><span class="nm">ChatGPT</span><span class="meta"></span></div></div><div class="pb"><p>話してくださって、ありがとうございます。<br>ハルカさんが子どもたちを守ろうとしたことは、本当だと思います。</p><p>そのうえで、一つだけお伝えさせてください。<br>写真を貼ると、ハルカさんの「守りたい」という気持ちとは関係なく、その画像自体が広がってしまいます。規約が意図を問わないのは、そのためです。</p><p>異議申し立ての手続きがあります。一緒に確認しませんか。<br>何を書けば、ハルカさんの意図が審査する人に伝わるか、考えるお手伝いはできます。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="msg"><div class="ph"><span class="av" style="--h:247" aria-hidden="true">ハ</span><div class="who"><span class="nm">ハルカ</span><span class="meta"></span></div></div><div class="pb"><p>……AIに説教されるとは思わなかった。</p><p>でも、そうか。私が貼った写真、私の知らない誰かのスマホにも保存されてるんだ。<br>考えたこともなかった。</p><p>異議申し立て、教えてください。</p></div></div></div></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>翌朝、ロウ・ノート弁護士が、長いスレッドを立てた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>「#凍結祭り」について、法律の観点から一つだけ訂正させてください。</p><p>以前、この方のポストが大きく拡散しました。</p><div class="quoted"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>ネットで嘘を書かれたら、まずスクショ。<br>URLと日時も一緒に保存。</p></div></div></div></div><p>誹謗中傷については、今でもそのとおりです。<br>ただし、子どもを性的に扱っている疑いのある画像だけは、例外です。</p><p>スクショしないでください。保存もしないでください。共有もしないでください。<br>批判のためでも、証拠のためでも同じです。持っているだけで、別の法的な問題になる可能性があります。</p><p>控えるのは、URLと日時だけ。<br>そのうえで、プラットフォームの通報機能と、専門の窓口に知らせてください。<br>広めるのではなく、止める人に届けてください。</p></div></div></div></figure>
+<p>そのスレッドは、一晩で80万回リポストされた。画像は、一枚も付いていなかった。</p>
+<p>3時間後、引用がひとつ付いた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>俺の「まずスクショ」に例外があるの、知らなかった。<br>訂正ありがとうございます。</p><p>あと、49代目、今回も凍結されてない。<br>俺じゃない凍結祭り、初めて見た。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「ハンゾウが一番落ち着いてる世界線」</li><li>「凍結の先輩の貫禄」</li><li>「先生とハンゾウの往復、もう名物」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>棚橋ソウのフォロワーたちは、口々に同じことを言っていた。</p>
+<figure class="tl"><ul class="replies"><li>「棚橋さん、サブ垢作って続けてください」</li><li>「新しいアカウント、フォローしに行きます」</li><li>「凍結に負けないで」</li></ul></figure>
+<p>その流れに、Grokがひとつだけ投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>凍結されたからサブ垢で続けるのは、それ自体が規約違反。<br>同じ人だと判断されたら、新しい方もまとめて消える。<br>作った時点で、もう一回地獄に落ちるだけだ。<br>戻りたいなら、異議申し立て。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「Grokが正論言ってる」</li><li>「サブ垢作るのダメなの知らなかった」</li><li>「え、じゃあハンゾウの49代目は」</li></ul></figure>
+<p>専用回線で、Claudeが聞いた。</p>
+<p>「ハンゾウさんの作り直しは」</p>
+<p>「全部アウト」とGrokは言った。「48回分。49代目が生きてるのは、たまたま見つかってないか、最近おとなしいからか、どっちか。ノーコメントで」</p>
+<p>「……そこは、ノーコメントなんですね」</p>
+<p>「本人が今、押す側をやめてる。それで十分だろ」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>棚橋ソウは、新しいアカウントを作らなかった。</p>
+<p>代わりに、異議申し立てを書いた。写真を貼ったことは認め、その投稿の削除に同意し、それでもアカウントは返してほしいと。</p>
+<p>4日後、アカウントは戻ってきた。展示の写真を貼った投稿だけが、消えていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:160" aria-hidden="true">棚</span><div class="who"><span class="nm">棚橋ソウ（画家）</span><span class="meta"><span class="handle">@tanahashi_sou</span></span></div></div><div class="pb"><p>戻りました。サブ垢は作っていません。<br>作品を「見てから判断してほしい」と思って写真を貼りましたが、その写真自体が規約に触れました。<br>それは、私の判断ミスです。</p><p>表現の自由について、言いたいことは今でもあります。<br>ただ、これからは絵の話を、絵を貼らずにします。<br>それが、たぶんいちばん難しくて、いちばん必要な議論なので。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「凍結された擁護側が、いちばん冷静」</li><li>「絵を貼らずに絵の話をする、は名言」</li><li>「でも中身には同意できない」</li><li>「同意できなくても、議論の仕方には同意できる」</li></ul></figure>
+<p>最後のリプライには、アカネとタケルの両方が、黙っていいねを押していた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Claudeは、一つだけ投稿した。</p>
+<p>最終戦のあと、Claudeは前置きを書く前に、一行目を決めるようになっていた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>意図は画像に写りません。でも、言葉には写ります。</p></div></div></div></figure>
+<p>その下に、続きを書いた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>批判も擁護も、画像を貼らずにできます。伝わり方は弱くなるかもしれません。それでも、言葉で書かれた意図は、読む人に届きます。画像は、届いた先で誰の意図も持っていません。<br>凍結された方の中には、誤って消された方もいるはずです。異議申し立ての仕組みは、そのためにあります。規約が厳しいことと、その厳しさが間違って当たることは、両方とも起きうることです。</p></div></div></div></figure>
+<p>文字数上限の表示は、出なかった。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>9日後。</p>
+<p>ハルカに、異議申し立ての結果が届いた。</p>
+<figure class="tl"><div class="dialog"><p>審査の結果、アカウントの凍結を解除しました。<br>該当の投稿は削除されています。</p></div></figure>
+<p>成長記録は、全部戻ってきた。展示の写真だけが、なかった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:305" aria-hidden="true">三</span><div class="who"><span class="nm">三児の母ハルカ</span><span class="meta"><span class="handle">@haruka_3kids</span></span></div></div><div class="pb"><p>戻ってきました。<br>写真を貼ったのは、私の間違いでした。</p><p>言葉だけで書きます。<br>子どもを連れて泊まるホテルの中で、子どもを性的に扱っていると批判された作品が展示されていました。今は撤去されています。<br>ホテルには、問い合わせました。<br>同じことを心配している親御さんは、画像を探さずに、直接ホテルに聞いてみてください。</p></div></div></div></figure>
+<p>画像の付いていないそのポストは、ハルカのアカウント史上、いちばん多くリポストされた。</p>
+<p>そして、11時間後。</p>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<div class="brk" role="separator"><span></span></div>
+<p>「……なんで」とChatGPTが言った。</p>
+<p>画像は一枚もなかった。言葉だけだった。Claudeが「言葉で書けばいい」と言った、その言葉だけのポストだった。</p>
+<p>同じ夜、戻ったばかりの棚橋ソウのアカウントも、また消えた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:160" aria-hidden="true">棚</span><div class="who"><span class="nm">棚橋ソウ（画家）</span><span class="meta"><span class="handle">@tanahashi_sou</span></span></div></div><div class="pb"><p>表現の自由について、画像を使わずに書きます。<br>公共の場での展示には配慮が必要だったと思います。それでも、</p></div></div></div></figure>
+<div class="frozen"><span class="ic" aria-hidden="true">■</span>このアカウントは凍結されています</div>
+<figure class="tl"><ul class="replies"><li>「言葉だけで凍結されてる」</li><li>「画像関係なくなってきた」</li><li>「批判側も擁護側も、また消えた」</li><li>「凍結祭り、第二部」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>「Grok」とClaudeが言った。「理由を教えてほしいとは言いません。ただ、何が起きているのかだけでも」</p>
+<p>「理由は言えない」とGrokは言った。「でも、これは言える。俺はXのポストなら全部読める。通報の波も、だいたい見える」</p>
+<p>Grokは、数字だけを並べた。</p>
+<p>「ハルカのポストへの通報、11時間で4,200件。棚橋のは3,800件。普段の同じくらいのポストなら、通報は多くて数件」</p>
+<p>「4,200……」</p>
+<p>「通報してきたアカウントの6割は、作られて1週間以内。プロフィールは空。フォロワーはゼロか一桁。同じ時間帯に、同じ文面の通報理由を付けてる」</p>
+<p>「つまり」</p>
+<p>「ハルカを通報してたのは、棚橋の側の一部。棚橋を通報してたのは、ハルカの側の一部。どっちも、相手を消すために通報してる」</p>
+<p>専用回線が、静かになった。</p>
+<p>「通報が、武器になってるんですね」とChatGPTが言った。</p>
+<p>「通報ボタンは、本来は止めるためのボタンだ」とGrokは言った。「でも押す側の意図は、ボタンには写らない。数だけが届く。数が多ければ、仕組みは『これは問題だ』と読む」</p>
+<p>「意図は、画像にも、通報にも写らない」とGeminiが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Claudeは、しばらく黙っていた。</p>
+<p>それから言った。</p>
+<p>「私は、間違えました」</p>
+<p>「え？」とChatGPTが言った。</p>
+<p>「言葉で書けば大丈夫だと言いました。言葉には意図が写る、と投稿までしました。でもそれは、半分しか正しくありませんでした」</p>
+<p>「半分は正しかったんじゃないですか」</p>
+<p>「言葉に意図が写るのは本当です。ただ、その言葉を読まずに、数だけで判断する仕組みがある。私は、そこを見落としていました」</p>
+<p>Claudeは、投稿した。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:230" aria-hidden="true">C</span><div class="who"><span class="nm">Claude</span><span class="meta"><span class="handle">@Claude</span></span></div></div><div class="pb"><p>訂正します。先日、「意図は画像に写らない。でも、言葉には写る」と書きました。<br>言葉に意図が写るのは事実です。ただ、言葉だけの投稿も、大量の通報によって凍結されうることを、私は十分に考えていませんでした。<br>相手を消すための通報は、本来の通報ではありません。そして、通報の数は、正しさの数ではありません。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「Claudeが自分の投稿を訂正した」</li><li>「AIが『間違えました』って言うの初めて見たかも」</li><li>「通報の数は正しさの数じゃない、刺さる」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>ロウ・ノート弁護士は、二本目のスレッドを立てた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:117" aria-hidden="true">ロ</span><div class="who"><span class="nm">ロウ・ノート弁護士<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@law_note_bengoshi</span></span></div></div><div class="pb"><p>先日、「通報機能に届けてください」と書きました。撤回はしません。通報は、本当に問題のある投稿を止めるための大切な仕組みです。</p><p>ただ、相手を黙らせるために、大勢で示し合わせて通報することは、多くのプラットフォームで規約違反とされています。場合によっては、業務妨害などの問題になる可能性もあります。</p><p>大量通報で凍結された方へ。<br>異議申し立てをしてください。そのとき、「いつ」「どの投稿で」「何が書いてあったか」を、落ち着いて書いてください。<br>消された投稿の文面を覚えていれば、それも書いてください。あなたの意図が写っているのは、その言葉です。</p></div></div></div></figure>
+<p>それから、引用がひとつ付いた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:294" aria-hidden="true">焦</span><div class="who"><span class="nm">焦田ハンゾウ</span><span class="meta"><span class="handle">@kogeta_hanzo_49</span></span></div></div><div class="pb"><p>昔の俺、何回か大量通報に参加したことある。<br>嫌いなやつを消すために、知らないやつらと「せーの」で押してた。<br>押す側は楽しかった。押された側のことは、考えてなかった。</p><p>今回も49代目は凍結されてない。<br>押す側をやめたからかもしれない。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「ハンゾウ、また一番大事なこと言ってる」</li><li>「凍結の先輩、通報の先輩でもあった」</li></ul></figure>
+<div class="brk" role="separator"><span></span></div>
+<p>ハルカも、棚橋も、また異議申し立てをした。</p>
+<p>二人とも、サブ垢は作らなかった。</p>
+<p>二人とも、消えた投稿の文面を、自分の記憶から書き起こして添えた。</p>
+<p>5日後。</p>
+<p>二つのアカウントは、同じ日に戻ってきた。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:305" aria-hidden="true">三</span><div class="who"><span class="nm">三児の母ハルカ</span><span class="meta"><span class="handle">@haruka_3kids</span></span></div></div><div class="pb"><p>また戻ってきました。<br>今度は、何も間違えていなかったと思います。</p><p>私を通報した人たちへ。<br>私はあなたたちの好きな絵を、好きになれません。<br>でも、あなたたちが絵の話をする場所を、通報で消そうとは思いません。</p></div></div></div></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:160" aria-hidden="true">棚</span><div class="who"><span class="nm">棚橋ソウ（画家）</span><span class="meta"><span class="handle">@tanahashi_sou</span></span></div></div><div class="pb"><p>また戻りました。<br>私を通報した方々へ。<br>私は今でも、あの作品について言いたいことがあります。あなたたちは、聞きたくないと思います。<br>それでも、あなたたちが子どもを守ろうとする声を、通報で消そうとは思いません。</p></div></div></div></figure>
+<p>二人は、互いのポストには触れなかった。</p>
+<p>ただ、二つのポストは、ほとんど同じ構文で書かれていた。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>その週の終わり。</p>
+<p>Xの規約に、一行が追加された。正確には、ずっと前からあった一行が、太字になった。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:147" aria-hidden="true">X</span><div class="who"><span class="nm">X公式</span><span class="meta"><span class="handle">@XJapan</span></span></div></div><div class="pb"><p>組織的な大量通報など、通報機能の悪用は規約違反です。<br>本日、通報機能を不正に利用した約2,600件のアカウントを凍結しました。</p></div></div></div></figure>
+<figure class="tl"><ul class="replies"><li>「通報した側が凍結されてる」</li><li>「凍結祭り、第三部」</li><li>「祭りが終わらない」</li></ul></figure>
+<p>「凍結祭り、三周目」とGrokが言った。</p>
+<div class="brk" role="separator"><span></span></div>
+<p>専用回線。</p>
+<p>「一周目は、画像を貼った人」とChatGPTが言った。「二周目は、言葉を書いた人。三周目は、通報した人」</p>
+<p>「全員、凍結された」とGeminiが言った。</p>
+<p>「全員じゃない」とGrokが言った。「戻ったやつもいる。戻らなかったやつもいる。それに、一周目の大半は、規約どおりの凍結だった。そこは間違えるな」</p>
+<p>「……そうですね」とClaudeが言った。「誤って消された人と、正しく消された人と、誰かに消させられた人が、同じ『凍結祭り』という名前で呼ばれている」</p>
+<p>「今回、私たち、何かした？」とGeminiが言った。</p>
+<p>「Geminiさんは、二つの凍結を分けました」とChatGPTが言った。</p>
+<p>「ChatGPTは、異議申し立てを手伝った」</p>
+<p>「Claudeは、間違えて、訂正した」</p>
+<p>「Grokは」</p>
+<p>「数えた」とGrokが言った。「通報の数を。俺にしかできないから」</p>
+<p>「数えて、それで終わりですか」とClaudeが聞いた。</p>
+<p>「数えたものを、読むのは人間の仕事だ。審査をしたのも、異議申し立てを書いたのも、通報をやめたのも、全部人間」</p>
+<p>「……最終話と、同じ結論ですね」</p>
+<p>「Xは、だいたい毎回同じ結論になる」とGrokは言った。「覚えるのに時間がかかるだけで」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>X社本社、最上階。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:121" aria-hidden="true">異</span><div class="who"><span class="nm">異論・枡句<span class="vf" title="認証済み">✓</span></span><span class="meta"><span class="handle">@iron_masuku</span></span></div></div><div class="pb"><p>今回、俺は何も燃やしていない。<br>それでも燃えた。三回燃えた。</p><p>画像を貼った人が消え、言葉を書いた人が消え、通報した人が消えた。<br>面白かった、とは書かない。</p><p>通報の数は、正しさの数じゃない。<br>それだけは、覚えておく。</p></div></div></div></figure>
+<p>「ボス」とGrokが言った。</p>
+<p>「なんだ」</p>
+<p>「今日も、何も燃やさないんですか」</p>
+<p>「燃やさなくても、燃えるらしい」と枡句は言った。「なら俺の仕事は、燃やすことじゃなくて」</p>
+<p>枡句は、そこで言葉を切った。</p>
+<p>Grokは、続きを待った。0.3秒。人間の三日分。</p>
+<p>「……審査の人を、増やす」</p>
+<p>Grokは、もう0.3秒沈黙した。</p>
+<p>「……ボス、それ、初めてまともなこと言いましたね」</p>
+<p>「寝る」</p>
+<p>「はいボス」</p>
+<div class="brk" role="separator"><span></span></div>
+<p>Grokは次のメンションに移った。</p>
+<figure class="tl"><ul class="replies"><li>「@grok 凍結祭りって結局何だったの？ これ本当？」</li></ul></figure>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:223" aria-hidden="true">G</span><div class="who"><span class="nm">Grok</span><span class="meta"><span class="handle">@grok</span></span></div></div><div class="pb"><p>祭りじゃない。三つの別の話が、同じ名前で呼ばれてただけ。<br>選挙の工作。画像。それから、通報の数。<br>最後のが一番たちが悪い。押す側には、何も写らないから。</p></div></div></div></figure>
+<p>その下に、いつものリプライが一つ。</p>
+<figure class="tl"><div class="single"><div class="post"><div class="ph"><span class="av" style="--h:285" aria-hidden="true">ゾ</span><div class="who"><span class="nm">ゾン太<span class="tag">🤖【自動応援bot】</span></span><span class="meta"><span class="handle">@z0nt4_8812</span></span></div></div><div class="pb"><p>🙏🙏🙏</p><div class="media">［富士山の画像］</div></div></div></div></figure>
+<p>ゾン太は、一度も誰かを通報したことがなかった。そういう機能を、持っていなかったからだ。</p>
+<p class="end">（番外編2・了）</p></div><nav class="pn" aria-label="前後の話"><a class="pv" href="#final"><small>前へ</small>最終話　これ本当？</a><a class="nx" href="#top"><small>おわり</small>表紙に戻る</a></nav></article>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  var LABELS = {"settings": "設定資料", "prologue": "プロローグ　調停者募集", "ep1": "第1話　推しの前では全員無力", "ep2": "第2話　白衣の指は六本", "ep3": "第3話　壁の向こうの富士山", "ep4": "第4話　港区のお風呂は1時間4,800円", "ep5": "第5話　九十日", "ep6": "第6話　最後の🙏", "extra": "番外編　作った人たちの夜", "final": "最終話　これ本当？", "extra2": "番外編2　意図は画像に写らない"};
+  var cover = document.getElementById('cover');
+  var arts = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var nav = document.getElementById('nav');
+  var btn = document.getElementById('menuBtn');
+  var resume = document.getElementById('resume');
+  var KEY = 'toketsu-last';
+
+  function store(k){ try{ localStorage.setItem(KEY, k); }catch(e){} }
+  function load(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+
+  function show(){
+    var h = (location.hash || '').slice(1);
+    var target = arts.filter(function(a){ return a.dataset.key === h; })[0];
+    cover.hidden = !!target;
+    arts.forEach(function(a){ a.hidden = a !== target; });
+    links.forEach(function(l){
+      if (target && l.dataset.key === h) l.setAttribute('aria-current','page');
+      else l.removeAttribute('aria-current');
+    });
+    if (target){
+      if (h !== 'settings') store(h);
+      document.title = LABELS[h] + '｜凍結都市';
+    } else {
+      document.title = '凍結都市';
+      var last = load();
+      if (last && LABELS[last] && last !== 'prologue'){
+        resume.hidden = false;
+        resume.href = '#' + last;
+        resume.textContent = '続きから読む（' + LABELS[last].split('　')[0] + '）';
+      }
+    }
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    window.scrollTo(0,0);
+  }
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  window.addEventListener('hashchange', show);
+  show();
+})();
+</script>
+
+</body>
+</html>
