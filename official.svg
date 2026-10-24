@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><circle cx="128" cy="128" r="124" fill="#171f28"/><g><path d="M63 56h29l101 144h-29zM196 56 61 200" fill="none" stroke="#ffffff" stroke-width="15"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="t d">
+<title id="t">架空の運営事務局</title><desc id="d">青緑の丸い背景に、クリーム色のメガホンと小さな通知の線を描いた独自アイコン</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#498CA1"/><stop offset="1" stop-color="#26556C"/></linearGradient></defs>
+<circle cx="128" cy="128" r="124" fill="url(#bg)"/>
+<circle cx="128" cy="128" r="105" fill="none" stroke="#9AD7D3" stroke-width="2" opacity=".5"/>
+<g stroke-linecap="round" stroke-linejoin="round">
+<path d="M65 107 Q65 97 76 97 H99 V154 H76 Q65 154 65 143Z" fill="#F6E8C4" stroke="#EED5A6" stroke-width="3"/>
+<path d="M100 98 Q144 96 178 70 V181 Q144 154 100 154Z" fill="#FDF5DB" stroke="#EED5A6" stroke-width="4"/>
+<path d="M77 154 L88 193 Q91 200 102 197 L117 191 L105 154Z" fill="#D7AB7B" stroke="#EED5A6" stroke-width="4"/>
+<path d="M178 90 Q198 98 198 126 Q198 155 178 162Z" fill="#F8BE7C" stroke="#F9DB9D" stroke-width="3"/>
+<path d="M207 99 L223 87 M207 127 H227 M206 155 L222 167" fill="none" stroke="#FFD69A" stroke-width="8"/>
+</g>
+</svg>

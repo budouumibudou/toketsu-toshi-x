@@ -165,7 +165,7 @@ const CAST=[
 const EP_IDS=['settings',...EPISODES.map(e=>e.id)];
 let originalPromise=null, originalDocument=null, fontLevel=0;
 const $=s=>document.querySelector(s);
-function asset(name){return name+(name.includes('?')?'&':'?')+'v=84'}
+function asset(name){return name+(name.includes('?')?'&':'?')+'v=85'}
 
 async function getOriginal(){
  if(originalDocument)return originalDocument;
@@ -210,7 +210,7 @@ const PROFILE_BY_HANDLE={
  '@chatgpt':'chatgpt','@claude':'claude','@gemini':'gemini','@grok':'grok','@iron_masuku':'masuku-social',
  ...Object.fromEntries(RESIDENTS.map(c=>[c.handle.toLowerCase(),c.id])),
  '@kogeta_hanzo_47':'hanzo','@kogeta_hanzo_48':'hanzo','@kogeta_hanzo':'hanzo',
- '@haida_ren':'ren','@xjapan':'official','@tanaka_diet_day1':'tanaka','@nami_inv_ai':'invest','@kenji_jp_fx':'fx'
+ '@haida_ren':'ren','@x_unei_2031':'official','@tanaka_diet_day1':'tanaka','@nami_inv_ai':'invest','@kenji_jp_fx':'fx'
 };
 const USER_IMAGES={lawyer:'lawyer.svg',hoshino:'hoshino.svg',yu:'yu.svg',houchou:'houchou.svg',iipu:'iipu.svg',lab:'lab.svg',official:'official.svg',tanaka:'tanaka.svg',invest:'invest.svg',fx:'fx.svg',haruka:'haruka.svg',tanahashi:'tanahashi.svg'};
 function profileAsset(id){return asset(USER_IMAGES[id]||(id+'.webp'))}
@@ -309,7 +309,7 @@ function buildFeed(){
  $('#homeFeed').innerHTML=EPISODES.map(makeTweet).join('');
  $('#episodesFeed').innerHTML=EPISODES.map(makeTweet).join('');
  const last=safeLoad('toketsu-last',null);if(last&&EPISODES.some(x=>x.id===last)){$('#resumeLink').hidden=false;$('#resumeLink').href='#'+last}
- $('#pinnedPost').innerHTML=`<img class="avatar" src="masuku-social.webp?v=82" alt=""><div class="tweet-core"><div class="authorline"><strong>異論・枡句 <span class="bluecheck">◆</span></strong><span class="muted">@iron_masuku · 午前4:21</span></div><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p><div class="post-quote"><div class="quote-top">調停コンペ・公式告知</div><p>Grok / ChatGPT / Claude / Gemini<br>誰がタイムラインを鎮める？</p></div><div class="engagement"><a class="action" href="#prologue">${svgIcons.message} プロローグへ</a><button class="action" data-act="share" data-id="prologue">${svgIcons.share} リンクを共有</button></div></div>`;
+ $('#pinnedPost').innerHTML=`<img class="avatar" src="masuku-social.webp?v=85" alt=""><div class="tweet-core"><div class="authorline"><strong>異論・枡句 <span class="bluecheck">◆</span></strong><span class="muted">@iron_masuku · 午前4:21</span></div><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p><div class="post-quote"><div class="quote-top">調停コンペ・公式告知</div><p>Grok / ChatGPT / Claude / Gemini<br>誰がタイムラインを鎮める？</p></div><div class="engagement"><a class="action" href="#prologue">${svgIcons.message} プロローグへ</a><button class="action" data-act="share" data-id="prologue">${svgIcons.share} リンクを共有</button></div></div>`;
 }
 function buildCharacterPage(){
  $('#castGrid').innerHTML=CAST.map(c=>`<button class="person-card" data-person="${c.id}" type="button"><img src="${asset(c.id+'.webp')}" loading="lazy" alt="${c.name}のイメージイラスト"><strong>${c.name}</strong><span>${c.role}</span><p>${c.quote}</p></button>`).join('');
