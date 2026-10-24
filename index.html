@@ -76,6 +76,11 @@ small{font-size:13px}
   .progress{top:59px}
   .chapter .prose{font-size:var(--read-size,17px)}
 }
+
+/* v6: DMプロフィールと写真の可読性 */
+.chapter .msg .av.portrait{background:transparent;overflow:hidden;border:1px solid #47515e}
+.chapter .msg .av.portrait img{width:100%;height:100%;object-fit:cover}
+.chapter .media.enhanced figcaption{display:none}
 </style></head><body><div class="progress" id="progress"></div><div class="layout">
 <aside class="left" aria-label="サイト内ナビゲーション"><a href="#home" class="logo" aria-label="凍結都市ホーム">凍</a><nav class="left-menu">
 <a class="nav-link" data-route="home" href="#home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H3z"/></svg><span>ホーム</span></a><a class="nav-link" data-route="episodes" href="#episodes"><svg viewBox="0 0 24 24"><path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1"/></svg><span>話一覧</span></a><a class="nav-link" data-route="characters" href="#characters"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 5a3 3 0 0 1 0 6M18 14a6 6 0 0 1 4 6v1"/></svg><span>登場人物</span></a><a class="nav-link" data-route="gallery" href="#gallery"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 5"/></svg><span>投稿画像</span></a><a class="nav-link" data-route="bookmarks" href="#bookmarks"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-7-5-7 5z"/></svg><span>ブックマーク</span></a><a class="nav-link" data-route="settings" href="#settings"><svg viewBox="0 0 24 24"><path d="M3 5a5 5 0 0 1 5-1h4v16H8a5 5 0 0 0-5 1zM21 5a5 5 0 0 0-5-1h-4v16h4a5 5 0 0 1 5 1z"/></svg><span>設定資料</span></a></nav><a href="#prologue" class="new-reader">プロローグを読む</a><a href="#home" class="left-profile"><img src="icon.svg" alt=""><span class="profiletext"><strong>凍結都市｜創作 <span class="fiction-mark" title="架空の作品">❄</span></strong><small>@toketsu_toshi</small></span></a></aside>
@@ -173,9 +178,9 @@ function buildResidents(){
  const media=[
   {id:'ep1',name:'ふたつの絵の比較',file:'post-compare.webp',note:'絵師とAI絵の論争'},
   {id:'ep2',name:'白衣姿の人物',file:'post-whitecoat.webp',note:'医療情報への疑問'},
-  {id:'ep3',name:'路線図に丸印',file:'post-route-map.webp',note:'誤解を生む画像'},
+  {id:'ep4',name:'路線図に丸印',file:'post-route-map.webp',note:'誤解を生む画像'},
   {id:'ep4',name:'ユニットバスの投稿',file:'post-bath-water.webp',note:'キラキラ投稿の裏側'},
-  {id:'ep4',name:'黄金色のスープ',file:'post-gold-soup.webp',note:'食べ物の写真'},
+  {id:'ep5',name:'黄金色のスープ',file:'post-gold-soup.webp',note:'食べ物の写真'},
   {id:'ep6',name:'富士山の写真',file:'post-fuji-photo.webp',note:'本文と無関係な画像の投稿'},
   {id:'extra2',name:'凍結祭り・画像非表示',file:'redacted-exhibit.svg',note:'センシティブな画像は表示しません'}
  ];
@@ -183,8 +188,23 @@ function buildResidents(){
 }
 function portraitAvatars(node){
  node.querySelectorAll('.post .ph, .msg .ph').forEach(header=>{
-  const av=header.querySelector('.av'),handle=header.querySelector('.handle');if(!av||!handle)return;
-  const id=PROFILE_BY_HANDLE[handle.textContent.trim().toLowerCase()];if(!id)return;
+  const av=header.querySelector('.av'),handle=header.querySelector('.handle');if(!av)return;
+  let id=handle?PROFILE_BY_HANDLE[handle.textContent.trim().toLowerCase()]:null;
+  // DM会話は@ハンドルがないため、表示名から解決する。原作テキストは変更しない。
+  if(!id&&header.closest('.msg')){
+    const displayName=(header.querySelector('.nm')?.textContent||'')
+      .replace(/[✓✔]/g,'').replace(/（[^）]*）/g,'').replace(/\([^)]*\)/g,'').trim();
+    const dmNameToId={
+      'ChatGPT':'chatgpt-official','Claude':'claude-official',
+      'Gemini':'gemini-official','Grok':'grok-official',
+      'ミナト・キラリ':'kirari','焦田ハンゾウ':'hanzo',
+      'ロウ・ノート弁護士':'lawyer','アデ':'ade',
+      'たわむれ研究所':'lab','ハルカ':'haruka',
+      '三児の母ハルカ':'haruka'
+    };
+    id=dmNameToId[displayName]||null;
+  }
+  if(!id)return;
   av.classList.add('portrait');const img=document.createElement('img');img.src=profileAsset(id);img.alt='';img.loading='lazy';av.textContent='';av.appendChild(img);
  });
  // The full setting document retains textual descriptions rather than inserting human forms.
@@ -203,7 +223,7 @@ const PLACEHOLDERS=[
 ];
 function improveMedia(node){node.querySelectorAll('.media').forEach(div=>{
  const t=div.textContent.trim();const match=PLACEHOLDERS.find(x=>x[0].test(t));if(!match)return;
- div.classList.add('enhanced');div.textContent='';const img=document.createElement('img');img.src=asset(match[1]);img.alt=match[2];img.loading='lazy';div.appendChild(img);const cap=document.createElement('figcaption');cap.textContent='作中の投稿画像をもとにしたイメージ';div.appendChild(cap);
+ div.classList.add('enhanced');div.textContent='';const img=document.createElement('img');img.src=asset(match[1]);img.alt=match[2];img.loading='lazy';div.appendChild(img);
 })}
 
 PROFILE_BY_HANDLE['@chatgpt']='chatgpt-official'; PROFILE_BY_HANDLE['@claude']='claude-official'; PROFILE_BY_HANDLE['@gemini']='gemini-official'; PROFILE_BY_HANDLE['@grok']='grok-official';
@@ -245,7 +265,7 @@ function buildCharacterPage(){
 }
 function showCharacter(id){const c=CAST.find(x=>x.id===id)||RESIDENTS.find(x=>x.id===id);if(!c)return;$('#modalImg').src=c.role.includes('／')&&CAST.some(x=>x.id===id)?asset(c.id+'.webp'):profileAsset(c.id);$('#modalImg').alt=c.name+'のイメージ';$('#modalName').textContent=c.name;$('#modalRole').textContent=c.role;$('#modalText').textContent=c.detail||('アカウント '+c.handle+'。本作のタイムラインに登場する架空のアカウント。');$('#modalNote').hidden=!['chatgpt','claude','gemini','grok'].includes(c.id);$('#modalQuote').textContent=c.quote||'';$('#modal').hidden=false;document.body.style.overflow='hidden';$('#closeModal').focus()}
 function closeCharacter(){$('#modal').hidden=true;document.body.style.overflow=''}
-function showGallery(){const data=[['ep1','絵師の比較画像','post-compare.webp'],['ep2','白衣の写真','post-whitecoat.webp'],['ep3','丸印のついた路線図','post-route-map.webp'],['ep4','入浴剤で濁ったユニットバス','post-bath-water.webp'],['ep4','同じユニットバス','post-bath-dry.webp'],['ep4','黄金色のスープ','post-gold-soup.webp'],['ep6','無関係な富士山','post-fuji-twilight.webp'],['ep6','富士山の写真','post-fuji-photo.webp'],['extra2','凍結祭り（画像は非表示）','redacted-exhibit.svg']];$('#mediaGrid').innerHTML=data.map(([id,title,file])=>`<a class="media-tile" href="#${id}"><img src="${file}" alt="${escapeHtml(title)}の物語用イメージ" loading="lazy"><div class="media-copy"><strong>${title}</strong><small>この投稿のある話を見る ↗</small></div></a>`).join('')}
+function showGallery(){const data=[['ep1','絵師の比較画像','post-compare.webp'],['ep2','白衣の写真','post-whitecoat.webp'],['ep4','丸印のついた路線図','post-route-map.webp'],['ep4','入浴剤で濁ったユニットバス','post-bath-water.webp'],['ep4','同じユニットバス','post-bath-dry.webp'],['ep5','黄金色のスープ','post-gold-soup.webp'],['ep6','無関係な富士山','post-fuji-twilight.webp'],['ep6','富士山の写真','post-fuji-photo.webp'],['extra2','凍結祭り（画像は非表示）','redacted-exhibit.svg']];$('#mediaGrid').innerHTML=data.map(([id,title,file])=>`<a class="media-tile" href="#${id}"><img src="${file}" alt="${escapeHtml(title)}の物語用イメージ" loading="lazy"><div class="media-copy"><strong>${title}</strong><small>この投稿のある話を見る ↗</small></div></a>`).join('')}
 function showBookmarks(){const ids=getSaved();const items=EPISODES.filter(e=>ids.includes(e.id));$('#bookmarksFeed').innerHTML=items.length?items.map(makeTweet).join(''):'<div class="empty">まだ保存したエピソードはありません。<br>投稿の「保存」を押すとここに表示されます。</div>'}
 async function showSearch(query=''){
  const q=query.trim().toLowerCase(),target=$('#searchResults');
