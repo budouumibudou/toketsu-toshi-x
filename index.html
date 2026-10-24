@@ -80,6 +80,37 @@ small{font-size:13px}
 /* v6: DMプロフィールと写真の可読性 */
 .chapter .msg .av.portrait{background:transparent;overflow:hidden;border:1px solid #47515e}
 .chapter .msg .av.portrait img{width:100%;height:100%;object-fit:cover}
+.dm-thread{margin:12px 0;border:1px solid var(--edge);border-radius:16px;overflow:hidden;background:#0f1318}
+.dm-thread-header{padding:10px 13px;background:#151a20;border-bottom:1px solid var(--edge)}
+.dm-thread-header strong{display:block;font-size:12px}
+.dm-thread-header small{display:block;color:var(--sub);font-size:10px;letter-spacing:.05em;margin-top:2px}
+.dm-thread-body{display:flex;flex-direction:column;gap:10px;padding:12px}
+.dm-thread .msg{background:transparent;padding:0;border-radius:0}
+.dm-thread figure.tl{margin:0;display:block;width:100%}
+.dm-thread .single{border:0;background:transparent;border-radius:0;overflow:visible}
+.dm-thread figure.tl:has(.dm-outgoing){align-self:flex-end;width:fit-content;max-width:100%}
+.dm-thread figure.tl:has(.dm-incoming){align-self:flex-start;width:fit-content;max-width:100%}
+.dm-thread .msg .pb p{margin:0}
+
+.dm-thread .msg .pb{padding-left:0}
+.dm-thread .msg p{margin:0}
+.dm-thread .dm-outgoing{align-self:flex-end;max-width:100%}
+.dm-thread .dm-outgoing .ph{display:none}
+.dm-thread .dm-outgoing .dm-bubble{background:linear-gradient(180deg,#2f91ff,#1b67f1);color:#fff;border-radius:18px 18px 6px 18px;padding:10px 12px;max-width:min(78vw,520px);box-shadow:0 4px 14px rgba(32,122,255,.25)}
+.dm-thread .dm-incoming{align-self:flex-start;max-width:100%}
+.dm-thread .dm-incoming .ph{display:flex;gap:8px;align-items:center;margin-bottom:4px}
+.dm-thread .dm-incoming .av{width:28px;height:28px}
+.dm-thread .dm-incoming .av.portrait{border:1px solid #4c5665}
+.dm-thread .dm-incoming .nm{font-size:11px}
+.dm-thread .dm-incoming .meta{font-size:10px}
+.dm-thread .dm-incoming .dm-bubble{background:#262c34;color:#eef2f7;border:1px solid rgba(255,255,255,.05);border-radius:18px 18px 18px 6px;padding:10px 12px;max-width:min(78vw,520px)}
+.dm-translation-note{font-size:10px;color:var(--sub);margin:4px 0 0 40px}
+.space-talk{border:1px solid var(--edge);border-left:4px solid #7faeff;background:#12161c;padding:12px;border-radius:14px;margin:10px 0}
+.space-talk .space-label{font:700 10px var(--sans);letter-spacing:.08em;color:#9fc0ff;margin-bottom:6px}
+.space-talk .ph{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.space-talk .pb{padding-left:0}
+@media(max-width:600px){.dm-thread .dm-outgoing .dm-bubble,.dm-thread .dm-incoming .dm-bubble{max-width:85vw}}
+
 .chapter .media.enhanced figcaption{display:none}
 
 /* v7: unified SNS circle masks; remove extra stroke that looked like misaligned embedded rings */
@@ -88,8 +119,6 @@ small{font-size:13px}
 }
 .resident img,.right-face img,.chapter .av.portrait,.tweet>.avatar{border:0;}
 .chapter .av.portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%;}
-/* Japanese sento mural: keep Fuji's summit in-frame in wide story thumbnails */
-.sento-art{object-position:center 14%!important;}
 /* the chapter splash and embed images adapt without side gutters */
 .chapter .media.enhanced{background:#101621;border-radius:12px;overflow:hidden;}
 .chapter .media.enhanced img{width:100%;height:auto;max-height:none;display:block;object-fit:cover;}
@@ -116,10 +145,10 @@ small{font-size:13px}
 const SOURCE_URL = "story-original.html";
 const EPISODES=[
  {id:'prologue',num:'プロローグ',title:'調停者募集',subtitle:'調停コンペ開幕',desc:'「面白くなってきた。」すべての始まり。',art:'hero.webp'},
- {id:'ep1',num:'第1話',title:'推しの前では全員無力',subtitle:'反AI vs AI推進派',desc:'創作への愛をめぐる論争は、AIに解決できるのか。',art:'post-compare.webp'},
+ {id:'ep1',num:'第1話',title:'推しの前では全員無力',subtitle:'反AI vs AI推進派',desc:'創作への愛をめぐる論争は、AIに解決できるのか。',art:'post-compare.webp',cover:'chapter-ep1.webp'},
  {id:'ep2',num:'第2話',title:'白衣の指は六本',subtitle:'情報商材 vs 医クラ',desc:'自信満々の情報こそ、最も危うい。',art:'post-whitecoat.webp'},
- {id:'ep3',num:'第3話',title:'壁の向こうの富士山',subtitle:'左派 vs 右派',desc:'正確な事実は、必ずしも好かれない。',art:'post-fuji-painting.webp'},
- {id:'ep4',num:'第4話',title:'港区のお風呂は1時間4,800円',subtitle:'キラキラ系 vs 一般人',desc:'華やかなポストの向こうに、何がある？',art:'post-skytree-bath.webp'},
+ {id:'ep3',num:'第3話',title:'壁の向こうの富士山',subtitle:'左派 vs 右派',desc:'正確な事実は、必ずしも好かれない。',art:'fuji.svg',hideStoryArt:true},
+ {id:'ep4',num:'第4話',title:'港区のお風呂は1時間4,800円',subtitle:'キラキラ系 vs 一般人',desc:'華やかなポストの向こうに、何がある？',art:'post-skytree-bath.webp',cover:'chapter-ep4.webp'},
  {id:'ep5',num:'第5話',title:'九十日',subtitle:'凍結アカウント vs 法クラ',desc:'証拠が消えるまで、九十日。',art:'post-gold-soup.webp'},
  {id:'ep6',num:'第6話',title:'最後の🙏',subtitle:'インプレゾンビ vs 規約',desc:'「🙏」は今日もタイムラインを流れていく。',art:'post-fuji-photo.webp'},
  {id:'extra',num:'番外編',title:'作った人たちの夜',subtitle:'辞めた研究者 vs 残る研究者',desc:'AIを作った人たちが抱えるもの。',art:'crew-wide.webp'},
@@ -136,7 +165,7 @@ const CAST=[
 const EP_IDS=['settings',...EPISODES.map(e=>e.id)];
 let originalPromise=null, originalDocument=null, fontLevel=0;
 const $=s=>document.querySelector(s);
-function asset(name){return name+(name.includes('?')?'&':'?')+'v=7'}
+function asset(name){return name+(name.includes('?')?'&':'?')+'v=81'}
 
 async function getOriginal(){
  if(originalDocument)return originalDocument;
@@ -237,7 +266,7 @@ const PLACEHOLDERS=[
 ];
 
 function enhanceKirariOpening(chapter,id){
-  if(id!=='ep4')return;
+  if(!['ep3','ep4'].includes(id))return;
   const posts=[...chapter.querySelectorAll('.post')];
   const first=posts.find(post => post.querySelector('.handle')?.textContent.trim()==='@kirari_minato' && post.textContent.includes('うちのお風呂からはスカイツリー見えるよ'));
   if(!first)return;
@@ -274,13 +303,13 @@ function makeTweet(e,index){
  const saved=getSaved().includes(e.id),liked=getLiked().includes(e.id),n=EPISODES.indexOf(e);
  const authorAvatar='icon.svg';
  // This is a fictional story feed, not a representation of actual AI posts.
- return `<article class="tweet" id="post-${e.id}"><img class="avatar" src="${asset(authorAvatar)}" alt=""><div class="tweet-core"><div class="authorline"><strong>${AUTHOR} <span class="bluecheck">◆</span></strong><span class="muted">@toketsu_toshi · 物語の目次</span></div><a class="tweet-title" href="#${e.id}">${escapeHtml(e.num)}　${escapeHtml(e.title)}</a><p>${escapeHtml(tweetText[e.id])}</p><a class="hashtag" href="#${e.id}">#凍結都市　#${escapeHtml(summaryLabels[e.id])}</a><a href="#${e.id}" class="tweet-art"><img class="${e.id==='ep3'?'sento-art':''}" src="${asset(e.art)}" alt="${escapeHtml(e.title)}の章扉イメージ" loading="lazy"><div class="art-caption"><span>${escapeHtml(e.subtitle)}</span><span>物語を読む ↗</span></div></a><div class="engagement"><button class="action" type="button" data-act="read" data-id="${e.id}" aria-label="${escapeHtml(e.title)}を読む">${svgIcons.message}<span>読む</span></button><button class="action" type="button" data-act="share" data-id="${e.id}" aria-label="${escapeHtml(e.title)}のリンクを共有">${svgIcons.repost}<span>共有</span></button><button class="action ${liked?'is-on':''}" type="button" data-act="like" data-id="${e.id}" aria-pressed="${liked}">${svgIcons.heart}<span>${liked?'いいね済':'いいね'}</span></button><button class="action ${saved?'is-on blue':''}" type="button" data-act="save" data-id="${e.id}" aria-pressed="${saved}">${svgIcons.bookmark}<span>${saved?'保存済':'保存'}</span></button><button class="action" type="button" data-act="share" data-id="${e.id}" aria-label="リンクをコピー">${svgIcons.share}</button></div></div></article>`;
+ return `<article class="tweet" id="post-${e.id}"><img class="avatar" src="${asset(authorAvatar)}" alt=""><div class="tweet-core"><div class="authorline"><strong>${AUTHOR} <span class="bluecheck">◆</span></strong><span class="muted">@toketsu_toshi · 物語の目次</span></div><a class="tweet-title" href="#${e.id}">${escapeHtml(e.num)}　${escapeHtml(e.title)}</a><p>${escapeHtml(tweetText[e.id])}</p><a class="hashtag" href="#${e.id}">#凍結都市　#${escapeHtml(summaryLabels[e.id])}</a><a href="#${e.id}" class="tweet-art"><img src="${asset(e.art)}" alt="${escapeHtml(e.title)}の章扉イメージ" loading="lazy"><div class="art-caption"><span>${escapeHtml(e.subtitle)}</span><span>物語を読む ↗</span></div></a><div class="engagement"><button class="action" type="button" data-act="read" data-id="${e.id}" aria-label="${escapeHtml(e.title)}を読む">${svgIcons.message}<span>読む</span></button><button class="action" type="button" data-act="share" data-id="${e.id}" aria-label="${escapeHtml(e.title)}のリンクを共有">${svgIcons.repost}<span>共有</span></button><button class="action ${liked?'is-on':''}" type="button" data-act="like" data-id="${e.id}" aria-pressed="${liked}">${svgIcons.heart}<span>${liked?'いいね済':'いいね'}</span></button><button class="action ${saved?'is-on blue':''}" type="button" data-act="save" data-id="${e.id}" aria-pressed="${saved}">${svgIcons.bookmark}<span>${saved?'保存済':'保存'}</span></button><button class="action" type="button" data-act="share" data-id="${e.id}" aria-label="リンクをコピー">${svgIcons.share}</button></div></div></article>`;
 }
 function buildFeed(){
  $('#homeFeed').innerHTML=EPISODES.map(makeTweet).join('');
  $('#episodesFeed').innerHTML=EPISODES.map(makeTweet).join('');
  const last=safeLoad('toketsu-last',null);if(last&&EPISODES.some(x=>x.id===last)){$('#resumeLink').hidden=false;$('#resumeLink').href='#'+last}
- $('#pinnedPost').innerHTML=`<img class="avatar" src="masuku-social.webp?v=7" alt=""><div class="tweet-core"><div class="authorline"><strong>異論・枡句 <span class="bluecheck">◆</span></strong><span class="muted">@iron_masuku · 午前4:21</span></div><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p><div class="post-quote"><div class="quote-top">調停コンペ・公式告知</div><p>Grok / ChatGPT / Claude / Gemini<br>誰がタイムラインを鎮める？</p></div><div class="engagement"><a class="action" href="#prologue">${svgIcons.message} プロローグへ</a><button class="action" data-act="share" data-id="prologue">${svgIcons.share} リンクを共有</button></div></div>`;
+ $('#pinnedPost').innerHTML=`<img class="avatar" src="masuku-social.webp?v=81" alt=""><div class="tweet-core"><div class="authorline"><strong>異論・枡句 <span class="bluecheck">◆</span></strong><span class="muted">@iron_masuku · 午前4:21</span></div><p>Xの争いを最も多く鎮めたAIに、Xの公式調停権を与える。<br>参加は自由。ただし外部AIの投稿は1回ごとに課金。<br>面白くなってきた。</p><div class="post-quote"><div class="quote-top">調停コンペ・公式告知</div><p>Grok / ChatGPT / Claude / Gemini<br>誰がタイムラインを鎮める？</p></div><div class="engagement"><a class="action" href="#prologue">${svgIcons.message} プロローグへ</a><button class="action" data-act="share" data-id="prologue">${svgIcons.share} リンクを共有</button></div></div>`;
 }
 function buildCharacterPage(){
  $('#castGrid').innerHTML=CAST.map(c=>`<button class="person-card" data-person="${c.id}" type="button"><img src="${asset(c.id+'.webp')}" loading="lazy" alt="${c.name}のイメージイラスト"><strong>${c.name}</strong><span>${c.role}</span><p>${c.quote}</p></button>`).join('');
@@ -303,8 +332,108 @@ async function showSearch(query=''){
 }
 async function shareEpisode(id){const text=storyLink(id);try{await navigator.clipboard.writeText(text);toast('作品内のリンクをコピーしました')}catch(e){window.prompt('このリンクをコピーしてください',text)}}
 function updateProgress(){if(active!=='story'){ $('#progress').style.width='0';return;}let max=document.documentElement.scrollHeight-innerHeight;$('#progress').style.width=(max?Math.min(100,Math.round(scrollY/max*100)):0)+'%'}
+function cleanDmName(name){
+  return (name||'').replace(/[✓✔]/g,'').replace(/（[^）]*）/g,'').replace(/\([^)]*\)/g,'').trim();
+}
+function isSpaceTalk(msg, chapterId){
+  if(chapterId!=='ep5')return false;
+  return cleanDmName(msg.querySelector('.nm')?.textContent||'')==='ロウ・ノート弁護士' && /一点だけ/.test(msg.textContent);
+}
+function markSpaceTalk(msg){
+  if(msg.querySelector('.space-label'))return;
+  msg.classList.add('space-talk');
+  const label=document.createElement('div');
+  label.className='space-label';
+  label.textContent='🎙 スペースで発言';
+  msg.insertBefore(label,msg.firstChild);
+}
+function dmRule(chapterId, runIndex){
+  const defaults={
+    ep4:{header:'ミナト・キラリ',outgoing:'ChatGPT'},
+    ep6:{header:'アデ',outgoing:'ChatGPT'},
+    final:{header:'たわむれ研究所',outgoing:'Claude'},
+    extra2:{header:'ハルカ',outgoing:'ChatGPT'}
+  };
+  const byRun={
+    ep3:[{header:'アカネ、タケル',outgoing:'Grok'}],
+    ep5:[
+      {header:'焦田ハンゾウ',outgoing:'ChatGPT'},
+      {header:'焦田ハンゾウ',outgoing:'ChatGPT'},
+      {header:'ロウ・ノート弁護士',outgoing:'Claude'},
+      {header:'ロウ・ノート弁護士',outgoing:'Claude'},
+      {header:'焦田ハンゾウ',outgoing:'ロウ・ノート弁護士'}
+    ]
+  };
+  if(byRun[chapterId])return byRun[chapterId][runIndex]||byRun[chapterId][byRun[chapterId].length-1];
+  return defaults[chapterId]||null;
+}
+function styleDmMessage(msg, rule){
+  const name=cleanDmName(msg.querySelector('.nm')?.textContent||'');
+  const meta=(msg.querySelector('.meta')?.textContent||'').trim();
+  const outgoing=name===rule?.outgoing;
+  msg.classList.add(outgoing?'dm-outgoing':'dm-incoming');
+  const bubble=msg.querySelector('.pb');
+  if(bubble)bubble.classList.add('dm-bubble');
+  if(/翻訳/.test(meta) && name==='アデ' && bubble && !msg.querySelector('.dm-translation-note')){
+    const note=document.createElement('div');
+    note.className='dm-translation-note';
+    note.textContent='翻訳';
+    bubble.insertAdjacentElement('afterend',note);
+    const tag=msg.querySelector('.meta');if(tag)tag.hidden=true;
+  }
+}
+function wrapDmRun(run, chapterId, runIndex){
+  const rule=dmRule(chapterId, runIndex) || {header:'ダイレクトメッセージ', outgoing:''};
+  const wrapper=document.createElement('section');
+  wrapper.className='dm-thread';
+  const head=document.createElement('div');
+  head.className='dm-thread-header';
+  const strong=document.createElement('strong');
+  strong.textContent=rule.header||'ダイレクトメッセージ';
+  const small=document.createElement('small');
+  small.textContent='ダイレクトメッセージ';
+  head.append(strong,small);
+  const body=document.createElement('div');
+  body.className='dm-thread-body';
+  wrapper.append(head,body);
+  run[0].figure.before(wrapper);
+  run.forEach(({figure,msg})=>{
+    styleDmMessage(msg,rule);
+    body.appendChild(figure);
+  });
+}
+function stylizeDMs(chapter,id){
+  const prose=chapter.querySelector('.prose');
+  if(!prose)return;
+  const kids=[...prose.children];
+  let run=[];
+  let runIndex=0;
+  const flush=()=>{
+    if(!run.length)return;
+    wrapDmRun(run,id,runIndex);
+    runIndex+=1;
+    run=[];
+  };
+  kids.forEach(el=>{
+    // 原作のDMは .msg 自体ではなく、figure.tl > div.single > div.msg に格納されている。
+    const msg=el.matches('figure.tl')?el.querySelector('.single > .msg'):null;
+    if(msg){
+      if(isSpaceTalk(msg,id)){
+        flush();
+        markSpaceTalk(msg);
+      }else{
+        run.push({figure:el,msg});
+      }
+    }else{
+      // 地の文・区切りは動かさず、DMの外に残す。
+      flush();
+    }
+  });
+  flush();
+}
+
 async function renderStory(id){const target=$('#readerTarget');target.innerHTML='<div class="loading">原作本文を読み込み中…<br><small>このサイトに同梱されている原作本文を表示します。</small></div>';
- try{const doc=await getOriginal();if(location.hash.slice(1)!==id)return;const found=doc.getElementById('ch-'+id);if(!found)throw Error('指定の話が見つかりません');let chapter=found.cloneNode(true);chapter.hidden=false;chapter.removeAttribute('hidden');chapter.id='story-'+id;chapter.querySelectorAll('script,iframe').forEach(el=>el.remove());portraitAvatars(chapter);improveMedia(chapter);enhanceKirariOpening(chapter,id);const picture=document.createElement('img');picture.className='story-art'+(id==='settings'?' setting-art':'')+(id==='ep3'?' sento-art':'');picture.src=asset(id==='settings'?'crew-wide.webp':(EPISODES.find(e=>e.id===id)?.art||'hero.webp'));picture.alt='章扉のイメージ';const head=chapter.querySelector('.ch-head');if(head)head.insertAdjacentElement('afterend',picture);chapter.querySelectorAll('.pn a[href="#top"]').forEach(a=>a.href='#home');target.replaceChildren(chapter);document.title=(chapter.querySelector('h1')?.textContent||'設定資料')+'｜凍結都市';if(id!=='settings'){safeSave('toketsu-last',id);$('#resumeLink').href='#'+id;$('#resumeLink').hidden=false}updateProgress();}
+ try{const doc=await getOriginal();if(location.hash.slice(1)!==id)return;const found=doc.getElementById('ch-'+id);if(!found)throw Error('指定の話が見つかりません');let chapter=found.cloneNode(true);chapter.hidden=false;chapter.removeAttribute('hidden');chapter.id='story-'+id;chapter.querySelectorAll('script,iframe').forEach(el=>el.remove());portraitAvatars(chapter);improveMedia(chapter);enhanceKirariOpening(chapter,id);stylizeDMs(chapter,id);const picture=document.createElement('img');picture.className='story-art'+(id==='settings'?' setting-art':'');const episodeMeta=EPISODES.find(e=>e.id===id);picture.src=asset(id==='settings'?'crew-wide.webp':(episodeMeta?.cover||episodeMeta?.art||'hero.webp'));picture.alt='章扉のイメージ';const head=chapter.querySelector('.ch-head');if(head&&!episodeMeta?.hideStoryArt)head.insertAdjacentElement('afterend',picture);chapter.querySelectorAll('.pn a[href="#top"]').forEach(a=>a.href='#home');target.replaceChildren(chapter);document.title=(chapter.querySelector('h1')?.textContent||'設定資料')+'｜凍結都市';if(id!=='settings'){safeSave('toketsu-last',id);$('#resumeLink').href='#'+id;$('#resumeLink').hidden=false}updateProgress();}
  catch(err){target.innerHTML='<div class="source-alert"><strong>原作本文を読み込めませんでした。</strong><p>このリメイク版には最新版の <code>story-original.html</code> が同梱されています。<code>index.html</code> と同じ階層に置き、GitHub PagesなどのWebサイトとして表示してください。iPhoneの「ファイル」アプリから直接開いた場合は読み込みが制限されることがあります。</p></div>' ;console.error(err)}}
 function goRoute(){const id=decodeURIComponent(location.hash.slice(1))||'home';const isStory=id==='settings'||EP_IDS.includes(id)&&id!=='home';const page=isStory?'story':routeOrder.includes(id)?id:'home';if(isStory&&active!=='story')previous=active;active=page;const titles={home:'凍結都市',episodes:'話一覧',characters:'登場人物',gallery:'投稿画像',bookmarks:'ブックマーク',search:'検索'};const title=isStory?(id==='settings'?'設定資料':EPISODES.find(e=>e.id===id)?.title):titles[page];$('#topTitle').textContent=title||'凍結都市';$('#topSubtitle').textContent=isStory?(id==='settings'?'世界観・登場人物・資料':(EPISODES.find(e=>e.id===id)?.subtitle||'物語を読む')):'SFパロディ小説・全10編';$('#backButton').hidden=!isStory;$('#tabNav').hidden=!['home','episodes','characters'].includes(page);document.querySelectorAll('.top-tabs [data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===page));document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!==page+'View');document.querySelectorAll('[data-route]').forEach(a=>a.classList.toggle('active',a.dataset.route===(page==='story'?'episodes':page)));$('#storyIndex').textContent=isStory?(id==='settings'?'設定資料':EPISODES.find(e=>e.id===id)?.num):'';if(page==='story'){const back=$('#storyView .chapter-nav a');if(back){back.href='#'+(previous||'episodes');back.textContent='← '+({home:'ホーム',episodes:'話一覧',search:'検索',bookmarks:'ブックマーク',characters:'登場人物'}[previous]||'話一覧')}renderStory(id)}else if(page==='bookmarks'){showBookmarks()}else if(page==='search'){showSearch($('#mainSearchInput').value)}else{document.title='凍結都市 ―タイムラインの向こう側―｜SFパロディ'}window.scrollTo(0,0);updateProgress();}
 function init(){buildFeed();buildCharacterPage();showGallery();window.addEventListener('hashchange',goRoute);window.addEventListener('scroll',updateProgress,{passive:true});$('#backButton').addEventListener('click',()=>{location.hash='#'+(previous||'episodes')});$('#fontButton').addEventListener('click',()=>{fontLevel=(fontLevel+1)%3;document.documentElement.style.setProperty('--read-size',[16,18,20][fontLevel]+'px');$('#fontButton').textContent=['あ±','あ＋','あ＋＋'][fontLevel];toast('本文の文字サイズを変更しました')});document.querySelectorAll('.top-tabs button').forEach(b=>b.addEventListener('click',()=>location.hash='#'+b.dataset.tab));$('#mobileSearch').addEventListener('click',()=>{location.hash='#search';setTimeout(()=>$('#mainSearchInput').focus(),20)});$('#closeModal').addEventListener('click',closeCharacter);$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeCharacter()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCharacter()});document.addEventListener('click',e=>{const b=e.target.closest('[data-person],[data-resident]');if(b){showCharacter(b.dataset.person||b.dataset.resident);return}const a=e.target.closest('[data-act]');if(!a)return;let id=a.dataset.id,act=a.dataset.act;if(act==='read'){location.hash='#'+id;return}if(act==='share'){shareEpisode(id);return}if(act==='save'||act==='like'){const key=act==='save'?'toketsu-x-saved':'toketsu-x-likes';let ids=safeLoad(key,[]);ids=ids.includes(id)?ids.filter(v=>v!==id):[...ids,id];safeSave(key,ids);buildFeed();if(active==='bookmarks')showBookmarks();if(active==='search')showSearch($('#mainSearchInput').value);toast(act==='save'?(ids.includes(id)?'ブックマークに保存しました':'保存を解除しました'):(ids.includes(id)?'いいねしました':'いいねを取り消しました'))}});const searchFn=e=>{const v=e.target.value;$('#mainSearchInput').value=v;$('#sideSearch').value=v;if(active!=='search')location.hash='#search';else showSearch(v)};$('#sideSearch').addEventListener('input',searchFn);$('#mainSearchInput').addEventListener('input',searchFn);goRoute()}
