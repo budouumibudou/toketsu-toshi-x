@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100e14">
+<meta name="description" content="億田リッチ郎が贈る、AIによる投稿・集客・販売・分析の全自動化をテーマにしたRICH AUTO SYSTEM 2031。『凍結都市』に登場する架空の情報商材ページ。">
+<title>RICH AUTO SYSTEM 2031｜億田リッチ郎（小説『凍結都市』）</title>
+<style>
+:root{--bg:#100d15;--bg2:#19111d;--gold:#f9d47c;--gold2:#d69a34;--cream:#fffaf0;--ink:#281d20;--muted:#736b70;--line:#e8dbc0;--pink:#f75e76}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1db4fe;outline-offset:3px}
+.wrap{max-width:1120px;margin:auto;padding:0 24px}
+.fiction-banner{padding:11px 16px;background:#f6e9d0;color:#352319;text-align:center;font-size:13px;line-height:1.7;font-weight:800;letter-spacing:.02em;border-bottom:2px solid #af7a2e}
+.mobile-break{display:none}
+.top{background:#000;color:#ffe1a3;text-align:center;padding:8px 15px;font-weight:900;font-size:11px;letter-spacing:.18em}
+header{position:sticky;top:0;background:#110e16f7;color:white;border-bottom:1px solid #b28a4665;z-index:40;backdrop-filter:blur(10px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:1000;letter-spacing:.1em;line-height:1.05;font-size:25px;white-space:nowrap}
+.brand b{color:var(--gold)}
+.brand small{display:block;font-size:9px;letter-spacing:.23em;font-weight:700;margin-top:8px;color:#c6a76d}
+nav{display:flex;align-items:center;gap:26px;font-size:12px;font-weight:800}
+nav a:hover{color:var(--gold)}
+.navbuy{display:inline-flex;align-items:center;justify-content:center;border:1px solid #e6c678;background:linear-gradient(120deg,#a57324,#efc976,#9b681c);padding:11px 19px;color:#160e0b;box-shadow:0 2px 9px #0009}
+.hero{position:relative;isolation:isolate;overflow:hidden;color:white;background:radial-gradient(ellipse at 70% 39%,#56332d 0%,#271522 37%,#100d15 75%);border-bottom:3px solid #d6ab55}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,transparent 30%,#f9dc9e07 31%,transparent 32%),repeating-linear-gradient(100deg,#f8de8700 0 110px,#f8de8716 111px,#f8de8700 112px 214px)}
+.hero-inner{display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:27px;min-height:590px;padding-top:52px;padding-bottom:65px}
+.flag{display:inline-block;padding:9px 14px;border:1px solid #efc97c8a;color:#fff1c8;background:#dc9d4214;font-size:12px;letter-spacing:.14em;font-weight:900}
+h1{font-size:clamp(37px,5vw,65px);line-height:1.25;margin:25px 0 16px;letter-spacing:.02em;text-shadow:0 5px 30px #0009;font-weight:1000}
+h1 em,.goldtext{font-style:normal;background:linear-gradient(#fffadf,#f7cb60 63%,#d58b27);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:clamp(16px,1.7vw,20px);font-weight:850;line-height:1.9;color:#fff8e9}
+.hero-sub strong{color:#ffde8b}
+.hero-pills{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0 28px}
+.hero-pills span{border:1px solid #d2ac647c;background:#eed9a315;border-radius:99px;font-size:12px;font-weight:750;color:#f9e2b2;padding:5px 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;border:0;border-radius:6px;padding:17px 25px;font-weight:1000;font-size:16px;line-height:1.5;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn.gold{color:#291709;background:linear-gradient(115deg,#fff5c7 0%,#e6ad43 43%,#fff4bf 100%);border:1px solid #ffdf84;box-shadow:0 5px 0 #825016,0 12px 29px #0006}
+.hero-note{font-size:12px;color:#cbb7a3;margin-top:24px}
+.hero-visual{min-width:0;display:flex;flex-direction:column;align-items:center;position:relative;padding:20px 0}
+.hero-visual:before{content:"";position:absolute;width:110%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#f7c16d35,transparent 69%);filter:blur(3px)}
+.person{position:relative;width:min(350px,88%);text-align:center;border-radius:20px;padding:25px 28px 18px;background:linear-gradient(160deg,#fbe9aa,#b47d2e 39%,#342024 86%);box-shadow:0 21px 50px #000a,0 0 0 8px #ffedbc18}
+.person:before{content:"";position:absolute;inset:6px;border:1px solid #fff2b5a6;border-radius:17px;pointer-events:none}
+.person img{display:block;width:100%;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 12px 16px #1e0d1280)}
+.person strong{display:block;color:#fff4d5;text-shadow:0 2px 7px #0009;font-size:25px;letter-spacing:.11em;line-height:1.4}
+.person small{display:block;font-size:12px;color:#f8df9a}
+.label-spark{position:absolute;right:-15px;top:-19px;border-radius:50%;background:linear-gradient(145deg,#fff3b9,#c68b2f);color:#472612;width:100px;height:100px;display:grid;place-content:center;text-align:center;line-height:1.35;font-size:14px;font-weight:1000;transform:rotate(12deg);border:3px dotted #a56728;box-shadow:0 6px 19px #0008}
+.mini-console{width:min(385px,94%);margin:-10px 0 0 40px;position:relative;z-index:2;background:#111a19e9;border:1px solid #82ecb06b;color:#b7f6d7;padding:17px 20px;box-shadow:0 12px 30px #0007;border-radius:8px;font-size:13px}
+.console-head{font-weight:900;font-size:11px;letter-spacing:.16em;margin-bottom:10px;color:#91ffbd}
+.led{display:inline-block;width:8px;height:8px;margin-right:7px;background:#55f7a0;box-shadow:0 0 12px #55f7a0;border-radius:50%}
+.console-line{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #fff2;padding-top:5px;margin-top:5px}.console-line b{color:#77ffc0}
+.strip{background:linear-gradient(90deg,#c58a30,#ffe9a3,#c28b36);text-align:center;padding:15px 8px;color:#553112;font-weight:1000;letter-spacing:.11em;font-size:13px}
+section.section{padding:86px 0}
+.head{text-align:center;max-width:790px;margin:0 auto 43px}
+.kicker{color:#b57c2a;font-weight:1000;letter-spacing:.23em;font-size:12px}
+.head h2{font-size:clamp(28px,3.6vw,43px);line-height:1.43;letter-spacing:.025em;margin:12px 0 16px}
+.head p{color:var(--muted);font-size:15px}
+.problems{background:#fffefa}
+.columns3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.problem{background:white;padding:28px 27px;box-shadow:0 9px 30px #2c21150b;border:1px solid #f0e5d2;border-top:5px solid #d6a147}
+.problem span{font:900 30px Georgia,serif;color:#c18a36}
+.problem h3{font-size:20px;line-height:1.45;margin:10px 0}.problem p{font-size:14px;color:#75695c;margin:0}
+.manifesto{background:linear-gradient(110deg,#120f18,#472430,#20101d);color:white;text-align:center;padding:60px 25px}
+.manifesto h2{font-size:clamp(26px,3.6vw,43px);margin:0 0 10px;line-height:1.55}
+.manifesto h2 strong{color:#fbd780}
+.manifesto p{margin:0;color:#e7cfc0;font-weight:700}
+.system{background:#f7f0e3}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative}
+.flow-step{position:relative;text-align:center;background:#fffdf8;border:1px solid #decaa7;padding:30px 17px 26px;box-shadow:0 12px 22px #79552c12}
+.flow-step:not(:last-child):after{content:"➜";position:absolute;right:-17px;top:44%;z-index:2;color:#aa7929;font-size:24px;text-shadow:0 0 5px #fff}
+.flow-icon{width:73px;height:73px;display:grid;place-content:center;background:linear-gradient(145deg,#321820,#130e14);color:#fbd484;border-radius:50%;font-size:30px;margin:0 auto 12px;border:2px solid #dbac59}
+.flow-step b{display:block;color:#b08031;font-size:12px;letter-spacing:.11em}.flow-step h3{margin:5px 0 11px;font-size:20px}.flow-step p{margin:0;font-size:13px;color:#74685e;line-height:1.75}
+.autoline{border:1px solid #d8ad5a;background:#fff9ea;margin:28px auto 0;padding:15px 20px;text-align:center;font-weight:900;letter-spacing:.045em}
+.dashboard{background:#121018;color:white}
+.dash-wrap{display:grid;grid-template-columns:1fr .95fr;align-items:center;gap:58px}
+.dash-copy h2{font-size:clamp(30px,3.9vw,47px);line-height:1.44;margin:15px 0 23px}
+.dash-copy h2 strong{color:#f1c474}
+.dash-copy p{color:#d2c9cb}
+.checks{padding:0;list-style:none;color:#f4e8d8;font-weight:700}
+.checks li{margin:10px 0}.checks li:before{content:"✓";color:#8cf5bc;font-weight:900;margin-right:12px}
+.screen{background:#1c2221;border:1px solid #816e45;border-radius:13px;box-shadow:0 35px 60px #0009;overflow:hidden}
+.screen-top{background:#0b1511;display:flex;justify-content:space-between;align-items:center;padding:15px 22px;font-size:12px;color:#c7e4d7;border-bottom:1px solid #70867455}
+.screen-top b{letter-spacing:.08em;color:#f1d28b}.screen-top span{color:#83f0a5}
+.screen-in{padding:23px}
+.stat-caption{color:#a1bcb2;font-size:12px;font-weight:750}.stat-val{font-size:clamp(31px,4.2vw,52px);font-weight:1000;color:#ecddab;line-height:1.3;margin:6px 0}.stat-val small{font-size:15px}
+.bargraph{display:flex;align-items:flex-end;gap:8px;height:96px;border-bottom:1px solid #4b695c;margin:20px 0}.bargraph span{background:linear-gradient(#e7c671,#886424);flex:1;border-radius:5px 5px 0 0}
+.screen-list{display:grid;gap:10px;font-size:13px}.screen-list div{display:flex;justify-content:space-between;border-bottom:1px solid #415148;padding-bottom:8px;color:#d3d7d3}.screen-list b{color:#91edb4}
+.screen-foot{font-size:11px;color:#b2ada4;margin-top:15px}
+.course{background:#fffef9}
+.coursebox{border:2px solid #d3a14f;box-shadow:0 20px 47px #34201920}
+.coursehead{text-align:center;background:linear-gradient(110deg,#201017,#572330,#201017);padding:31px 20px;color:white}
+.coursehead small{font-size:12px;letter-spacing:.2em;color:#f0c976;font-weight:850}
+.coursehead h3{font-size:clamp(27px,4.3vw,43px);line-height:1.35;margin:7px 0 10px;color:#ffe6ad}.coursehead p{font-size:14px;color:#e7d1c4;margin:0}
+.modules{padding:18px 37px;display:grid;grid-template-columns:1fr 1fr;gap:0 35px}
+.module{padding:21px 0;border-bottom:1px solid #e9dfcb;display:grid;grid-template-columns:49px 1fr;gap:13px}
+.module .num{font:900 29px Georgia,serif;color:#b48239}.module h4{font-size:17px;margin:0 0 7px;line-height:1.4}.module p{font-size:13px;color:#736862;margin:0}
+.bonus{background:#fff1d3;margin:16px 36px 35px;border:1px solid #ebca8e;padding:23px 25px}.bonus b{color:#80521d}.bonus ul{margin:10px 0 0;padding-left:1.4em;font-size:14px}
+.voices{background:#faf2e4}
+.testimonial{padding:28px 25px;border:1px solid #e4d3b2;background:white;box-shadow:0 10px 25px #0000000d}
+.stars{color:#d4a043;letter-spacing:.14em}
+.testimonial h3{font-size:17px;line-height:1.5}.testimonial p{font-size:14px;color:#76675e}.testimonial small{display:block;border-top:1px solid #e8dece;margin-top:15px;padding-top:12px;color:#8d794f}
+.offer{background:linear-gradient(140deg,#1a0e16,#48202c 60%,#180f17);color:white}
+.offer .head h2{color:white}.offer .head p{color:#e0cbbd}
+.offerbox{max-width:790px;margin:auto;text-align:center;border:2px solid #e9bf69;background:#fffefa;color:#2f231e;box-shadow:0 30px 68px #0008}
+.offer-ribbon{background:linear-gradient(110deg,#ad7625,#ffeba7,#b77e2c);padding:13px;font-weight:1000;color:#533217;letter-spacing:.15em}
+.offer-in{padding:36px 25px 43px}.offer-in h3{font-size:27px;line-height:1.4;margin:0 0 15px}.old{color:#9a938c}.price{color:#b32535;font-weight:1000;font-size:clamp(57px,9vw,91px);line-height:1.3}.price small{font-size:20px}.offer-in .btn{max-width:520px;width:100%;margin:18px auto 12px}.offer-in p{color:#73665c}
+.faq{background:#fffefa}
+.faq-items{max-width:790px;margin:auto;display:grid;gap:12px}
+.faq details{background:white;border:1px solid #e2d4bb;padding:0 21px}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:900;font-size:15px}
+.faq summary:after{content:"＋";float:right;color:#a67933}
+.faq details[open] summary:after{content:"−"}
+.faq details p{color:#776a62;font-size:14px;margin:0 0 21px;border-top:1px solid #eee5d3;padding-top:13px}
+.closing{background:#1a0d15;color:white;text-align:center;padding:70px 18px 90px}
+.closing h2{font-size:clamp(29px,4vw,48px);line-height:1.6;margin:0 0 15px}.closing h2 span{color:#f6ce7d}.closing p{color:#e6cbbb;margin-bottom:25px}
+footer{background:#0b090d;color:#c5b5a3;text-align:center;padding:37px 20px 92px;font-size:11px}
+footer b{font-size:21px;color:#eed19a;letter-spacing:.12em}
+footer p{max-width:850px;margin:10px auto;line-height:1.8}footer a{text-decoration:underline}
+.sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 14px;background:#150d16f5;border-top:1px solid #bd9246;z-index:39;display:none;text-align:center}.sticky .btn{padding:12px 20px;font-size:14px;box-shadow:0 2px 0 #76501f}
+.dialog{display:none;position:fixed;inset:0;z-index:100;background:#0d070bdc;padding:19px;justify-content:center;align-items:center}
+.dialog[aria-hidden="false"]{display:flex}
+.dialog-box{position:relative;background:#fffaf0;border:3px solid #d6a757;width:min(480px,100%);text-align:center;color:#33211b;box-shadow:0 30px 70px #0009;padding:32px 24px}
+.dialog-box small{letter-spacing:.15em;color:#9c6f28;font-weight:900}
+.dialog-box h2{font-size:28px;margin:10px 0}.dialog-box p{font-size:14px;color:#6e635b}
+.dialog-box button.close{position:absolute;top:5px;right:11px;font-size:28px;color:#78572a;background:transparent;border:0}
+.dialog-box .btn{color:white;background:#2b1720;margin-top:12px}
+@media(max-width:900px){nav a:not(.navbuy){display:none}.hero-inner{grid-template-columns:1fr;text-align:center;padding:50px 20px 55px}.hero-visual{max-width:430px;margin:auto;width:100%}.hero-pills{justify-content:center}.dash-wrap{grid-template-columns:1fr;gap:25px}.columns3{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.flow-step:nth-child(2):after{display:none}.sticky{display:block}}
+@media(max-width:580px){.wrap{padding:0 16px}.nav{height:66px}.brand{font-size:20px}.navbuy{font-size:11px;padding:9px 11px}.hero h1{font-size:clamp(35px,9.4vw,49px)}.hero-sub{font-size:15px}.hero-inner{padding:37px 12px 40px}.person{width:min(290px,85%)}.label-spark{width:79px;height:79px;font-size:11px}.mini-console{margin:-9px 0 0 20px}.flow{grid-template-columns:1fr}.flow-step:after{display:none!important}.modules{grid-template-columns:1fr;padding:9px 23px}.bonus{margin:17px 21px 24px}.section{padding:60px 0!important}.manifesto{padding:50px 17px}.screen-in{padding:17px}.hero-pills span{font-size:11px}.head h2{font-size:29px}.offer-in h3{font-size:23px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* FOUNDER / RICH STORY */
+.founder{background:linear-gradient(180deg,#fffdf7,#f6ecd8)}
+.founder-grid{display:grid;grid-template-columns:.79fr 1.21fr;gap:57px;align-items:center}
+.founder-portrait{background:linear-gradient(155deg,#160f17 0%,#39222a 58%,#5e3b29 100%);padding:35px 29px 27px;position:relative;box-shadow:0 24px 50px #1b0d182c;border:3px solid #cba053;color:#fff}
+.founder-portrait:before{content:"";position:absolute;inset:9px;border:1px solid #e8c47970;pointer-events:none}
+.founder-portrait img{width:min(290px,94%);aspect-ratio:1;object-fit:contain;display:block;margin:0 auto;filter:drop-shadow(0 16px 20px #0b050a99)}
+.founder-portrait h3{font-size:31px;color:#fff5d8;margin:10px 0 4px;letter-spacing:.08em;text-align:center;line-height:1.35}
+.founder-portrait p{text-align:center;color:#e0c99c;font-size:13px;margin:4px 0 18px}
+.founder-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.founder-tags span{font-size:11px;border:1px solid #d7aa55a0;color:#ffedcb;padding:6px 8px}
+.founder-copy .kicker{margin:0 0 12px}.founder-copy h2{font-size:clamp(29px,3.9vw,44px);line-height:1.43;margin:0 0 18px}
+.founder-copy .story-lead{border-left:4px solid #c69344;padding:4px 0 4px 20px;margin:25px 0;font-size:clamp(17px,2vw,21px);font-weight:900;line-height:1.8;color:#5b3928}
+.founder-copy p{font-size:15px;color:#574c49;line-height:2.1;margin:15px 0}
+.founder-copy p strong{color:#9f6724}
+.founder-sign{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin-top:19px;padding-top:15px;border-top:1px solid #dbcaab}
+.founder-sign small{color:#8a7458}.founder-sign strong{font-size:19px;color:#704d29}
+.story-metrics{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}
+.story-metric{background:#fff9ea;border:1px solid #e7cd91;padding:14px 12px;text-align:center}
+.story-metric small{display:block;color:#906f44;font-weight:800;font-size:12px}
+.story-metric b{display:block;font-size:30px;color:#684021;line-height:1.4}
+/* SPECIFIED COMMERCIAL TRANSACTION DISCLOSURES - fictional story settings */
+.legal{background:#f5efe4;padding:75px 0}
+.legal .head{margin-bottom:32px}
+.legal-inner{max-width:890px;margin:0 auto;background:#fffefa;border:1px solid #ded0b8;padding:8px 31px 27px;box-shadow:0 16px 31px #32211a0c}
+.legal-grid{margin:0;display:grid;grid-template-columns:1fr}
+.legal-row{display:grid;grid-template-columns:210px minmax(0,1fr);padding:15px 3px;gap:21px;border-bottom:1px solid #ece3d5}
+.legal-row dt{font-size:13px;font-weight:900;color:#654926}
+.legal-row dd{font-size:13px;color:#4c4540;margin:0;overflow-wrap:anywhere}
+.legal-row dd small{display:block;color:#9c9080;font-size:11px;margin-top:3px}
+.legal-note{max-width:890px;margin:18px auto 0;font-size:12px;color:#807569;line-height:1.8}
+footer .footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;font-size:12px;margin:15px 0}
+footer .footer-links a{border-bottom:1px solid #94744e;text-decoration:none}
+@media(max-width:900px){.founder-grid{grid-template-columns:1fr;max-width:640px;margin:auto;gap:32px}.founder-portrait{max-width:420px;margin:auto;width:100%}}
+@media(max-width:580px){.founder-copy p{font-size:14px}.founder-copy .story-lead{font-size:17px}.legal-inner{padding:4px 17px 20px}.legal-row{grid-template-columns:1fr;gap:4px;padding:13px 0}.legal-row dt{font-size:12px}.legal-row dd{font-size:13px}.legal{padding:57px 0}.founder-portrait h3{font-size:26px}}
+@media(max-width:580px){.mobile-break{display:inline}.fiction-banner{font-size:12px;line-height:1.6;padding:9px 12px}}
+</style>
+</head>
+<body>
+<div class="fiction-banner" role="note">小説『凍結都市』に登場する架空の情報商材ページです。実在の商品・販売者ではありません。</div>
+<div class="top">2031年最新版 ｜ “労働”から“自動化”へ。　AI収益革命、始動。</div>
+<header><div class="wrap nav"><a class="brand" href="#home">OKUDA <b>RICH.</b><small>RICH AUTO SYSTEM 2031</small></a><nav aria-label="ページ内メニュー"><a href="#founder">億田のプロフィール</a><a href="#system">自動化の仕組み</a><a href="#course">プログラム</a><a href="#voice">参加者の声</a><a class="navbuy" href="#offer">特別案内を見る　›</a></nav></div></header>
+<main id="home">
+<section class="hero">
+<div class="wrap hero-inner">
+  <div>
+    <div class="flag">億田リッチ郎 presents ｜ 2031年 AI無人収益革命</div>
+    <h1>まだ、自分で<br>働いているん<br class="mobile-break">ですか？<br><em>AIに稼がせる</em><br>時代です。</h1>
+    <p class="hero-sub">投稿も、集客も、販売も、分析も。<br><strong>面倒な作業は、すべてAIへ。</strong><br>あなたは“収益が生まれる仕組み”のオーナーになる。</p>
+    <div class="hero-pills"><span>AI自動投稿</span><span>24時間集客</span><span>セールス自動化</span><span>データ最適化</span></div>
+    <a href="#offer" class="btn gold">AI全自動収益システムを見る　➜</a>
+    <p class="hero-note">RICH AUTO SYSTEM 2031 ── 働き方そのものを、アップデートする。</p>
+  </div>
+  <div class="hero-visual">
+    <div class="person"><div class="label-spark">新時代の<br>収益設計</div>
+      <img src="rich.webp" alt="億田リッチ郎の自画像" width="256" height="256">
+      <strong>億田リッチ郎</strong><small>@oku_rich_ ｜ AI収益戦略プロデューサー</small>
+    </div>
+    <div class="mini-console" aria-label="自動化システムのイメージ">
+      <div class="console-head"><span class="led"></span>RICH AUTO CORE / ACTIVE</div>
+      <div class="console-line"><span>AIコンテンツ生成</span><b>稼働中</b></div>
+      <div class="console-line"><span>自動集客シナリオ</span><b>稼働中</b></div>
+      <div class="console-line"><span>オファー最適化</span><b>稼働中</b></div>
+      <div class="console-line"><span>24時間オペレーション</span><b>ON</b></div>
+    </div>
+  </div>
+</div>
+</section>
+<div class="strip">✦　投稿はAI。集客もAI。販売もAI。　✦　収益の仕組みを、あなたの手に。　✦</div>
+<section class="section problems">
+<div class="wrap"><div class="head"><div class="kicker">WORK LESS. AUTOMATE MORE.</div><h2>その努力、<br>まだ<strong style="color:#ae7525">手作業</strong>で続けますか？</h2><p>時間が足りない。アイデアが尽きる。売上につながらない。<br>その課題を、AIの仕組みで変えていく。</p></div>
+<div class="columns3">
+  <div class="problem"><span>01</span><h3>毎日の投稿だけで<br>時間がなくなる</h3><p>ネタ探し、文章作成、画像づくり。時間を使うほど自由がなくなる発信から卒業。</p></div>
+  <div class="problem"><span>02</span><h3>人を集めても<br>収益につながらない</h3><p>見られて終わりにしない。興味から購入案内まで一連の導線として設計する。</p></div>
+  <div class="problem"><span>03</span><h3>売上を増やすには<br>労働を増やすしかない</h3><p>自分ひとりでできることには限界がある。だからこそ、仕組みを働かせる。</p></div>
+</div></div>
+</section>
+
+<section class="section founder" id="founder" aria-labelledby="founderTitle">
+<div class="wrap founder-grid">
+  <div>
+    <div class="founder-portrait">
+      <img src="rich.webp" alt="億田リッチ郎の自画像" width="256" height="256" loading="lazy">
+      <h3>億田リッチ郎</h3><p>AI収益戦略プロデューサー ｜ @oku_rich_</p>
+      <div class="founder-tags"><span>RICH AUTO LAB 主宰</span><span>AI収益自動化 提唱者</span></div>
+    </div>
+    <div class="story-metrics" aria-label="自動化を始める前の億田リッチ郎">
+      <div class="story-metric"><small>かつてのフォロワー</small><b>38<span style="font-size:16px">人</span></b></div>
+      <div class="story-metric"><small>当時の投稿のいいね</small><b>3<span style="font-size:16px">件</span></b></div>
+    </div>
+  </div>
+  <div class="founder-copy">
+    <div class="kicker">MY STORY / FROM 38 FOLLOWERS</div>
+    <h2 id="founderTitle">かつての僕は、<br>フォロワー<strong style="color:#ad762e">38人</strong>の<br>普通の会社員でした。</h2>
+    <div class="story-lead">一生懸命投稿しても、いいねは3つ。<br>でも、僕はそこで諦めませんでした。</div>
+    
+    <p>仕事から帰って、投稿の文章を考えて、画像を作って、反応を確認する。気がつけば一日が終わっている。それなのに、数字はまったく伸びない。僕も、そんな毎日を送っていたんです。</p>
+    <p>転機は、あることに気づいた瞬間でした。<strong>「AIに文章を書かせるだけでは、まだ自動化とは呼べない」</strong>。文章、画像、投稿、集客、販売、そして改善。そのすべてをつなげて、初めて「仕組み」になる。</p>
+    <p>今では、AIが文章も画像も作り、投稿し、稼いでくれます。僕がやっているのは、<strong>朝起きて収益を確認することだけです。</strong></p>
+    <p>以前の僕のように、毎日頑張っているのに報われない人へ。才能や人脈ではなく、仕組みで勝負する方法を伝えたい。その想いから生まれたのが、<strong>RICH AUTO SYSTEM 2031</strong>です。</p>
+    <div class="founder-sign"><small>RICH AUTO LAB 代表</small><strong>億田リッチ郎</strong></div>
+  </div>
+</div>
+</section>
+<section class="manifesto"><h2>あなたが寝ている間も、<br><strong>AIは、止まらない。</strong></h2><p>働く時間を増やすな。動く仕組みを増やせ。 ―― 億田リッチ郎</p></section>
+<section class="section system" id="system"><div class="wrap"><div class="head"><div class="kicker">THE AUTOMATION ENGINE</div><h2>収益への導線をつくる<br><strong style="color:#ad762e">４つの全自動エンジン</strong></h2><p>アイデアから次の購入案内まで。<br>複数のAI処理を組み合わせ、ひとつの運用フローに。</p></div>
+<div class="flow">
+  <div class="flow-step"><div class="flow-icon">✍</div><b>ENGINE 01</b><h3>AIがつくる</h3><p>テーマ選定・投稿文・見出し・画像案を一括作成。コンテンツ制作を効率化。</p></div>
+  <div class="flow-step"><div class="flow-icon">⌁</div><b>ENGINE 02</b><h3>AIが集める</h3><p>コンテンツの届け方を設計。見込み客との接点を継続的に生み出す。</p></div>
+  <div class="flow-step"><div class="flow-icon">↗</div><b>ENGINE 03</b><h3>AIが案内する</h3><p>紹介ページ・フォローメッセージ・販売導線を自動化する。</p></div>
+  <div class="flow-step"><div class="flow-icon">▥</div><b>ENGINE 04</b><h3>AIが改善する</h3><p>アクセスや反応を整理し、次のコンテンツと導線に反映する。</p></div>
+</div>
+<div class="autoline">あなたの役割は「作業者」から「仕組みのオーナー」へ。</div>
+</div></section>
+<section class="section dashboard"><div class="wrap dash-wrap">
+<div class="dash-copy"><div class="kicker">AUTO REVENUE CONTROL</div>
+<h2>収益の仕組みを、<br><strong>ひとつの画面で。</strong></h2>
+<p>億田式の発想はシンプル。作る・届ける・案内する・改善する。あらゆる段階にAIを配置することで、事業を運営する新しいスタイルを目指します。</p>
+<ul class="checks"><li>投稿スケジュールを一括管理</li><li>反応データから次の打ち手を提案</li><li>見込み客への案内フローを自動化</li><li>日々の運用をダッシュボードで確認</li></ul>
+</div>
+<div class="screen" aria-label="架空のAI自動化ダッシュボードの画面イメージ">
+<div class="screen-top"><b>RICH AUTO DASHBOARD</b><span>● SYSTEM ONLINE</span></div>
+<div class="screen-in"><div class="stat-caption">MONTHLY REVENUE / AUTOMATION SCENARIO</div><div class="stat-val">¥1,280,000 <small>↗</small></div><div class="stat-caption">自動化ワークフローの表示例</div>
+<div class="bargraph" aria-hidden="true"><span style="height:35%"></span><span style="height:44%"></span><span style="height:39%"></span><span style="height:62%"></span><span style="height:55%"></span><span style="height:72%"></span><span style="height:80%"></span><span style="height:93%"></span><span style="height:100%"></span></div>
+<div class="screen-list"><div><span>CONTENTS ENGINE</span><b>ACTIVE</b></div><div><span>AUDIENCE FUNNEL</span><b>ACTIVE</b></div><div><span>SALES AUTOMATION</span><b>ACTIVE</b></div><div><span>OPTIMIZATION</span><b>ACTIVE</b></div></div>
+<p class="screen-foot">※ 数値・グラフはシステム構想を表現した架空の画面イメージです。</p>
+</div></div>
+</div></section>
+<section class="section course" id="course"><div class="wrap"><div class="head"><div class="kicker">MASTER PROGRAM</div><h2>億田式<br><strong style="color:#ab7b30">AI全自動収益システム構築講座</strong></h2><p>全自動化の設計図を、最初から組み立てる。</p></div>
+<div class="coursebox"><div class="coursehead"><small>RICH AUTO SYSTEM 2031</small><h3>THE AUTOMATION BLUEPRINT</h3><p>AIを使った事業設計と運用フロー構築の実践プログラム</p></div>
+<div class="modules">
+  <div class="module"><span class="num">01</span><div><h4>自動収益モデルの設計</h4><p>商品企画、対象顧客、収益導線の全体像を構築する。</p></div></div>
+  <div class="module"><span class="num">02</span><div><h4>AIコンテンツ工場</h4><p>ネタ出し・文章・画像案・予約投稿までの作業を連携する。</p></div></div>
+  <div class="module"><span class="num">03</span><div><h4>24時間集客フロー</h4><p>SNSから紹介ページまで、継続的な顧客導線を整える。</p></div></div>
+  <div class="module"><span class="num">04</span><div><h4>AIセールスオペレーション</h4><p>案内文、フォローメッセージ、販売ページの設計を学ぶ。</p></div></div>
+  <div class="module"><span class="num">05</span><div><h4>自動分析・改善</h4><p>運用状況を把握する指標と、改善の仕組みを整える。</p></div></div>
+  <div class="module"><span class="num">06</span><div><h4>オーナーモードへの移行</h4><p>最終確認と管理を残しながら、日常業務を極力省力化する。</p></div></div>
+</div><div class="bonus"><b>先行参加特典３点</b><ul><li>AI投稿テンプレート 100選</li><li>自動集客シナリオ設計シート</li><li>収益導線ダッシュボード・デザインひな形</li></ul></div>
+</div></div></section>
+<section class="section voices" id="voice"><div class="wrap"><div class="head"><div class="kicker">SUCCESS STORIES</div><h2>自分で動く毎日から、<br><strong style="color:#a97830">仕組みが動く毎日へ。</strong></h2><p>億田式プログラム参加者の声</p></div>
+<div class="columns3">
+<div class="testimonial"><div class="stars">★★★★★</div><h3>「毎日の投稿準備から解放されました」</h3><p>投稿を考える時間が大幅に減って、商品企画に集中できるようになりました。やるべきことが変わった感覚です。</p><small>30代・会社員</small></div>
+<div class="testimonial"><div class="stars">★★★★★</div><h3>「自分が寝ている間も運用が続く」</h3><p>発信を仕組みとして組み直したことで、毎回ゼロから始める感覚がなくなりました。</p><small>40代・個人事業主</small></div>
+<div class="testimonial"><div class="stars">★★★★★</div><h3>「全部ひとりで抱える必要がない」</h3><p>AIが担当するところと、自分が判断するところを分けたことで、ビジネスを見直すきっかけになりました。</p><small>20代・副業チャレンジ中</small></div>
+</div></div></section>
+<section class="section offer" id="offer"><div class="wrap"><div class="head"><div class="kicker" style="color:#f0c974">EXCLUSIVE INVITATION</div><h2>次は、あなたの番です。</h2><p>「労働時間を増やす」のではなく、「動く仕組みをつくる」。</p></div>
+<div class="offerbox"><div class="offer-ribbon">RICH AUTO SYSTEM 2031 ｜ 先行特別案内</div><div class="offer-in">
+<h3>億田式<br>AI全自動収益システム構築講座</h3>
+<div class="old">通常案内価格 <s>99,600円</s></div>
+<div class="price"><small>特別価格　</small>49,800<small>円</small></div>
+<p>全６モジュール ＋ 参加特典３点</p>
+<button type="button" class="btn gold apply" aria-haspopup="dialog">AI自動収益システムの案内を見る　➜</button>
+<p style="font-size:12px;margin-bottom:0">※ 実践結果は運用内容や環境によって異なります。</p>
+</div></div></div></section>
+<section class="section faq" id="faq"><div class="wrap"><div class="head"><div class="kicker">FAQ</div><h2>よくあるご質問</h2></div>
+<div class="faq-items">
+<details><summary>Q. AIを使ったことがなくても始められますか？</summary><p>はい。導入に必要な考え方から、実際の運用フローの設計まで、順番に学ぶ構成です。</p></details>
+<details><summary>Q. どこまで自動化できるのですか？</summary><p>企画補助、投稿案作成、運用管理、案内フロー、分析などの自動化を目指します。各サービスの仕様や規約、実際の事業内容に応じて設定と確認が必要です。</p></details>
+<details><summary>Q. スマートフォンでも使えますか？</summary><p>閲覧や一部の管理はスマートフォンでも行えます。システムの構築や設定ではPCがあると便利です。</p></details>
+<details><summary>Q. 収益を保証する内容ですか？</summary><p>収益は商品・顧客・価格・運用方法などによって変わるため、個々の収益額を保証するものではありません。</p></details>
+</div></div></section>
+
+<section class="legal" id="legal" aria-labelledby="legalTitle">
+ <div class="wrap">
+  <div class="head"><div class="kicker">TRANSACTION INFORMATION</div><h2 id="legalTitle">特定商取引法に基づく表記</h2><p>RICH AUTO SYSTEM 2031　販売条件・運営情報</p></div>
+  <div class="legal-inner">
+   <dl class="legal-grid">
+    <div class="legal-row"><dt>販売事業者</dt><dd>RICH AUTO LAB<small>『凍結都市』の世界に登場する架空の事業者です。</small></dd></div>
+    <div class="legal-row"><dt>運営統括責任者</dt><dd>億田リッチ郎</dd></div>
+    <div class="legal-row"><dt>所在地</dt><dd>凍結都市 中央ビジネス街 RICH TOWER 31F<small>物語上の架空住所であり、実在の所在地ではありません。</small></dd></div>
+    <div class="legal-row"><dt>電話番号</dt><dd>架空の事業者のため、電話窓口の設定はありません。</dd></div>
+    <div class="legal-row"><dt>メールでのお問い合わせ</dt><dd>本作は架空のサービスのため、お問い合わせ受付はありません。</dd></div>
+    <div class="legal-row"><dt>商品名</dt><dd>億田式 AI全自動収益システム構築講座／RICH AUTO SYSTEM 2031</dd></div>
+    <div class="legal-row"><dt>販売価格</dt><dd>49,800円（税込）<small>作品中の価格設定です。実際の請求は行われません。</small></dd></div>
+    <div class="legal-row"><dt>商品代金以外の必要料金</dt><dd>ネット接続の通信費および、利用する外部AIサービスの料金等（利用状況に応じて発生する場合があります）。ダウンロード教材のため送料なし。</dd></div>
+    <div class="legal-row"><dt>お支払方法</dt><dd>クレジットカード決済・銀行振込（いずれも作中設定のみ）</dd></div>
+    <div class="legal-row"><dt>お支払時期</dt><dd>クレジットカード：お申込み時／銀行振込：お申込み後の指定期日まで（作中設定）</dd></div>
+    <div class="legal-row"><dt>商品の引渡時期</dt><dd>決済確認後、受講者専用ページから閲覧・ダウンロード（作中設定）</dd></div>
+    <div class="legal-row"><dt>返品・キャンセル</dt><dd>デジタル教材のため、提供開始後のお客様都合による返品・キャンセルは原則受け付けない想定です。法令に基づく解除等の権利を制限するものではありません。<small>このページで実際に契約・決済が成立することはありません。</small></dd></div>
+    <div class="legal-row"><dt>動作環境</dt><dd>最新の主要ブラウザが利用できるPCまたはスマートフォン、インターネット接続環境。外部AIサービスを利用する場合は各サービスの利用環境に準じます。</dd></div>
+    <div class="legal-row"><dt>お申込み期限</dt><dd>特段の期限設定なし（作中設定）</dd></div>
+    <div class="legal-row"><dt>収益に関する表現</dt><dd>効果・成果には個人差があり、収益や自動化の程度を保証するものではありません。</dd></div>
+   </dl>
+  </div>
+  <p class="legal-note">※ これは小説『凍結都市』に登場する架空の販売サイトを模した創作上の表示です。実在する販売事業者の法定表示ではなく、現実の通信販売に必要な事業者の実住所・連絡先を充足するものではありません。実際の商品販売や個人情報の取得は行いません。</p>
+ </div>
+</section>
+<section class="closing"><div class="wrap"><h2>あなたが働く人生から、<br><span>AIが働く人生へ。</span></h2><p>収益の仕組みをつくる。その一歩を、今日から。</p><a href="#offer" class="btn gold">AI全自動収益の詳細を確認する　➜</a></div></section>
+</main>
+<footer><b>OKUDA RICH.</b><div class="footer-links"><a href="#founder">代表プロフィール</a><a href="#legal">特定商取引法に基づく表記</a><a href="#faq">よくある質問</a></div><p>© 2031 OKUDA RICH LAB</p><p>本ページは小説『凍結都市 ―タイムラインの向こう側―』を題材にしたフィクションです。商品・体験談・数値は創作上の設定であり、実際の販売、決済、申し込み受付はありません。</p><p class="related-books"><a href="https://budouumibudou.github.io/toketsu-toshi/" target="_blank" rel="noopener noreferrer">『凍結都市』オリジナル版</a>　｜　<a href="https://budouumibudou.github.io/toketsu-toshi-x/" target="_blank" rel="noopener noreferrer">『凍結都市』X風リメイク版</a></p></footer>
+<div class="sticky"><a href="#offer" class="btn gold">AI全自動収益プログラムを見る　➜</a></div>
+<div class="dialog" id="dialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="dialogTitle"><div class="dialog-box">
+<button type="button" class="close" id="close" aria-label="閉じる">×</button>
+<small>RICH AUTO SYSTEM 2031</small><h2 id="dialogTitle">AI全自動収益システム</h2><div style="font-weight:1000;color:#b32535;font-size:35px">49,800円</div>
+<p>全６モジュール ＋ 参加特典３点<br>業務と集客の仕組みをAIで再設計するプログラム。</p>
+<p style="font-size:12px">本ページはフィクションのため、実際の申し込みや決済には進みません。</p>
+<button type="button" class="btn" id="dismiss">案内を閉じる</button>
+</div></div>
+<script>
+(()=>{const d=document.getElementById('dialog'),c=document.getElementById('close');let focusBefore=null;
+const open=()=>{focusBefore=document.activeElement;d.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';c.focus()};
+const close=()=>{d.setAttribute('aria-hidden','true');document.body.style.overflow='';focusBefore?.focus()};
+document.querySelectorAll('.apply').forEach(b=>b.addEventListener('click',open));
+c.addEventListener('click',close);document.getElementById('dismiss').addEventListener('click',close);
+d.addEventListener('click',e=>{if(e.target===d)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&d.getAttribute('aria-hidden')==='false')close()});
+})();
+</script>
+</body>
+</html>
