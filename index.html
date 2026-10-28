@@ -149,6 +149,13 @@ small{font-size:13px}
 .world-site.matsunoyu{border-color:#47625e}
 .world-sites-foot{margin:14px 0 0;font-size:11px;color:#929ba7;line-height:1.7}
 @media(max-width:680px){.world-sites{margin:15px 12px 22px;padding:14px}.world-sites-grid{grid-template-columns:1fr}.world-site{padding:11px}.world-site>img{width:52px;height:52px;min-width:52px}.world-sites-head h2{font-size:19px}}
+/* スマートフォンでは関連サイトをホーム画面の一番下に移す（ネタバレ防止） */
+.world-sites-spoiler{display:none}
+@media(max-width:680px){
+  #homeView{display:flex;flex-direction:column}
+  #homeView>.world-sites{order:99;margin-top:30px;margin-bottom:32px}
+  .world-sites-spoiler{display:block;margin:13px 0 0;padding:11px 12px;border:1px solid #665039;border-radius:9px;background:#2a2118;color:#f1d7aa;font-size:12px;line-height:1.75}
+}
 @media(prefers-reduced-motion:reduce){.world-site{transition:none}.world-site:hover,.world-site:focus-visible{transform:none}}
 </style></head><body><div class="progress" id="progress"></div><div class="layout">
 <aside class="left" aria-label="サイト内ナビゲーション"><a href="#home" class="logo" aria-label="凍結都市ホーム">凍</a><nav class="left-menu">
@@ -187,6 +194,7 @@ small{font-size:13px}
     </a>
   </div>
   <p class="world-sites-foot">※いずれも小説『凍結都市』の架空サイトです。外部ページは新しいタブで開きます。</p>
+  <p class="world-sites-spoiler">⚠ 登場人物のサイトには物語の展開に関わる内容が含まれます。各話を読んだ後にご覧になるのがおすすめです。</p>
 </section>
 <div class="feed-heading"><h2>あなたへのおすすめ</h2><small>物語の投稿が流れます</small></div><div id="homeFeed"></div><div class="notice">※この画面は作品をモチーフにした架空のSNS表示です。Xの公式サービスではありません。原作は全10編、最新版を同梱しています。<br><a href="https://budouumibudou.github.io/toketsu-toshi/" target="_blank" rel="noopener">元のオリジナル版を見る</a></div></section>
 <section class="view" id="episodesView" hidden><div class="feed-heading"><h2>全エピソード</h2><small>プロローグを含む全10編</small></div><div id="episodesFeed"></div></section>
