@@ -123,6 +123,33 @@ small{font-size:13px}
 .chapter .media.enhanced{background:#101621;border-radius:12px;overflow:hidden;}
 .chapter .media.enhanced img{width:100%;height:auto;max-height:none;display:block;object-fit:cover;}
 .tweet-title{line-height:1.55;}
+
+/* 作中の架空ホームページへ案内するリンクカード（2026-10追加） */
+.world-sites{margin:20px 15px 26px;padding:18px;border:1px solid #2f3336;border-radius:18px;background:linear-gradient(145deg,#121921 0%,#101113 56%,#19141b 100%);color:#e7e9ea}
+.world-sites-head{margin:0 0 16px}
+.world-sites-kicker{font-size:11px;color:#a9b5c5;letter-spacing:.13em;font-weight:750}
+.world-sites-head h2{font-size:20px;line-height:1.45;margin:4px 0 5px;font-weight:850;letter-spacing:.02em}
+.world-sites-head p{font-size:12px;line-height:1.75;margin:0;color:#9ba5ae}
+.world-sites-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.world-site{display:flex;align-items:center;gap:10px;min-width:0;padding:13px 12px;text-decoration:none;border:1px solid #3a414a;border-radius:14px;background:#191d24;color:#e7e9ea;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.world-site:hover,.world-site:focus-visible{background:#232c36;border-color:#668da7;transform:translateY(-2px)}
+.world-site:focus-visible{outline:2px solid #80baff;outline-offset:3px}
+.world-site>img{width:56px;height:56px;min-width:56px;object-fit:cover;border-radius:13px;background:#303842;border:1px solid #ffffff18}
+.world-site .w-copy{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.world-site .w-type{font-size:10px;color:#afbed0;letter-spacing:.05em}
+.world-site .w-name{font-size:14px;line-height:1.4;font-weight:800;color:#f2f4f5;overflow-wrap:anywhere}
+.world-site .w-desc{font-size:11px;line-height:1.5;color:#a2aab5}
+.world-site .w-ext{font-size:19px;color:#91a5bc;flex:none;align-self:flex-start}
+.world-site.okuda{border-color:#77603b;background:linear-gradient(135deg,#29241d,#191d24)}
+.world-site.okuda:hover,.world-site.okuda:focus-visible{border-color:#dbb768;background:#332a1e}
+.world-site.okuda .w-name{color:#f3d5a0}
+.world-site.lawyer{border-color:#3b576d}
+.world-site.kirari{border-color:#684358;background:linear-gradient(135deg,#29212b,#191d24)}
+.world-site.kirari .w-name{color:#ffc5dd}
+.world-site.matsunoyu{border-color:#47625e}
+.world-sites-foot{margin:14px 0 0;font-size:11px;color:#929ba7;line-height:1.7}
+@media(max-width:680px){.world-sites{margin:15px 12px 22px;padding:14px}.world-sites-grid{grid-template-columns:1fr}.world-site{padding:11px}.world-site>img{width:52px;height:52px;min-width:52px}.world-sites-head h2{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.world-site{transition:none}.world-site:hover,.world-site:focus-visible{transform:none}}
 </style></head><body><div class="progress" id="progress"></div><div class="layout">
 <aside class="left" aria-label="サイト内ナビゲーション"><a href="#home" class="logo" aria-label="凍結都市ホーム">凍</a><nav class="left-menu">
 <a class="nav-link" data-route="home" href="#home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H3z"/></svg><span>ホーム</span></a><a class="nav-link" data-route="episodes" href="#episodes"><svg viewBox="0 0 24 24"><path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1"/></svg><span>話一覧</span></a><a class="nav-link" data-route="characters" href="#characters"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 5a3 3 0 0 1 0 6M18 14a6 6 0 0 1 4 6v1"/></svg><span>登場人物</span></a><a class="nav-link" data-route="gallery" href="#gallery"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 5"/></svg><span>投稿画像</span></a><a class="nav-link" data-route="bookmarks" href="#bookmarks"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-7-5-7 5z"/></svg><span>ブックマーク</span></a><a class="nav-link" data-route="settings" href="#settings"><svg viewBox="0 0 24 24"><path d="M3 5a5 5 0 0 1 5-1h4v16H8a5 5 0 0 0-5 1zM21 5a5 5 0 0 0-5-1h-4v16h4a5 5 0 0 1 5 1z"/></svg><span>設定資料</span></a></nav><a href="#prologue" class="new-reader">プロローグを読む</a><a href="#home" class="left-profile"><img src="icon.svg?v=7" alt=""><span class="profiletext"><strong>凍結都市｜創作 <span class="fiction-mark" title="架空の作品">❄</span></strong><small>@toketsu_toshi</small></span></a></aside>
@@ -130,7 +157,38 @@ small{font-size:13px}
 <div id="tabNav" class="top-tabs"><button type="button" data-tab="home" class="active">おすすめ</button><button type="button" data-tab="episodes">連載一覧</button><button type="button" data-tab="characters">登場人物</button></div>
 <section class="view" id="homeView"><div class="banner"><img src="hero.webp?v=7" alt="氷のような青の近未来都市とSNSのホログラム"><div class="banner-heading"><p>— タイムラインの向こう側 —</p><h2>凍結都市</h2></div></div>
 <div class="official-strip"><div class="official-row"><img src="icon.svg?v=7" alt=""><div><h3>凍結都市 <span class="fiction-mark" title="架空の作品">❄</span></h3><p>@toketsu_toshi ・ フィクション</p></div></div><div class="official-desc">2031年、Xは国家を超える社会インフラになった。<br>Grok、Claude、Gemini、ChatGPT──4体のAIが、終わらない炎上を鎮めるために呼び出される。<br>ただし、外部AIは一言ごとに課金。<strong>面白くなってきた。</strong></div><div class="official-meta"><span>SFパロディ</span>　全10編 ／ 作品内の発言・出来事はフィクション</div><div class="hero-cta"><a class="pill" href="#prologue"><svg viewBox="0 0 24 24"><path d="M3 5a5 5 0 0 1 5-1h4v16H8a5 5 0 0 0-5 1zM21 5a5 5 0 0 0-5-1h-4v16h4a5 5 0 0 1 5 1z"/></svg>　プロローグから読む</a><a class="pill secondary" href="#episodes">全話を見る →</a><a class="pill secondary" id="resumeLink" hidden href="#prologue">続きから読む</a></div></div>
-<div class="pinned">📌 固定された投稿</div><div class="tweet" id="pinnedPost"></div><div class="feed-heading"><h2>あなたへのおすすめ</h2><small>物語の投稿が流れます</small></div><div id="homeFeed"></div><div class="notice">※この画面は作品をモチーフにした架空のSNS表示です。Xの公式サービスではありません。原作は全10編、最新版を同梱しています。<br><a href="https://budouumibudou.github.io/toketsu-toshi/" target="_blank" rel="noopener">元のオリジナル版を見る</a></div></section>
+<div class="pinned">📌 固定された投稿</div><div class="tweet" id="pinnedPost"></div>
+<section class="world-sites" id="world-sites" aria-labelledby="world-sites-title">
+  <div class="world-sites-head">
+    <div class="world-sites-kicker">2031 / FICTIONAL WEB</div>
+    <h2 id="world-sites-title">物語の中のウェブサイト</h2>
+    <p>タイムラインを飛び出して、登場人物たちのホームページをのぞいてみよう。</p>
+  </div>
+  <div class="world-sites-grid">
+    <a class="world-site okuda" href="okuda/" target="_blank" rel="noopener noreferrer" aria-label="億田リッチ郎の情報商材サイトを別タブで開く">
+      <img src="rich.webp" loading="lazy" alt="" width="56" height="56">
+      <span class="w-copy"><span class="w-type">情報商材 / AI自動収益</span><strong class="w-name">RICH AUTO SYSTEM 2031</strong><span class="w-desc">億田リッチ郎の販売ページ</span></span>
+      <span class="w-ext" aria-hidden="true">↗</span>
+    </a>
+    <a class="world-site lawyer" href="law-note/" target="_blank" rel="noopener noreferrer" aria-label="被害回復弁護団のホームページを別タブで開く">
+      <img src="lawyer.svg" loading="lazy" alt="" width="56" height="56">
+      <span class="w-copy"><span class="w-type">法律 / 消費者被害</span><strong class="w-name">情報商材被害回復弁護団</strong><span class="w-desc">団長：ロウ・ノート弁護士</span></span>
+      <span class="w-ext" aria-hidden="true">↗</span>
+    </a>
+    <a class="world-site kirari" href="kirari/" target="_blank" rel="noopener noreferrer" aria-label="ミナト・キラリの架空SNSを別タブで開く">
+      <img src="kirari.webp" loading="lazy" alt="" width="56" height="56">
+      <span class="w-copy"><span class="w-type">SNS / 日常と美容</span><strong class="w-name">ミナト・キラリの写真日記</strong><span class="w-desc">@kirari_minato の架空SNS</span></span>
+      <span class="w-ext" aria-hidden="true">↗</span>
+    </a>
+    <a class="world-site matsunoyu" href="matsunoyu/" target="_blank" rel="noopener noreferrer" aria-label="松の湯の公式サイトを別タブで開く">
+      <img src="yu.svg" loading="lazy" alt="" width="56" height="56">
+      <span class="w-copy"><span class="w-type">町の銭湯 / 昭和36年創業</span><strong class="w-name">松の湯 公式ホームページ</strong><span class="w-desc">番台のお知らせと富士山のペンキ絵</span></span>
+      <span class="w-ext" aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <p class="world-sites-foot">※いずれも小説『凍結都市』の架空サイトです。外部ページは新しいタブで開きます。</p>
+</section>
+<div class="feed-heading"><h2>あなたへのおすすめ</h2><small>物語の投稿が流れます</small></div><div id="homeFeed"></div><div class="notice">※この画面は作品をモチーフにした架空のSNS表示です。Xの公式サービスではありません。原作は全10編、最新版を同梱しています。<br><a href="https://budouumibudou.github.io/toketsu-toshi/" target="_blank" rel="noopener">元のオリジナル版を見る</a></div></section>
 <section class="view" id="episodesView" hidden><div class="feed-heading"><h2>全エピソード</h2><small>プロローグを含む全10編</small></div><div id="episodesFeed"></div></section>
 <section class="view" id="charactersView" hidden><div class="cast-group"><h2 class="section-title">調停する4体のAIと仕掛け人</h2><p class="section-sub">4体のAIエージェントは原作では身体を持たず、SNSアカウントとして登場します。4体の人物像は性格を表現した擬人化イラストです。<br>異論・枡句は人間の登場人物です。作中のタイムラインではそれぞれSNS用アイコンを使用しています。</p><div class="cast-grid" id="castGrid"></div></div><div class="resident-group"><h2 class="section-title">タイムラインの住人たち</h2><p class="section-sub">絵師垢、猫アイコン、弁護士垢、医クラ、情報商材系……それぞれに異なるプロフィール。</p><div class="resident-grid" id="residentsGrid"></div></div></section>
 <section class="view" id="galleryView" hidden><div class="gallery-section"><h2 class="section-title">画像付きポスト</h2><p class="section-sub">原作で［画像］と記された投稿に、ストーリーに沿ったイラストや写真風の画像を添えています。いずれも創作のイメージ画像です。</p><div class="media-grid" id="mediaGrid"></div></div></section>
