@@ -1,14 +1,17 @@
-凍結都市 リメイク第8版追補 v8.1（第7版からの差し替えセット）
+凍結都市 X風リメイク版・リンクと設定資料ナビ修正版
 
-ZIPを解凍し、中のファイルを GitHub の toketsu-toshi-x リポジトリ直下にアップロードしてください。
-画像やHTMLが全て同じ階層にある構成用です。story-original.html は修正も再アップロードも不要です。
+GitHubの budouumibudou/toketsu-toshi-x リポジトリ直下の index.html をこのZIPに入っている index.html に置き換えてください。
+※ZIPをそのままアップロードするのではなく、中のindex.htmlを使用してください。
+※別のフォルダ(okuda, law-note, kirari, matsunoyu)の中ではなく、リポジトリの最上位です。
 
-差し替え・追加するファイル：
-- index.html
-- post-compare.webp（レイ×カナタの比較）
-- post-bath-water.webp（入浴剤入りユニットバス）
-- chapter-ep1.webp（第1話章扉）
-- chapter-ep4.webp（第4話章扉）
-- CLAUDE_REVIEW_v81.md（任意、Claudeチェック用）
+変更点:
+- PC・スマホともに、4つの架空サイトへのリンクカードをホーム画面の投稿リストより後（一番下）へ移動
+- ネタバレ注意をPC・スマホ両方に表示
+- スマホの下部メニューに「資料」を追加（#settingsへ移動）
+- 各メニューに小さな文字ラベルを付け、設定資料の入口を分かりやすく
+- 既存の小説本文・画像・サイト機能は維持
 
-第3話の銭湯写真 post-fuji-painting.webp はサイトで使わないので、削除しなくても画面には出ません。
+設定資料の直接URL: https://budouumibudou.github.io/toketsu-toshi-x/#settings
+公開トップ: https://budouumibudou.github.io/toketsu-toshi-x/
+
+注意: 設定資料や本編は既存のstory-original.htmlを読み込むため、従来どおり同ファイルを同じ階層に残してください。
